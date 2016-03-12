@@ -1,0 +1,112 @@
+% thermodynamic quantities: capital roman italic
+% 4-tensors: capital roman upright
+% 2-tensors: lowercase greek (except nu, mu, kappa, chi, delta and )
+%===================================================================
+% mathup for lowercase Greek letters
+\DeclareRobustCommand{\mathup}[1]{\begingroup\changegreek\mathrm{#1}\endgroup}
+\DeclareRobustCommand{\mathbfup}[1]{\begingroup\changegreekbf\mathbf{#1}\endgroup}
+%%% THIS WILL NOT PROVIDE UPRIGHT VARKAPPA!
+\makeatletter
+\def\changegreek{\@for\next:={%
+alpha,nu,beta,xi,gamma,delta,pi,varpi,epsilon,varepsilon,rho,varrho,zeta,sigma,varsigma,eta,tau,theta,vartheta,upsilon,iota,phi,varphi,kappa,chi,lambda,psi,mu,omega}%
+  \do{\expandafter\let\csname\next\expandafter\endcsname\csname\next up\endcsname}}
+\def\changegreekbf{\@for\next:={%
+alpha,nu,beta,xi,gamma,delta,pi,varpi,epsilon,varepsilon,rho,varrho,zeta,sigma,varsigma,eta,tau,theta,vartheta,upsilon,iota,phi,varphi,kappa,chi,lambda,psi,mu,omega}%
+  \do{\expandafter\def\csname\next\expandafter\endcsname\expandafter{%
+    \expandafter\bm\expandafter{\csname\next up\endcsname}}}}
+\makeatother
+% Tensors and vectors fonts 
+\newcommand{\vc}[1]{{\mathbf{#1}}} % font for 3-vectors
+\newcommand{\tz}[1]{{\mathrm{#1}}} % font definition for 4-tensors
+\newcommand{\tG}[1]{{\mathup{#1}}} % upright for 2-tensor (Upright Greek letters) 
+\newcommand{\tsc}[1]{{\text{\textsc{#1}}}} % small cups for occasional supperscrips % Differentials 
+\newcommand{\rmd}{\mathrm{d}}
+\newcommand{\I}{\mathcal{I}} % inclusion
+\newcommand{\dI}{{\partial\I}} % body
+\newcommand{\Bo}{\mathcal{B}} % body
+\newcommand{\Dk}{{\mathcal{D}(a)}} % domain of k vectors
+\newcommand{\dB}{{\partial\mathcal{B}}} % body
+\newcommand{\dV}{{\mathrm{dV}}}
+\newcommand{\dr}{{\mathrm{d}\vc{r}}}
+\newcommand{\dveck}{{\mathrm{d}\vc{k}}}
+\newcommand{\dS}{{\mathrm{dS}}}
+\newcommand{\dO}{{\mathrm{d}\Omega}}
+% variables 
+\newcommand{\densBo}{\rho_\tsc{m}} % body
+\newcommand{\pE}{E} % potential energy 
+% 6-vectors and their components 
+% C = component, must be italic
+\newcommand{\fs}{\tG{\rho}} % frozen-in stress
+\newcommand{\fsC}{\rho} % frozen-in stress
+\newcommand{\fsn}{\tG{\eta}} % frozen-in strain
+\newcommand{\fsnC}{\eta} % frozen-in strain
+\newcommand{\s}{\tG{\sigma}} % elastic (compatible) stress
+\newcommand{\sC}{\sigma} % elastic (compatible) stress
+\newcommand{\e}{\tG{\varepsilon}} % elastic (compatible) strain
+\newcommand{\eC}{\varepsilon} % elastic (compatible) strain
+\newcommand{\eT}{\e^\tsc{t}} % strain due to external traction \fs=0
+\newcommand{\eTC}{\eC^\tsc{t}} % strain due to external traction \fs=0
+\newcommand{\sT}{\s^\tsc{t}} % strain due to external traction \fs=0
+\newcommand{\sTC}{\sC^\tsc{t}} % strain due to external traction \fs=0
+\newcommand{\eS}{\e^\tsc{s}} % strain due to \fs 
+\newcommand{\eSC}{\eC^\tsc{s}} % strain due to \fs 
+\newcommand{\sS}{\s^\tsc{s}} % strain due to \fs (\sT
+\newcommand{\sSC}{\sC^\tsc{s}} % strain due to \fs (\sT
+\newcommand{\eP}{\e^\tsc{p}} % strain due to external traction \fs=0
+\newcommand{\sP}{\s^\tsc{p}} % strain due to external traction \fs=0
+\newcommand{\ePC}{\eC^\tsc{p}} % strain due to external traction \fs=0
+\newcommand{\sPC}{\sC^\tsc{p}} % strain due to external traction \fs=0
+\newcommand{\ut}{\tG{\tau}} % unit 6-vector 
+\newcommand{\utC}{\tau} % unit 6-vector components 
+\newcommand{\Lt}[2]{\tz{L}\!\left[{#1}\;,{#2}\right]}
+\newcommand{\Dt}[2]{\tz{D}\!\left[{#1}\;,{#2}\right]}
+\newcommand{\gA}{{\tG{\gamma}^\tsc{a}}}
+\newcommand{\gAC}{{\gamma}^\tsc{a}}
+\newcommand{\sig}[1]{\tG{\sigma}^{(#1)}}
+\newcommand{\sigC}[1]{\sigma^{(i)}}
+\newcommand{\spin}[1]{\ut^{(#1)}}
+\newcommand{\spinC}[1]{\utC^{(i)}}
+\newcommand{\Y}[1]{\tz{Y}^{(#1)}}
+\newcommand{\YC}[1]{Y^{(#1)}}
+% elastic moduli inside inclusion (bare constants)
+\newcommand{\Bm}{\varkappa} % bulk modulus 
+\newcommand{\mI}{\mu_0} 
+\newcommand{\nI}{\nu_0}
+\newcommand{\kI}{\Bm_0}
+\newcommand{\cI}{\tz{C}_0}
+% elastic moduli inside the matrix (experimentally measured constants)
+\newcommand{\mM}{\mu}
+\newcommand{\nM}{\nu}
+\newcommand{\kM}{\Bm}
+\newcommand{\cM}{\tz{C}}
+\newcommand{\cMC}{C}
+\newcommand{\cIC}{C_0}
+% operators 
+\newcommand{\Si}{{\operatorname{Si}}}
+%\newcommand{\max}{{\operatorname{max}}}
+%\newcommand{\min}{{\operatorname{min}}}
+\newcommand{\inc}{{\operatorname{inc}}}
+\newcommand{\Tr}{{\operatorname{Tr}}}
+\newcommand{\Det}[1]{\operatorname{det}{#1}}
+\newcommand{\QQText}[1]{\text{\qquad{#1}\qquad}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+% misc
+\newcommand{\of}[1]{\left({#1}\right)}
+\newcommand{\ofR}{({\vc{r}})} % (\vc{r}) 
+\newcommand{\MF}{\tsc{mf}} % Mean field label
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left[} 
+\newcommand{\rb}{\right]}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\rf}[1]{(\ref{#1})}
+\newcommand{\transpose}[1]{{#1}^{\top}}
+\newcommand{\nosum}{\cancel{\Sigma}}
+\newcommand{\atp}[1]{^{(#1)}}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "thesis"
+%%% End: 

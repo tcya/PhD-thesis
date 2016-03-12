@@ -1,0 +1,44 @@
+\documentclass[hidelinks,footinclude=false,headinclude,titlepage,fontsize=11pt,BCOR=0.5in,DIV=12,letterpaper]{scrreprt}
+\input{thesis-config}
+% chapter in the equation numbering
+\numberwithin{equation}{chapter}
+% page breaks in displayed math
+\allowdisplaybreaks
+% \bibliographystyle{ieeetr}
+\begin{document}
+\raggedbottom \selectlanguage{american} \pagenumbering{roman}
+\pagestyle{plain}
+% ********************************************************************
+% Frontmatter *******************************************************
+\include{FrontBackmatter/Titlepage}
+\include{FrontBackmatter/Signaturepage}
+\include{FrontBackmatter/Acknowledgments}
+\include{FrontBackmatter/Abstracttitlepage}
+\include{FrontBackmatter/Abstract}
+\include{FrontBackmatter/Contents}
+\include{FrontBackmatter/Notations}
+% ********************************************************************
+% Mainmatter *******************************************************
+\pagenumbering{arabic}
+\pagestyle{useheadings}
+%\part{Glass as a stressed elastic continuum}\label{pt:th}
+%\include{FontTest/fonttest}
+\include{Chapters/chap2/manuscript}
+% \include{Chapters/ch2}
+\include{Chapters/chap3/Manuscript-FINAL}
+% \include{Chapters/ch4}
+% \include{Chapters/ch5}
+% ********************************************************************
+% Backmatter *******************************************************
+\appendix
+% \include{Chapters/appGT}
+% \include{Chapters/appEshelby}
+% \include{Chapters/appGI}
+% \include{Chapters/appSamples} %
+% ********************************************************************
+% Other Stuff in the Back
+% *******************************************************
+% \pagestyle{plain}
+% \include{FrontBackmatter/Bibliography}
+\end{document}
+

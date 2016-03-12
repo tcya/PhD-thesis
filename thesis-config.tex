@@ -1,0 +1,111 @@
+% *********************************************************************************
+% 1. Setup Front Matter variables
+% *********************************************************************************
+\newcommand{\myTitle}{
+\emph{Ab initio} Calculations of Intramolecular Exciton Transfer with Reduced Modes in Donor-bridge-acceptor Species
+%Elastic continuum approximation for the theory
+%of structural glasses
+\xspace}
+\newcommand{\myDegree}{Doctor of Philosophy\xspace}
+\newcommand{\myName}{Xunmo Yang\xspace}
+\newcommand{\myAdvisor}{Dr. Eric R. Bittner\xspace}
+\newcommand{\FirstReader}{Dr. Vassiliy Lubchenko\xspace}
+\newcommand{\SecondReader}{Dr. Shoujun Xu\xspace}
+\newcommand{\ThirdReader}{Dr. Don Coltart\xspace}
+\newcommand{\FourthReader}{Dr. Gila Stein
+\\Department of Chemical and Biomolecular Engineering
+\xspace}
+\newcommand{\myUni}{University of Houston\xspace}
+\newcommand{\myCollege}{College of Natural Sciences and Mathematics\xspace}
+\newcommand{\DeansName}{
+%Dr. Mark A. Smith\xspace
+}
+\newcommand{\myLocation}{Houston\xspace}
+\newcommand{\myTime}{May 2016\xspace}
+\newcommand{\myThesisType}{Dissertation\xspace}
+\newcommand{\myDepartment}{Chemistry\xspace}
+% *********************************************************************************
+% 2. Load custom definitions
+% *********************************************************************************
+\include{customdefs}
+% *********************************************************************************
+% 3. Setup babel and biblatex
+% *********************************************************************************
+\PassOptionsToPackage{american}{babel}
+\usepackage{babel}
+\PassOptionsToPackage{style=phys,articletitle=true,biblabel=brackets,chaptertitle=true,pageranges=false,backend=biber,url=false,doi=false,eprint=false,isbn=false,firstinits=true,refsection=chapter}{biblatex}
+% \usepackage{biblatex}
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage{chapterbib}
+% \newcommand{\chapterbib}{
+%   \bibliographystyle{unsrt}
+%   \bibliography{all}
+% }
+% \bibliographystyle{abbrvnat}
+\bibliography{Dbib}%$
+% *********************************************************************************
+% 4. Setup encoding, fonts, math, and spacing
+% *********************************************************************************
+\PassOptionsToPackage{utf8}{inputenc}
+\usepackage{inputenc}
+\usepackage{setspace}
+\doublespacing
+% ====== libertine staff ============
+\PassOptionsToPackage{sb}{libertine}
+\usepackage{libertine}
+\PassOptionsToPackage{T1}{fontenc}
+\usepackage{fontenc}
+\usepackage{textcomp} % required to get special symbols
+\renewcommand*\ttdefault{txtt}
+%\renewcommand*{\ttfamily}{\fontencoding{OT1}\fontfamily{cmtt}\selectfont}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amsopn} % for \DeclareMathOperator
+\usepackage{mathtools} % for dcases
+\PassOptionsToPackage{libertine,varbb}{newtxmath}
+\usepackage{newtxmath}
+\PassOptionsToPackage{scr=rsfso,cal=pxtx}{mathalfa}
+\usepackage{mathalfa}
+\usepackage{bm}% load after all math to give access to bold math
+\renewcommand*{\rmdefault}{LinuxLibertineT-OsF} %old-style figures in
+                                %text
+%\usepackage{ebgaramond}
+% ====================================
+\PassOptionsToPackage{protrusion=true,expansion=true}{microtype}
+\usepackage{microtype}
+% *********************************************************************************
+% 4. Setup floats: tables, (sub)figures, and captions
+% *********************************************************************************
+\usepackage{graphicx}
+\setkeys{Gin}{width=.6\textwidth}
+\usepackage{tabularx} % better tables
+\usepackage{ctable}
+\setlength{\extrarowheight}{3pt} % increase table row height
+\newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\newcommand{\myfloatalign}{\centering} % to be used with each float for alignment
+\usepackage{caption}
+\captionsetup{format=hang,font=small}
+\usepackage{subfig}
+% \usepackage{subfigure}
+% *********************************************************************************
+% 5. Load mics packages
+% *********************************************************************************
+\usepackage{afterpage}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{ifthen}
+\usepackage{xfrac}
+\usepackage{scrhack} % fix warnings when using KOMA with listings package
+\usepackage{xspace} % to get the spacing after macros right
+\usepackage{fixltx2e} % fixes some LaTeX stuff
+%\PassOptionsToPackage{printonlyused,smaller}{acronym}
+\PassOptionsToPackage{printonlyused}{acronym}
+	\usepackage{acronym} % nice macros for handling all acronyms in the thesis
+\renewcommand{\aclabelfont}[1]{{#1}\hfill} % fix the list of acronyms
+%\usepackage{tocloft}
+% *********************************************************************************
+% 6. Load cthesis.sty
+% *********************************************************************************
+% \PassOptionsToPackage{parts}{cthesism}
+ \usepackage{cthesism}
+
