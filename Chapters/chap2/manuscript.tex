@@ -107,59 +107,59 @@
 
 % \newpage
 
-\chapter{Chapter 2}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}
+\chapter{Chapter 2}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}\label{chap:chapt2}
 \section{Introduction}
 \label{sec:intro}
 
-Energy and electronic transport plays a central role in a
-wide range of  chemical  and biological systems.
-It is the fundamental mechanism for transporting the  energy  of a
-absorbed photon to a reaction center in light harvesting systems
-and for initiating a wide range of photo-induced  chemical processes,
-including vision, DNA mutation, and pigmentation.
-The seminal model for calculating electron transfer rates was developed by
-Marcus in the 1950's\cite{marcus1956theory,marcus1965theory,marcus1993electron}.
-\begin{equation}
-k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta\epsilon)^{2}/4\text{\ensuremath{\lambda}}k_{B}T}.\label{eq:marcus}
-\end{equation}
-where $\lambda$ is  energy required to reorganize the environment
-following the transfer of an electron from donor to acceptor.
-and $\Delta \epsilon$ is the driving force for the reaction.
+% Energy and electronic transport plays a central role in a
+% wide range of  chemical  and biological systems.
+% It is the fundamental mechanism for transporting the  energy  of a
+% absorbed photon to a reaction center in light harvesting systems
+% and for initiating a wide range of photo-induced  chemical processes,
+% including vision, DNA mutation, and pigmentation.
+% The seminal model for calculating electron transfer rates was developed by
+% Marcus in the 1950's\cite{marcus1956theory,marcus1965theory,marcus1993electron}.
+% \begin{equation}
+% k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta\epsilon)^{2}/4\text{\ensuremath{\lambda}}k_{B}T}.\label{eq:marcus}
+% \end{equation}
+% where $\lambda$ is  energy required to reorganize the environment
+% following the transfer of an electron from donor to acceptor.
+% and $\Delta \epsilon$ is the driving force for the reaction.
 
-\begin{figure}[h]
-\includegraphics[width=0.5\columnwidth]{Chapters/chap2/Figure1}
-\caption{Sketch of Marcus parabolas for a model energy or charge transfer system.
-Labeled are the key parameters used to compute the Marcus rate constant (Eq. \ref{eq:marcus}).
-Energies are given in eV and the collective nuclear displacement  is dimensionless.
-}
-\label{marcus}
-\end{figure}
-
-
-If we assume that the nuclear motions about the equilibrium configurations of the
-donor and acceptor species is harmonic,  the chemical reactions resulting from
-energy or charge transfer events can be understood in terms of intersecting
-diabatic potentials as sketched in Fig.~\ref{marcus}.    The upper and lower
-curves are the adiabatic potential energy surfaces describing the nuclear dynamics
-resulting from an energy or charge transfer event, taking the geometry of the donor
-state as the origin.
-%For reactions carried out in open systems,  the Marcus parabolas represent
-%free energy surfaces with driving force $\Delta G$.
-As the transfer occurs by crossing an energy barrier,
-the transfer rate can be expected to be in the Arrhenius form
-\begin{eqnarray}
-k\propto e^{-E_{A}/k_{B}T},
-\end{eqnarray}
-with $E_{A}$ as the activation energy.
- Using $E_{A}={(\lambda+\Delta \epsilon)^{2}}/{4\lambda}$
- we can relate the activation energy to both the reorganization energy and driving force, $-\Delta \epsilon$.
-One of the most profound predictions of the theory is that  as the driving force increases,
-the transfer rate reaches a maximum and further increases in the driving force
-lead to lower reaction rates, termed the inverted regime.
+% \begin{figure}[h]
+% \includegraphics[width=0.5\columnwidth]{Chapters/chap2/Figure1}
+% \caption{Sketch of Marcus parabolas for a model energy or charge transfer system.
+% Labeled are the key parameters used to compute the Marcus rate constant (Eq. \ref{eq:marcus}).
+% Energies are given in eV and the collective nuclear displacement  is dimensionless.
+% }
+% \label{marcus}
+% \end{figure}
 
 
+% If we assume that the nuclear motions about the equilibrium configurations of the
+% donor and acceptor species is harmonic,  the chemical reactions resulting from
+% energy or charge transfer events can be understood in terms of intersecting
+% diabatic potentials as sketched in Fig.~\ref{marcus}.    The upper and lower
+% curves are the adiabatic potential energy surfaces describing the nuclear dynamics
+% resulting from an energy or charge transfer event, taking the geometry of the donor
+% state as the origin.
+% %For reactions carried out in open systems,  the Marcus parabolas represent
+% %free energy surfaces with driving force $\Delta G$.
+% As the transfer occurs by crossing an energy barrier,
+% the transfer rate can be expected to be in the Arrhenius form
+% \begin{eqnarray}
+% k\propto e^{-E_{A}/k_{B}T},
+% \end{eqnarray}
+% with $E_{A}$ as the activation energy.
+%  Using $E_{A}={(\lambda+\Delta \epsilon)^{2}}/{4\lambda}$
+%  we can relate the activation energy to both the reorganization energy and driving force, $-\Delta \epsilon$.
+% One of the most profound predictions of the theory is that  as the driving force increases,
+% the transfer rate reaches a maximum and further increases in the driving force
+% lead to lower reaction rates, termed the inverted regime.
 
-We focus here on the rates of triplet exchange between a naphthalene donor and a benzaldehyde acceptor linked by a variety of bridging units.
+
+
+In this chapter we focus here on the rates of triplet exchange between a naphthalene donor and a benzaldehyde acceptor linked by a variety of bridging units.
 \begin{center}
 \includegraphics[width=0.50\columnwidth]{Chapters/chap2/Scheme1}
 \end{center}
@@ -171,228 +171,232 @@ in which they verified the existence of the Marcus inverted regime
 and serve as crucial benchmarks for testing new theoretical models for computing
 energy and charge transfer rates\cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
 
-
-A number of years ago,  we developed a time-convolutionless  master equation approach for computing
-state-to-state rates in which the coupling between  states depends upon the
-nuclear coordinates\cite{pereverzev2006time}. This approach incorporates a fully quantum
-mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
-well-known Marcus expression in the semiclassical limit.  The model is parameterized by the
-vibrational normal mode frequencies, and the electronic energies and energy derivatives
-at a reference configuration.  The approach has been used by our group to compute state-to-state
-transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
-\cite{tamura2008phonon,tamura2007exciton,bittner2014noise,singh2009fluorescence}.
-This paper represents the first time we have used this approach within the context of a fully {\em ab initio} quantum
-chemical model.   As such, this present work provides an important benchmark of the approach since all parameters will be determined
-using state-of-the-art quantum chemical methods
-and results compared to both theoretical and experimental
-rates.
-
-Central to the work presented here is the use of a diabatization scheme for determining
-donor and acceptor states in a molecular unit.  We benchmark the approach
-by computing the  triplet energy transfer rates for a series of donor-bridge-acceptor molecules
-originally studied by Closs\cite{miller1984intramolecular}.  The triplet energy transfer rates computed using our approach
-compare well against both the experimental rates and with
-more recent theoretical rates presented by Subotnik {\em et al.}
-\cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
-An important component of our analysis is the use of a projection operator scheme
-that parses out specific internal nuclear motions that accompany
-the electronic transition.
-Similar decomposition schemes have been presented by Burghardt
- \cite{cederbaum2005short,gindensperger2006shortI,gindensperger2006shortII,cederbaum2005short}
- and the approach used here builds upon the method given in Ref.~\cite{pereverzev2009energy}.
- By analyzing the electron-phonon couplings, we can
-discern a reduced set of motions that are responsible for coupling between the donor and
-acceptor states.
+The chapter is arranged in this way. First we examine the validity of the assumptions in our method. Then we apply the method to get theoretical transfer rate constants, and compare them to experiments. Finally, we use the projection scheme to find the primary modes in the reactions. The modes turn out to show certain symmetry.
 
 
+% A number of years ago,  we developed a time-convolutionless  master equation approach for computing
+% state-to-state rates in which the coupling between  states depends upon the
+% nuclear coordinates\cite{pereverzev2006time}. This approach incorporates a fully quantum
+% mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
+% well-known Marcus expression in the semiclassical limit.  The model is parameterized by the
+% vibrational normal mode frequencies, and the electronic energies and energy derivatives
+% at a reference configuration.  The approach has been used by our group to compute state-to-state
+% transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
+% \cite{tamura2008phonon,tamura2007exciton,bittner2014noise,singh2009fluorescence}.
+% This paper represents the first time we have used this approach within the context of a fully {\em ab initio} quantum
+% chemical model.   As such, this present work provides an important benchmark of the approach since all parameters will be determined
+% using state-of-the-art quantum chemical methods
+% and results compared to both theoretical and experimental
+% rates.
 
-\section{Theoretical Approach}
-
-\subsection{Model Hamiltonian}
-We consider a generic model for $n$ electronic states coupled linearly
-to a phonon bath.  Taking the electronic ground state of the system as a reference
-and assuming that the electronic states are coupled linearly to a common set of
- modes, we arrive a generic form for the Hamiltonian:
- \begin{eqnarray}
-H=\left(\begin{array}{cc}
-\epsilon_{1} & 0\\
-0 & \epsilon_{2}
-\end{array}\right)+\left(\begin{array}{cc}
-{\mathbf g}_{11}&{\mathbf g}_{12} \\
-{\mathbf g}_{21} &{\mathbf g}_{22}
-\end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}.
-\nonumber \\
-\label{ham1}
-\end{eqnarray}
-Here, the first term contains the electronic energies, $\epsilon_{1}$ and $\epsilon_{2}$ computed at a
-reference geometry--typically that of the donor or acceptor state.   The second term represents the
-linearized coupling between the electronic and nuclear degrees of freedom given in terms of the mass-weighted
-normal coordinates $\mathbf q$.   The diagonal terms
-give the adiabatic displacement forces between the reference geometry and the two states.  If we choose one of the
-states as the reference state, then either $\mathbf g_{11}$ or $\mathbf g_{22}$ will vanish.
-The remaining two terms correspond to the harmonic motions of the nuclear normal modes, given here in mass-weighted normal coordinates.
-In the normal mode basis, $\mathbf \Omega$  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
-
-
-We now separate Eq.~\ref{ham1} into diagonal and
-off-diagonal terms
-\begin{eqnarray}
-\hat  H = \hat H_{o} + \hat V
-\end{eqnarray}
-and perform a polaron transform
-using the unitary transformation~\cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
-\begin{eqnarray}
-U&=&e^{-\sum_{ni}\!\!\frac{g_{nni}}{\hbar\omega_i}|n\rangle \langle
-n|(a^{\dagger}_i-a_i)}
- \nonumber \\
-&=&
-\sum_{n}|n\rangle \langle n|e^{-\sum_{i}\!\!\frac{g_{nni}}{\hbar\omega_i}(a^{\dagger}_i-a_i)}
-\label{unitary}
-\end{eqnarray}
-under which the transformed Hamiltonian is written in terms of the
-diagonal elements
-\begin{eqnarray} \tilde H_0=U^{-1}H_0U
-=\sum_n\tilde\epsilon_n |n\rangle \langle
-n|+\sum_i\omega_ia^{\dagger}_ia_i,
- \end{eqnarray}
-with  the renormalized electronic energies,
-\begin{eqnarray}
-\tilde\epsilon_n=\epsilon_n-\sum_{i}\frac{g_{nni}^2}{\hbar\omega_i},
-\end{eqnarray}
-and off-diagonal terms,
-\begin{eqnarray} \hat V_{nm}=\sum_{i}g_{nmi}\left(a^{\dagger}_i+
-a_i-\frac{2g_{nni}}{\hbar\omega_i}\right)e^{\sum_{j}\frac{(g_{nnj}-g_{mmj})}{\hbar\omega_j}(a^{\dagger}_j-a_j)}.
-\label{opm}
-\end{eqnarray}
-In the transformed (or dressed) picture the electronic transition from state
-$|n\rangle$ to $|m\rangle$ is accompanied by the excitations of all the
-normal phonon modes.  Transforming to the interaction representation
-and performing a trace over the phonons gives the spectral density in
-terms of the autocorrelation of the electron-phonon coupling
-operators.
-\begin{eqnarray}
-S_{nm}(\tilde\omega) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle.\label{spec-dens}
-\end{eqnarray}
-Here, $\hat V_{nm}(t)$ is the electron-phonon coupling term in the Heisenberg representation and
-$\langle \cdots \rangle$ denotes a thermal average over the
-vibrational degrees of freedom.
-The derivation and explicit form for the kernel in Eq.~\ref{spec-dens}  is quite lengthy and is given in
-Ref.~\cite{pereverzev2006time}.
-
-\subsection{Non-Markovian Master Equation and Golden-Rule rates}
-
-In Ref.~\cite{pereverzev2006time}, Pereverzev and Bittner derived
-a non-Markovian, time-convolutionless form of the Pauli master
-equation (TCLME)  for general system described by Eq.~\ref{ham1}.
-\begin{eqnarray}
-\frac{dP_{n}}{dt} = \sum_{m} W_{nm}(t)P_{m}(t) - \left(\sum_{m} W_{mn}(t)\right)P_{n}(t)
-\end{eqnarray}
-where the time-dependent rates are given by
-\begin{eqnarray}
-W_{nm}(\tau)=2{\rm Re}\int_{0}^{\tau}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
-\label{rate-expression}
-\end{eqnarray}
-In the limit that $\tau\to\infty$, Eq.~\ref{rate-expression} gives the Fermi's Golden Rule expression for the
-transition rate,
-\begin{eqnarray}
-k_{nm}=2{\rm Re}\int_{0}^{\infty}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
-\label{gr-expression}
-\end{eqnarray}
-
-At this point it is useful to connect the various terms in the phonon-dressed Hamiltonian
-with specific physical parameters.
-First, the reorganization energy is given by
-%The terms involving $$
-%are related to the reorganized energy difference between the two states.
-%$$
-%\lambda_{nm} =\sum_{j}((g_{nnj}-g_{mmj})/\omega_j)^{2} = \sum_{j}\hbar \omega_{j}S_{j}
-%$$
-\[
-\lambda_{nm}=\sum_{j}\frac{\left(g_{nnj}-g_{mmj}\right)^{2}}{\omega_{j}} = \sum_{j}\hbar \omega_{j}S_{j}
-\]
-where  the $\{S_{j}\}$  are  the Huang-Rhys factors for each phonon mode.
-These are related to the Franck-Condon factor
-describing the overlap between the $v_j=1$ vibronic state in one electronic state
-with the $v_j=0$ vibronic state in the other.
-Likewise, the energy difference between the renormalized energy gaps is related to the
-driving force of the state-to-state transition,
-\begin{eqnarray}
-\Delta E_{nm} = \tilde \epsilon_n-\tilde \epsilon_m.
-\end{eqnarray}
+% Central to the work presented here is the use of a diabatization scheme for determining
+% donor and acceptor states in a molecular unit.  We benchmark the approach
+% by computing the  triplet energy transfer rates for a series of donor-bridge-acceptor molecules
+% originally studied by Closs\cite{miller1984intramolecular}.  The triplet energy transfer rates computed using our approach
+% compare well against both the experimental rates and with
+% more recent theoretical rates presented by Subotnik {\em et al.}
+% \cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
+% An important component of our analysis is the use of a projection operator scheme
+% that parses out specific internal nuclear motions that accompany
+% the electronic transition.
+% Similar decomposition schemes have been presented by Burghardt
+%  \cite{cederbaum2005short,gindensperger2006shortI,gindensperger2006shortII,cederbaum2005short}
+%  and the approach used here builds upon the method given in Ref.~\cite{pereverzev2009energy}.
+%  By analyzing the electron-phonon couplings, we can
+% discern a reduced set of motions that are responsible for coupling between the donor and
+% acceptor states.
 
 
-The difficulty in using this approach is that
-it requires both diagonal (${\mathbf g}_{nn}$) and off-diagonal  (${\mathbf g}_{nm}$) derivative couplings between
-adiabatic states.    In the following section, we discuss how we have used the Edmiston-Ruedenberg localization scheme
-to estimate the couplings\cite{edmiston1963localized}.   We also
-present how one can construct a reduced set of harmonic modes that
-fully capture the electron/nuclear coupling.
-\subsection{Parameterization From Quantum Chemistry}
 
- In order to obtain the final form of our target Hamiltonian, we assume the diabatic  potentials
-are a good approximation to the actual adiabatic potentials.
+% \section{Theoretical Approach}
 
-When the adiabatic (and diabatic) energy minima
-are far enough away from the crossing points and the mixing angles between the diabatic  and adiabatic
-states is small, we can
-use the gradients of the adiabatic potentials to approximate the diabatic potentials.
-Thus, if we perform calculations at the
-optimized geometry of the final acceptor state  ({\em i.~e.} about $Q_{2}$  in Fig.~\ref{marcus}),
-we can write the Hamiltonian as
-\begin{eqnarray}
-H_{dia,e}=\left(\begin{array}{cc}
-\epsilon_{1} & V_{12}\\
-V_{21} & \epsilon_{2}
-\end{array}\right)+\left(\begin{array}{cc}
-0 & 0\\
-0 & 1
-\end{array}\right) {\mathbf g}_{22}\cdot{\mathbf q}+H_{osc},
-\end{eqnarray}
-where $H_{osc}$ is the harmonic oscillator Hamiltonian for the vibrational normal modes.
-The linear assumption amounts  to performing a series expansion of the
-full, multi-dimensional coupling term and keeping only the lowest order terms.
-Systematic improvement can be made by including higher-order (e.g.  quadratic) off-diagonal couplings.
-However, this would involve a substantial increase in the complexity of the theory.
-The linear assumption is reasonable so long as  the mixing angle is small,
-as verified by the benchmark calculations presented below.
-
-We obtain the diabatic couplings $V_{12}$
-and the mixing angle $\theta$  via ER localization and transform the electronic Hamiltonian
-from the adiabatic basis to the diabatic basis {\em viz.}
-\begin{equation}
-H_{dia}=\left(\begin{array}{cc}
-\cos\theta & -\sin\theta\\
-\sin\theta & \cos\theta
-\end{array}\right)\left(\begin{array}{cc}
-\epsilon_{1}  & 0 \\
-0  & \epsilon_{2}
-\end{array}\right)\left(\begin{array}{cc}
-\cos\theta & \sin\theta\\
--\sin\theta & \cos\theta
-\end{array}\right).\label{eq:boys}
-\end{equation}
-The diabatic coupling is then given by
-\begin{eqnarray}
-V_{ab}=\frac{1}{2}\sin2\theta\left(\epsilon_{2}-\epsilon_{1}\right).
-\end{eqnarray}
+% \subsection{Model Hamiltonian}
+% We consider a generic model for $n$ electronic states coupled linearly
+% to a phonon bath.  Taking the electronic ground state of the system as a reference
+% and assuming that the electronic states are coupled linearly to a common set of
+%  modes, we arrive a generic form for the Hamiltonian:
+%  \begin{eqnarray}
+% H=\left(\begin{array}{cc}
+% \epsilon_{1} & 0\\
+% 0 & \epsilon_{2}
+% \end{array}\right)+\left(\begin{array}{cc}
+% {\mathbf g}_{11}&{\mathbf g}_{12} \\
+% {\mathbf g}_{21} &{\mathbf g}_{22}
+% \end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}.
+% \nonumber \\
+% \label{ham1}
+% \end{eqnarray}
+% Here, the first term contains the electronic energies, $\epsilon_{1}$ and $\epsilon_{2}$ computed at a
+% reference geometry--typically that of the donor or acceptor state.   The second term represents the
+% linearized coupling between the electronic and nuclear degrees of freedom given in terms of the mass-weighted
+% normal coordinates $\mathbf q$.   The diagonal terms
+% give the adiabatic displacement forces between the reference geometry and the two states.  If we choose one of the
+% states as the reference state, then either $\mathbf g_{11}$ or $\mathbf g_{22}$ will vanish.
+% The remaining two terms correspond to the harmonic motions of the nuclear normal modes, given here in mass-weighted normal coordinates.
+% In the normal mode basis, $\mathbf \Omega$  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
 
 
-We then diagonalize the electronic part and transform the electron/nuclear coupling
-back into the adiabatic basis.  In doing so,  we obtain the Hamiltonian in the
-form given in Eq. \ref{ham1}
-\begin{eqnarray}
-H&=&U^{T}H_{dia}U\nonumber  \\
-&=&\left(\begin{array}{cc}
-E_{1}  & 0 \\
-0 & E_{2}
-\end{array}\right)+\left(\begin{array}{cc}
-\sin^{2}\theta & \frac{1}{2}\sin2\theta\\
-\frac{1}{2}\sin2\theta & \cos^{2}\theta
-\end{array}\right) {\mathbf g}_{22}.{\mathbf q} \nonumber \\
-&+& H_{osc}.\label{eq:locaiHam}
-\end{eqnarray}
+% We now separate Eq.~\ref{ham1} into diagonal and
+% off-diagonal terms
+% \begin{eqnarray}
+% \hat  H = \hat H_{o} + \hat V
+% \end{eqnarray}
+% and perform a polaron transform
+% using the unitary transformation~\cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
+% \begin{eqnarray}
+% U&=&e^{-\sum_{ni}\!\!\frac{g_{nni}}{\hbar\omega_i}|n\rangle \langle
+% n|(a^{\dagger}_i-a_i)}
+%  \nonumber \\
+% &=&
+% \sum_{n}|n\rangle \langle n|e^{-\sum_{i}\!\!\frac{g_{nni}}{\hbar\omega_i}(a^{\dagger}_i-a_i)}
+% \label{unitary}
+% \end{eqnarray}
+% under which the transformed Hamiltonian is written in terms of the
+% diagonal elements
+% \begin{eqnarray} \tilde H_0=U^{-1}H_0U
+% =\sum_n\tilde\epsilon_n |n\rangle \langle
+% n|+\sum_i\omega_ia^{\dagger}_ia_i,
+%  \end{eqnarray}
+% with  the renormalized electronic energies,
+% \begin{eqnarray}
+% \tilde\epsilon_n=\epsilon_n-\sum_{i}\frac{g_{nni}^2}{\hbar\omega_i},
+% \end{eqnarray}
+% and off-diagonal terms,
+% \begin{eqnarray} \hat V_{nm}=\sum_{i}g_{nmi}\left(a^{\dagger}_i+
+% a_i-\frac{2g_{nni}}{\hbar\omega_i}\right)e^{\sum_{j}\frac{(g_{nnj}-g_{mmj})}{\hbar\omega_j}(a^{\dagger}_j-a_j)}.
+% \label{opm}
+% \end{eqnarray}
+% In the transformed (or dressed) picture the electronic transition from state
+% $|n\rangle$ to $|m\rangle$ is accompanied by the excitations of all the
+% normal phonon modes.  Transforming to the interaction representation
+% and performing a trace over the phonons gives the spectral density in
+% terms of the autocorrelation of the electron-phonon coupling
+% operators.
+% \begin{eqnarray}
+% S_{nm}(\tilde\omega) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle.\label{spec-dens}
+% \end{eqnarray}
+% Here, $\hat V_{nm}(t)$ is the electron-phonon coupling term in the Heisenberg representation and
+% $\langle \cdots \rangle$ denotes a thermal average over the
+% vibrational degrees of freedom.
+% The derivation and explicit form for the kernel in Eq.~\ref{spec-dens}  is quite lengthy and is given in
+% Ref.~\cite{pereverzev2006time}.
+
+% \subsection{Non-Markovian Master Equation and Golden-Rule rates}
+
+% In Ref.~\cite{pereverzev2006time}, Pereverzev and Bittner derived
+% a non-Markovian, time-convolutionless form of the Pauli master
+% equation (TCLME)  for general system described by Eq.~\ref{ham1}.
+% \begin{eqnarray}
+% \frac{dP_{n}}{dt} = \sum_{m} W_{nm}(t)P_{m}(t) - \left(\sum_{m} W_{mn}(t)\right)P_{n}(t)
+% \end{eqnarray}
+% where the time-dependent rates are given by
+% \begin{eqnarray}
+% W_{nm}(\tau)=2{\rm Re}\int_{0}^{\tau}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
+% \label{rate-expression}
+% \end{eqnarray}
+% In the limit that $\tau\to\infty$, Eq.~\ref{rate-expression} gives the Fermi's Golden Rule expression for the
+% transition rate,
+% \begin{eqnarray}
+% k_{nm}=2{\rm Re}\int_{0}^{\infty}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
+% \label{gr-expression}
+% \end{eqnarray}
+
+% At this point it is useful to connect the various terms in the phonon-dressed Hamiltonian
+% with specific physical parameters.
+% First, the reorganization energy is given by
+% %The terms involving $$
+% %are related to the reorganized energy difference between the two states.
+% %$$
+% %\lambda_{nm} =\sum_{j}((g_{nnj}-g_{mmj})/\omega_j)^{2} = \sum_{j}\hbar \omega_{j}S_{j}
+% %$$
+% \[
+% \lambda_{nm}=\sum_{j}\frac{\left(g_{nnj}-g_{mmj}\right)^{2}}{\omega_{j}} = \sum_{j}\hbar \omega_{j}S_{j}
+% \]
+% where  the $\{S_{j}\}$  are  the Huang-Rhys factors for each phonon mode.
+% These are related to the Franck-Condon factor
+% describing the overlap between the $v_j=1$ vibronic state in one electronic state
+% with the $v_j=0$ vibronic state in the other.
+% Likewise, the energy difference between the renormalized energy gaps is related to the
+% driving force of the state-to-state transition,
+% \begin{eqnarray}
+% \Delta E_{nm} = \tilde \epsilon_n-\tilde \epsilon_m.
+% \end{eqnarray}
 
 
+% The difficulty in using this approach is that
+% it requires both diagonal (${\mathbf g}_{nn}$) and off-diagonal  (${\mathbf g}_{nm}$) derivative couplings between
+% adiabatic states.    In the following section, we discuss how we have used the Edmiston-Ruedenberg localization scheme
+% to estimate the couplings\cite{edmiston1963localized}.   We also
+% present how one can construct a reduced set of harmonic modes that
+% fully capture the electron/nuclear coupling.
+% \subsection{Parameterization From Quantum Chemistry}
+
+%  In order to obtain the final form of our target Hamiltonian, we assume the diabatic  potentials
+% are a good approximation to the actual adiabatic potentials.
+
+% When the adiabatic (and diabatic) energy minima
+% are far enough away from the crossing points and the mixing angles between the diabatic  and adiabatic
+% states is small, we can
+% use the gradients of the adiabatic potentials to approximate the diabatic potentials.
+% Thus, if we perform calculations at the
+% optimized geometry of the final acceptor state  ({\em i.~e.} about $Q_{2}$  in Fig.~\ref{marcus}),
+% we can write the Hamiltonian as
+% \begin{eqnarray}
+% H_{dia,e}=\left(\begin{array}{cc}
+% \epsilon_{1} & V_{12}\\
+% V_{21} & \epsilon_{2}
+% \end{array}\right)+\left(\begin{array}{cc}
+% 0 & 0\\
+% 0 & 1
+% \end{array}\right) {\mathbf g}_{22}\cdot{\mathbf q}+H_{osc},
+% \end{eqnarray}
+% where $H_{osc}$ is the harmonic oscillator Hamiltonian for the vibrational normal modes.
+% The linear assumption amounts  to performing a series expansion of the
+% full, multi-dimensional coupling term and keeping only the lowest order terms.
+% Systematic improvement can be made by including higher-order (e.g.  quadratic) off-diagonal couplings.
+% However, this would involve a substantial increase in the complexity of the theory.
+% The linear assumption is reasonable so long as  the mixing angle is small,
+% as verified by the benchmark calculations presented below.
+
+% We obtain the diabatic couplings $V_{12}$
+% and the mixing angle $\theta$  via ER localization and transform the electronic Hamiltonian
+% from the adiabatic basis to the diabatic basis {\em viz.}
+% \begin{equation}
+% H_{dia}=\left(\begin{array}{cc}
+% \cos\theta & -\sin\theta\\
+% \sin\theta & \cos\theta
+% \end{array}\right)\left(\begin{array}{cc}
+% \epsilon_{1}  & 0 \\
+% 0  & \epsilon_{2}
+% \end{array}\right)\left(\begin{array}{cc}
+% \cos\theta & \sin\theta\\
+% -\sin\theta & \cos\theta
+% \end{array}\right).\label{eq:boys}
+% \end{equation}
+% The diabatic coupling is then given by
+% \begin{eqnarray}
+% V_{ab}=\frac{1}{2}\sin2\theta\left(\epsilon_{2}-\epsilon_{1}\right).
+% \end{eqnarray}
+
+
+% We then diagonalize the electronic part and transform the electron/nuclear coupling
+% back into the adiabatic basis.  In doing so,  we obtain the Hamiltonian in the
+% form given in Eq. \ref{ham1}
+% \begin{eqnarray}
+% H&=&U^{T}H_{dia}U\nonumber  \\
+% &=&\left(\begin{array}{cc}
+% E_{1}  & 0 \\
+% 0 & E_{2}
+% \end{array}\right)+\left(\begin{array}{cc}
+% \sin^{2}\theta & \frac{1}{2}\sin2\theta\\
+% \frac{1}{2}\sin2\theta & \cos^{2}\theta
+% \end{array}\right) {\mathbf g}_{22}.{\mathbf q} \nonumber \\
+% &+& H_{osc}.\label{eq:locaiHam}
+% \end{eqnarray}
+
+\section{Assumption Validity}
+
+Our method employs two assumptions, parabolic assumption and Condon approximation. The former assumes that relevant potential energy surfaces are parabolic. The latter means diabatic coupling  is independent of nuclear coordinates in the region where reaction occurs.
 In Fig.~\ref{parabs} we show the adiabatic potential curves and off-diagonal couplings along an interpolation coordinate
 connecting the equilibrium geometries of the donor and acceptor states for the donor-[d-2,6ae]-acceptor case.
 The dashed curve gives the parabolic approximation to the
@@ -400,7 +404,7 @@ lower potential curves.  Along this coordinate, the off-diagonal coupling is sma
 approximation provides a good approximation to the actual potential.  This indicates that the assumptions in our model Hamiltonian
 are generally robust for the systems we consider herein.
 
-\begin{figure}[t]
+\begin{figure}[!ht]
 \subfloat[c-1,4ee]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure2a}}
 \subfloat[d-2,6ae]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure2b}}
 \caption{Adiabatic energy curves and off-diagonal couplings computed along an interpolation coordinate between the
@@ -421,7 +425,7 @@ reference geometry.   We then project the energy gradients onto the vibrational 
 coordinates to obtain the electron-phonon coupling constants.  Either the Boys or ER
 localization scheme can be use to compute the mixing
 angles for constructing diabatic states. For all calculations shown here we
-used the qChem 4.0 code and employed the 6-31G(d){*}{*} basis set
+used the Q-Chem 4.0 \cite{QCHEM4} code and employed the 6-31G(d){*}{*} basis set
 in order to compare our results  with  Ref. \cite{subotnik2010predicting}.
 
  We  benchmark our approach against a series of donor-bridge-acceptor
@@ -506,156 +510,155 @@ and the Condon approximation breaks down.\cite{subotnik2010predicting}
 
 
 
-\section{Determining the Optimal Electron-Phonon Coupling Components}
+% \section{Determining the Optimal Electron-Phonon Coupling Components}
 
-While the Marcus expression is elegant in its simplicity in requiring three parameters that
-can be obtained experimentally, it masks a wealth of detail that underlie the quantum transition.
-Central to the theory is that there exists a collective nuclear displacement coordinate
-that connects the initial geometry of the donor to the final geometry of the acceptor.
+% While the Marcus expression is elegant in its simplicity in requiring three parameters that
+% can be obtained experimentally, it masks a wealth of detail that underlie the quantum transition.
+% Central to the theory is that there exists a collective nuclear displacement coordinate
+% that connects the initial geometry of the donor to the final geometry of the acceptor.
 
-Generally speaking, this collective coordinate involves all nuclear degrees of freedom.
-However, the form of the electronic Hamiltonian in Eq.~\ref{ham1} suggests that
-there exists a subset of motions that are specific modes  that capture the majority of the
-electronic/nuclear coupling and give the dominant contribution to the collective
-reaction coordinate.  Within the linearized approximation for the electronic/nuclear coupling,
-we can write a force tensor
-\begin{eqnarray}
-{\mathbf F} =
-\left(\begin{array}{cc}
-{\mathbf g}_{11}&{\mathbf g}_{12} \\
-{\mathbf g}_{21} &{\mathbf g}_{22}
-\end{array}\right)
-\end{eqnarray}
-where ${\mathbf F}\cdot \mathbf q$ is the electronic/nuclear coupling term in Eq.~\ref{ham1}.
-If we consider each unique element $\{ \mathbf g_{11}, \mathbf g_{12} , \mathbf g_{22}\}$ to be
-linearly independent, but non-orthogonal force vectors,  one can develop a  projection operator scheme to
-to parse the $N$-dimensional linear vector space spanned by the mass-weighted normal mode vectors into two subspaces:
-one spanned by three vectors describing the coupling between the electronic states
-and the other spanned by the remaining $N-3$ dimensional space spanned by motions that
-do not couple the electronic states.
-This  subspace  can be generated by defining a projection operator
-\begin{eqnarray}
-\mathbf{P}=\sum_{\alpha\beta}'\left(\mathbf{S^{-1}}\right)_{\alpha\beta}\mathbf{g_{\alpha}}\otimes\mathbf{g_{\beta}}
-\end{eqnarray}
-in which the summation is limited to linearly independent vectors.
-   Here $\mathbf{S}_{\alpha\beta}=\mathbf{g_{\alpha}}\cdot\mathbf{g_{\beta}}$,
-$\otimes$ is outer product,  and $\mathbf{I}$ is unitary operator.
-This $N\times N$ matrix projects out all normal modes that are directly coupled to the
-electronic degrees of freedom and
- its complement $\mathbf{Q}=\mathbf{I}-\mathbf{P}$ projects out all modes not directly coupled.
-By diagonalizing the matrix
-\begin{eqnarray}
-\mathbf{K}=\mathbf{P}\cdot\mathbf\Omega\cdot \mathbf{P}+\mathbf{Q}\cdot\mathbf\Omega\cdot\mathbf{Q}
-\end{eqnarray}
-we obtain a  transformation, ${\mathbf M}$,  between the normal coordinates and a new set of orthogonal
-coordinates.  Both $\mathbf{P}\cdot\mathbf\Omega\cdot \mathbf{P}$ and $\mathbf{Q}\cdot\mathbf\Omega\cdot\mathbf{Q}$ are $N\times N$ matrices.
-However, for a two-state system, the former will have exactly $3$ non-trivial eigenvalues, $\{\alpha_{p}\}$, with corresponding
-eigenvectors, $\{ M_{p}\}$, whereas the latter will have exactly $N_{r} = N-3$ non-trivial eigenvalues, $\{\alpha_{q}\}$,  and corresponding
-eigenvectors, $\{M_q\}$.   This the full $N\times N$ transformation is formed by joining the non-trivial vectors from the
-two respective subspaces ${\mathbf M} = \{M_{p}, M_{q}\}$.
-The transformed electron-phonon coupling constants are given by projecting the  couplings   in the normal mode basis on to the new
-basis.
-\begin{eqnarray}
-\mathbf{g}_{ab}'=\mathbf{M}_{p}\cdot\mathbf{g}_{ab}.
-\end{eqnarray}
-By examining the types of molecular motions that compose the ${\mathbf M_{p}}$ subspace, we can
-gain a deeper understanding of the specific classes of internal motion that are directly involved with the
-electron transfer process.  In addition,  we can gain a computational advantage since presumably this
- reduced set of modes give the dominant contribution to the electron-phonon coupling and  autocorrelation
- function given as the kernel in Eq. ~\ref{gr-expression}.
+% Generally speaking, this collective coordinate involves all nuclear degrees of freedom.
+% However, the form of the electronic Hamiltonian in Eq.~\ref{ham1} suggests that
+% there exists a subset of motions that are specific modes  that capture the majority of the
+% electronic/nuclear coupling and give the dominant contribution to the collective
+% reaction coordinate.  Within the linearized approximation for the electronic/nuclear coupling,
+% we can write a force tensor
+% \begin{eqnarray}
+% {\mathbf F} =
+% \left(\begin{array}{cc}
+% {\mathbf g}_{11}&{\mathbf g}_{12} \\
+% {\mathbf g}_{21} &{\mathbf g}_{22}
+% \end{array}\right)
+% \end{eqnarray}
+% where ${\mathbf F}\cdot \mathbf q$ is the electronic/nuclear coupling term in Eq.~\ref{ham1}.
+% If we consider each unique element $\{ \mathbf g_{11}, \mathbf g_{12} , \mathbf g_{22}\}$ to be
+% linearly independent, but non-orthogonal force vectors,  one can develop a  projection operator scheme to
+% to parse the $N$-dimensional linear vector space spanned by the mass-weighted normal mode vectors into two subspaces:
+% one spanned by three vectors describing the coupling between the electronic states
+% and the other spanned by the remaining $N-3$ dimensional space spanned by motions that
+% do not couple the electronic states.
+% This  subspace  can be generated by defining a projection operator
+% \begin{eqnarray}
+% \mathbf{P}=\sum_{\alpha\beta}'\left(\mathbf{S^{-1}}\right)_{\alpha\beta}\mathbf{g_{\alpha}}\otimes\mathbf{g_{\beta}}
+% \end{eqnarray}
+% in which the summation is limited to linearly independent vectors.
+%    Here $\mathbf{S}_{\alpha\beta}=\mathbf{g_{\alpha}}\cdot\mathbf{g_{\beta}}$,
+% $\otimes$ is outer product,  and $\mathbf{I}$ is unitary operator.
+% This $N\times N$ matrix projects out all normal modes that are directly coupled to the
+% electronic degrees of freedom and
+%  its complement $\mathbf{Q}=\mathbf{I}-\mathbf{P}$ projects out all modes not directly coupled.
+% By diagonalizing the matrix
+% \begin{eqnarray}
+% \mathbf{K}=\mathbf{P}\cdot\mathbf\Omega\cdot \mathbf{P}+\mathbf{Q}\cdot\mathbf\Omega\cdot\mathbf{Q}
+% \end{eqnarray}
+% we obtain a  transformation, ${\mathbf M}$,  between the normal coordinates and a new set of orthogonal
+% coordinates.  Both $\mathbf{P}\cdot\mathbf\Omega\cdot \mathbf{P}$ and $\mathbf{Q}\cdot\mathbf\Omega\cdot\mathbf{Q}$ are $N\times N$ matrices.
+% However, for a two-state system, the former will have exactly $3$ non-trivial eigenvalues, $\{\alpha_{p}\}$, with corresponding
+% eigenvectors, $\{ M_{p}\}$, whereas the latter will have exactly $N_{r} = N-3$ non-trivial eigenvalues, $\{\alpha_{q}\}$,  and corresponding
+% eigenvectors, $\{M_q\}$.   This the full $N\times N$ transformation is formed by joining the non-trivial vectors from the
+% two respective subspaces ${\mathbf M} = \{M_{p}, M_{q}\}$.
+% The transformed electron-phonon coupling constants are given by projecting the  couplings   in the normal mode basis on to the new
+% basis.
+% \begin{eqnarray}
+% \mathbf{g}_{ab}'=\mathbf{M}_{p}\cdot\mathbf{g}_{ab}.
+% \end{eqnarray}
+% By examining the types of molecular motions that compose the ${\mathbf M_{p}}$ subspace, we can
+% gain a deeper understanding of the specific classes of internal motion that are directly involved with the
+% electron transfer process.  In addition,  we can gain a computational advantage since presumably this
+%  reduced set of modes give the dominant contribution to the electron-phonon coupling and  autocorrelation
+%  function given as the kernel in Eq. ~\ref{gr-expression}.
 
-\subsection{Lanczos Method}
-It is crucial to notice that the vectors  given in Eq.~\ref{eq:locaiHam} are {\em not linearly independent}.
- Consequently, special care
-must be taken to generate the reduced sub-space.  To do so, we use an iterative Lanczos approach
-taking the normalized vector ${\mathbf v}_{1} = {\mathbf g}_{22}$ as a starting point.
+% \subsection{Lanczos Method}
+% It is crucial to notice that the vectors  given in Eq.~\ref{eq:locaiHam} are {\em not linearly independent}.
+%  Consequently, special care
+% must be taken to generate the reduced sub-space.  To do so, we use an iterative Lanczos approach
+% taking the normalized vector ${\mathbf v}_{1} = {\mathbf g}_{22}$ as a starting point.
 
-As above, we initialize each step indexed by $k$,  by defining a projection operator
-\begin{eqnarray}
-{\mathbf P}_{k} = {\mathbf v}_{k}\otimes  {\mathbf v}_{k}
-\end{eqnarray}
-and its complement ${\mathbf Q}_{k} = {\mathbf I}  - {\mathbf P}_{k}$.
-%${\mathbf P}_{k}$ is the projection operator for the
-$k$-th mode.
-%We also construct
-%\begin{eqnarray}
-%\mathbf p = \sum_{k} \mathbf P_{k}
-%\end{eqnarray}
-%as  the total projection operator for all ${k} \le N$ modes.
-We then project the hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
-\begin{eqnarray}
-\mathbf\Omega_{p} = \mathbf P_{k}\cdot \mathbf\Omega \cdot \mathbf P_{k} \,\, \& \,\, \mathbf\Omega_{q} = \mathbf Q_{k}\cdot \mathbf\Omega \cdot  \mathbf Q_{k}
-\end{eqnarray}
-and diagonalize each to obtain eigenvalues and eigenvectors $\{\alpha_{p}, {\mathbf M}_{p}\}$ and $\{\alpha_{q}, {\mathbf M}_{q}\}$
-respectively.
-As above, $\mathbf\Omega_{p} $ and $\mathbf\Omega_{q}$ are $N\times N$ matrices.
-The first set will have a single
-non-trivial eigenvalue and the second set
-will have $N-k$ non-trivial eigenvalues.  As above we collect the non-trivial eigenvectors associated with each
-to form the orthogonal transformation matrix
-\begin{eqnarray}
-{\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\}.
-\end{eqnarray}
-and again transform the full hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
- At each step in the iteration, the transformed hessian, $\mathbf\Omega'$ is in the form of a
-$k\times k$ tri-diagonal submatrix in the upper-left part of the matrix and
-a diagonal submatrix in the lower-right.  For example, after $k=3$ iterations, one has
-a Hessian matrix of the form:
-\begin{eqnarray}
-{\mathbf\Omega}' =
-\begin{pmatrix}
-\alpha_{1}   & b_{1}    & 0                    &               &             &            & 0 \\
-b_{1}     & \alpha_{2}  & b_{2}                         \\
-0            &   b_{2}         & \alpha_{3}    &   c_{k+1}   & c_{k+2}  & \cdots & c_{N}     \\
-               &                     &           c_{k+1}           &     \alpha_{k+ 1} & &             & 0                 \\
-               &                     &           c_{k+2}           &                 & \alpha_{k+2}  \\
-               &                     &          \vdots           &                 &                    &  \ddots \\
-   0           &                     &           c_{N}           &     0   &&& \alpha_{N}\\
-\end{pmatrix}.
-\label{omega-prime}
-\end{eqnarray}
-We note that only the $k$-th mode is coupled the $N-k$ remaining modes.
-Since all of the transformations are orthogonal, diagonalizing $\mathbf\Omega'$ at any point
-returns the original Hessian matrix.
+% As above, we initialize each step indexed by $k$,  by defining a projection operator
+% \begin{eqnarray}
+% {\mathbf P}_{k} = {\mathbf v}_{k}\otimes  {\mathbf v}_{k}
+% \end{eqnarray}
+% and its complement ${\mathbf Q}_{k} = {\mathbf I}  - {\mathbf P}_{k}$.
+% %${\mathbf P}_{k}$ is the projection operator for the
+% $k$-th mode.
+% %We also construct
+% %\begin{eqnarray}
+% %\mathbf p = \sum_{k} \mathbf P_{k}
+% %\end{eqnarray}
+% %as  the total projection operator for all ${k} \le N$ modes.
+% We then project the hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
+% \begin{eqnarray}
+% \mathbf\Omega_{p} = \mathbf P_{k}\cdot \mathbf\Omega \cdot \mathbf P_{k} \,\, \& \,\, \mathbf\Omega_{q} = \mathbf Q_{k}\cdot \mathbf\Omega \cdot  \mathbf Q_{k}
+% \end{eqnarray}
+% and diagonalize each to obtain eigenvalues and eigenvectors $\{\alpha_{p}, {\mathbf M}_{p}\}$ and $\{\alpha_{q}, {\mathbf M}_{q}\}$
+% respectively.
+% As above, $\mathbf\Omega_{p} $ and $\mathbf\Omega_{q}$ are $N\times N$ matrices.
+% The first set will have a single
+% non-trivial eigenvalue and the second set
+% will have $N-k$ non-trivial eigenvalues.  As above we collect the non-trivial eigenvectors associated with each
+% to form the orthogonal transformation matrix
+% \begin{eqnarray}
+% {\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\}.
+% \end{eqnarray}
+% and again transform the full hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
+%  At each step in the iteration, the transformed hessian, $\mathbf\Omega'$ is in the form of a
+% $k\times k$ tri-diagonal submatrix in the upper-left part of the matrix and
+% a diagonal submatrix in the lower-right.  For example, after $k=3$ iterations, one has
+% a Hessian matrix of the form:
+% \begin{eqnarray}
+% {\mathbf\Omega}' =
+% \begin{pmatrix}
+% \alpha_{1}   & b_{1}    & 0                    &               &             &            & 0 \\
+% b_{1}     & \alpha_{2}  & b_{2}                         \\
+% 0            &   b_{2}         & \alpha_{3}    &   c_{k+1}   & c_{k+2}  & \cdots & c_{N}     \\
+%                &                     &           c_{k+1}           &     \alpha_{k+ 1} & &             & 0                 \\
+%                &                     &           c_{k+2}           &                 & \alpha_{k+2}  \\
+%                &                     &          \vdots           &                 &                    &  \ddots \\
+%    0           &                     &           c_{N}           &     0   &&& \alpha_{N}\\
+% \end{pmatrix}.
+% \label{omega-prime}
+% \end{eqnarray}
+% We note that only the $k$-th mode is coupled the $N-k$ remaining modes.
+% Since all of the transformations are orthogonal, diagonalizing $\mathbf\Omega'$ at any point
+% returns the original Hessian matrix.
 
-To continue iterating, we  take the $k$-th row of $\mathbf\Omega'$ and zero the first $k$ elements
-$$
-{\mathbf e} = \{0,\cdots 0,c_{k+1},c_{k+2},\cdots ,c_{N}\}.
-$$
-This is the coupling between the upper tridiagonal block and the lower diagonal block.
-We thus obtain a new vector
-$$
-{\mathbf v}_{k+1} = {\mathbf e} \cdot {\mathbf M}
-$$
-which is then reintroduced into the iteration scheme.
+% To continue iterating, we  take the $k$-th row of $\mathbf\Omega'$ and zero the first $k$ elements
+% $$
+% {\mathbf e} = \{0,\cdots 0,c_{k+1},c_{k+2},\cdots ,c_{N}\}.
+% $$
+% This is the coupling between the upper tridiagonal block and the lower diagonal block.
+% We thus obtain a new vector
+% $$
+% {\mathbf v}_{k+1} = {\mathbf e} \cdot {\mathbf M}
+% $$
+% which is then reintroduced into the iteration scheme.
 
-At any point along the way, we can terminate the iteration and obtain a reduced set of
-couplings.  Since the  Lanczos approach uses the power method for finding the largest eigenvector of a matrix,
-it converges first upon the vector with the largest electron/nuclear coupling--which
- we refer to as the ``primary mode''.  Subsequent iterations produce reduced modes with
- weaker electron/nuclear couplings and the entire  process can be terminated after a few iterations.
-After $k$-steps, the final electron-phonon couplings are then obtained by
-projecting the original set of couplings (in the normal mode basis) into the final vector space.
+% At any point along the way, we can terminate the iteration and obtain a reduced set of
+% couplings.  Since the  Lanczos approach uses the power method for finding the largest eigenvector of a matrix,
+% it converges first upon the vector with the largest electron/nuclear coupling--which
+%  we refer to as the ``primary mode''.  Subsequent iterations produce reduced modes with
+%  weaker electron/nuclear couplings and the entire  process can be terminated after a few iterations.
+% After $k$-steps, the final electron-phonon couplings are then obtained by
+% projecting the original set of couplings (in the normal mode basis) into the final vector space.
 
-For the first iteration, ${\mathbf v}_{1}$ is parallel to the bare electron-phonon coupling vector $g_{22}$
-and the associated frequency is ${\mathbf v}_{1}\cdot\Omega\cdot{\mathbf v}_{1}$.   The subsequent iterations introduce
-corrections to this via phonon-phonon coupling.  For example, for the $k=3$ iteration,
-we would determine the active vector space in terms of the upper-left 3$\times 3$ block of the matrix in
-Eq.~\ref{omega-prime}.
-\begin{eqnarray}
-{\mathbf \Omega}_{3}' =
-\begin{pmatrix}
-\alpha_{1}   & b_{1}    & 0      \\
-b_{1}     & \alpha_{2}  & b_{2}                         \\
-0            &   b_{2}         & \alpha_{3}
-\end{pmatrix}
-\end{eqnarray}
-Diagonalizing  ${\mathbf \Omega}_{3}'$ returns a set of frequencies and  associated eigenvectors
-which are then used to compute the electron-phonon couplings in this reduced active space.
-After $N-1$ iterations, $\mathbf\Omega'$ is a fully tridiagonal matrix and diagonalizing this returns the original
-normal mode basis.
+% For the first iteration, ${\mathbf v}_{1}$ is parallel to the bare electron-phonon coupling vector $g_{22}$
+% and the associated frequency is ${\mathbf v}_{1}\cdot\Omega\cdot{\mathbf v}_{1}$.   The subsequent iterations introduce
+% corrections to this via phonon-phonon coupling.  For example, for the $k=3$ iteration,
+% we would determine the active vector space in terms of the upper-left 3$\times 3$ block of the matrix in
+% Eq.~\ref{omega-prime}.
+% \begin{eqnarray}
+% {\mathbf \Omega}_{3}' =
+% \begin{pmatrix}
+% \alpha_{1}   & b_{1}    & 0      \\
+% b_{1}     & \alpha_{2}  & b_{2}                         \\
+% 0            &   b_{2}         & \alpha_{3}
+% \end{pmatrix}
+% \end{eqnarray}
+% Diagonalizing  ${\mathbf \Omega}_{3}'$ returns a set of frequencies and  associated eigenvectors
+% which are then used to compute the electron-phonon couplings in this reduced active space.
+% After $N-1$ iterations, $\mathbf\Omega'$ is a fully tridiagonal matrix and diagonalizing this returns the original
+% normal mode basis.
 
-%{\bf XUNMO---how are frequencies and couplings determined at this point??---  }
 
 \begin{figure}[t]
 \subfloat[c-1,4ee]{\includegraphics[width=0.75\columnwidth]{Chapters/chap2/Figure4a}}\\
