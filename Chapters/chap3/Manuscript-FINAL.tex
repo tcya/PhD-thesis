@@ -132,7 +132,7 @@ itself is highly quantum mechanical in nature and involves strong coupling betwe
 electronic degrees of freedom.  The seminal model for the calculation of the transfer rate for this process
 was developed by Marcus in the 1950's\cite{marcus1956theory,marcus1965theory,marcus1993electron}
 \begin{equation}
-k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta G^{o})^{2}/4\text{\ensuremath{\lambda}}k_{B}T}\label{eq:marcus},
+k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta G^{o})^{2}/4\text{\ensuremath{\lambda}}k_{B}T},
 \end{equation}
 which relates the Fermi golden-rule transition rate, $k_{Marcus}$
 to the thermodynamic driving force $\Delta G^{o}$ and the reorganization energy $\lambda$.
@@ -341,7 +341,7 @@ H_{dia,e}=\left(\begin{array}{cc}
 \end{array}\right)\left(\begin{array}{cc}
 \cos\theta & \sin\theta\\
 -\sin\theta & \cos\theta
-\end{array}\right).\label{eq:boys}
+\end{array}\right).
 \end{equation}
 The diabatic coupling is then given by
 \begin{eqnarray}
@@ -357,7 +357,7 @@ E_{1}  & 0 \\
 \sin^{2}\theta & \frac{1}{2}\sin2\theta\\
 \frac{1}{2}\sin2\theta & \cos^{2}\theta
 \end{array}\right) {\mathbf g}_{22}.{\mathbf q} \nonumber \\
-&+& H_{osc}.\label{eq:locaiHam}
+&+& H_{osc}.\label{eq:locaiHam2}
 \end{eqnarray}
 where the electronic part is in the adiabatic basis with eigenenergies of $E_1$ and $E_2$ at certain reference geometry. The nuclear normal modes are described by $H_{osc}$ whereas $\theta$ is the mixing angle between two states.
 %to describe the coupling between two electronic states, $|1\rangle$ and $|2\rangle$  by a set of nuclear vibrational motionsdescribed by $H_{osc}$.  The angle $\theta$ gives the mixing angle between diabatic states and $E_1$ and $E_{2}$ are electronic energies computed at the same reference configuration.
@@ -369,14 +369,14 @@ use the gradients of the adiabatic potentials to approximate the diabatic potent
 This approximation is  valid when the adiabatic (and diabatic) energy minima
 are far enough away from the crossing points and the mixing angles between the diabatic  and adiabatic
 states is small.
-Thus, all parameters in Eq.~\ref{eq:locaiHam}  can be  obtained from
+Thus, all parameters in Eq.~\ref{eq:locaiHam2}  can be  obtained from
 standard  quantum chemical computations.
 As in our previous work, we use the Q-Chem 4.0 package  to obtain the vertical energies
  from single point CI(S) calculations with 6-31G** basis set at a given
 reference geometry.   We then project the energy gradients onto the vibrational normal
 coordinates
 
-Our group has shown that the dynamics of Hamiltonian in the form of Eq.~\ref{eq:locaiHam} can be expressed in a time-convolutionless mater equation \cite{pereverzev2006time}. The derivation is lengthy so we present it briefly.
+Our group has shown that the dynamics of Hamiltonian in the form of Eq.~\ref{eq:locaiHam2} can be expressed in a time-convolutionless mater equation \cite{pereverzev2006time}. The derivation is lengthy so we present it briefly.
 
 \subsection{Transition Rate and Autocorrelation}
 We start from a more general Hamiltonian:
@@ -389,7 +389,7 @@ H=\left(\begin{array}{cc}
 {\mathbf g}_{21} &{\mathbf g}_{22}
 \end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}
 \nonumber \\
-\label{ham1}
+% \label{ham1}
 \end{eqnarray}
 then perform a polaron transform
 using the unitary transformation~\cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
@@ -399,7 +399,7 @@ n|(a^{\dagger}_i-a_i)}
  \nonumber \\
 &=&
 \sum_{n}|n\rangle \langle n|e^{-\sum_{i}\!\!\frac{g_{nni}}{\hbar\omega_i}(a^{\dagger}_i-a_i)}
-\label{unitary}
+% \label{unitary}
 \end{eqnarray}
 under which the transformed Hamiltonian is written in terms of the
 diagonal elements
@@ -414,7 +414,7 @@ with  the renormalized electronic energies,
 and off-diagonal terms,
 \begin{eqnarray} \hat V_{nm}=\sum_{i}g_{nmi}\left(a^{\dagger}_i+
 a_i-\frac{2g_{nni}}{\hbar\omega_i}\right)e^{\sum_{j}\frac{(g_{nnj}-g_{mmj})}{\hbar\omega_j}(a^{\dagger}_j-a_j)}.
-\label{opm}
+% \label{opm}
 \end{eqnarray}
 % In the transformed (or dressed) picture the electronic transition from state
 % $|n\rangle$ to $|m\rangle$ is accompanied by the excitations of all the
@@ -439,7 +439,7 @@ vibrational degrees of freedom.
 Using this approach , the golden-rule rates are given by
 \begin{eqnarray}
 k_{nm}=\lim_{\tau \to \infty}2{\rm Re}\int_{0}^{\tau}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
-\label{gr-expression}
+% \label{gr-expression}
 \end{eqnarray}
 In a practical sense, we take $\tau$ to be some finite time at which the
 autocorrelation function $C(t)$
@@ -481,7 +481,7 @@ when parameterized using accurate quantum chemical data.\cite{yang2014intramolec
 
 
 \subsection{Constructing Primary Lanczos Modes}
-The linear coupling parameter $ {\mathbf g}_{22}$ in Eq.~\ref{eq:locaiHam} defines
+The linear coupling parameter $ {\mathbf g}_{22}$ in Eq.~\ref{eq:locaiHam2} defines
 a force
 along a vector connecting
 the initial and final equilibrium geometries of the molecule.
