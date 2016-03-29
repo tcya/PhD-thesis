@@ -4,7 +4,6 @@
 \numberwithin{equation}{chapter}
 % page breaks in displayed math
 \allowdisplaybreaks
-% \bibliographystyle{ieeetr}
 \begin{document}
 \raggedbottom \selectlanguage{american} \pagenumbering{roman}
 \pagestyle{plain}
@@ -17,7 +16,7 @@
 \include{FrontBackmatter/Abstracttitlepage}
 \include{FrontBackmatter/Abstract}
 \include{FrontBackmatter/Contents}
-\include{FrontBackmatter/Notations}
+% \include{FrontBackmatter/Notations}
 % ********************************************************************
 % Mainmatter *******************************************************
 \pagenumbering{arabic}
@@ -41,5 +40,7 @@
 % *******************************************************
 % \pagestyle{plain}
 % \include{FrontBackmatter/Bibliography}
+\bibliographystyle{unsrtnat}
+\bibliography{Dbib}
 \end{document}
 

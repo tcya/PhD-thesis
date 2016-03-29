@@ -163,24 +163,24 @@ We focus here on the rates of triplet exchange between a naphthalene donor and a
 \begin{center}
 \includegraphics[width=0.50\columnwidth]{Chapters/chap2/Scheme1}
 \end{center}
-Triplet energy exchange in these systems occurs via the through-space Dexter mechanism\cite{Dexter:1952}.
+Triplet energy exchange in these systems occurs via the through-space Dexter mechanism\cite{dexter1953theory}.
 This is a short-ranged interaction involving the simultaneous exchange of two electrons between the
 donor and acceptor moieties.
 Systems such as these formed the basis of a series of experiments by  Closs and Miller\cite{miller1984intramolecular}
 in which they verified the existence of the Marcus inverted regime
 and serve as crucial benchmarks for testing new theoretical models for computing
-energy and charge transfer rates\cite{subotnik2008constructing,subotnik2009initial,Subotnik:2010}.
+energy and charge transfer rates\cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
 
 
 A number of years ago,  we developed a time-convolutionless  master equation approach for computing
 state-to-state rates in which the coupling between  states depends upon the
-nuclear coordinates\cite{pereverzev:104906}. This approach incorporates a fully quantum
+nuclear coordinates\cite{pereverzev2006time}. This approach incorporates a fully quantum
 mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
 well-known Marcus expression in the semiclassical limit.  The model is parameterized by the
 vibrational normal mode frequencies, and the electronic energies and energy derivatives
 at a reference configuration.  The approach has been used by our group to compute state-to-state
 transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
-\cite{Tamura08,tamura:021103,Bittner:2014ab,Jaykrishna-Singh:2009ly}.
+\cite{tamura2008phonon,tamura2007exciton,bittner2014noise,singh2009fluorescence}.
 This paper represents the first time we have used this approach within the context of a fully {\em ab initio} quantum
 chemical model.   As such, this present work provides an important benchmark of the approach since all parameters will be determined
 using state-of-the-art quantum chemical methods
@@ -193,13 +193,13 @@ by computing the  triplet energy transfer rates for a series of donor-bridge-acc
 originally studied by Closs\cite{miller1984intramolecular}.  The triplet energy transfer rates computed using our approach
 compare well against both the experimental rates and with
 more recent theoretical rates presented by Subotnik {\em et al.}
-\cite{subotnik2008constructing,subotnik2009initial,Subotnik:2010}.
+\cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
 An important component of our analysis is the use of a projection operator scheme
 that parses out specific internal nuclear motions that accompany
 the electronic transition.
 Similar decomposition schemes have been presented by Burghardt
- \cite{Cederbaum:2005,gindensperger:144103,gindensperger:144104,PhysRevLett.94.113003}
- and the approach used here builds upon the method given in Ref.~\cite{pereverzev:034104}.
+ \cite{cederbaum2005short,gindensperger2006shortI,gindensperger2006shortII,cederbaum2005short}
+ and the approach used here builds upon the method given in Ref.~\cite{pereverzev2009energy}.
  By analyzing the electron-phonon couplings, we can
 discern a reduced set of motions that are responsible for coupling between the donor and
 acceptor states.
@@ -240,7 +240,7 @@ off-diagonal terms
 \hat  H = \hat H_{o} + \hat V
 \end{eqnarray}
 and perform a polaron transform
-using the unitary transformation~\cite{grover:2099,rice:2504,pereverzev:104906}.
+using the unitary transformation~\cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
 \begin{eqnarray}
 U&=&e^{-\sum_{ni}\!\!\frac{g_{nni}}{\hbar\omega_i}|n\rangle \langle
 n|(a^{\dagger}_i-a_i)}
@@ -277,11 +277,11 @@ Here, $\hat V_{nm}(t)$ is the electron-phonon coupling term in the Heisenberg re
 $\langle \cdots \rangle$ denotes a thermal average over the
 vibrational degrees of freedom.
 The derivation and explicit form for the kernel in Eq.~\ref{spec-dens}  is quite lengthy and is given in
-Ref.~\cite{pereverzev:104906}.
+Ref.~\cite{pereverzev2006time}.
 
 \subsection{Non-Markovian Master Equation and Golden-Rule rates}
 
-In Ref.~\cite{pereverzev:104906}, Pereverzev and Bittner derived
+In Ref.~\cite{pereverzev2006time}, Pereverzev and Bittner derived
 a non-Markovian, time-convolutionless form of the Pauli master
 equation (TCLME)  for general system described by Eq.~\ref{ham1}.
 \begin{eqnarray}
@@ -324,7 +324,7 @@ driving force of the state-to-state transition,
 The difficulty in using this approach is that
 it requires both diagonal (${\mathbf g}_{nn}$) and off-diagonal  (${\mathbf g}_{nm}$) derivative couplings between
 adiabatic states.    In the following section, we discuss how we have used the Edmiston-Ruedenberg localization scheme
-to estimate the couplings\cite{RevModPhys.35.457}.   We also
+to estimate the couplings\cite{edmiston1963localized}.   We also
 present how one can construct a reduced set of harmonic modes that
 fully capture the electron/nuclear coupling.
 \subsection{Parameterization From Quantum Chemistry}
@@ -422,7 +422,7 @@ coordinates to obtain the electron-phonon coupling constants.  Either the Boys o
 localization scheme can be use to compute the mixing
 angles for constructing diabatic states. For all calculations shown here we
 used the qChem 4.0 code and employed the 6-31G(d){*}{*} basis set
-in order to compare our results  with  Ref. \cite{Subotnik:2010}.
+in order to compare our results  with  Ref. \cite{subotnik2010predicting}.
 
  We  benchmark our approach against a series of donor-bridge-acceptor
 molecules studied by Closs\cite{closs1988determination,closs1988intramolecular,closs1989connection}.
@@ -438,7 +438,7 @@ computed using the Edmiston-Reudenberg (ER) localization method.
 \hline \hline
  & & \multicolumn{3}{c}{Rates (s$^{-1}$) }& \\
                 &                                                                &   Expt.                 &        Marcus Theory   & This work      & \multicolumn{3}{c}{Marcus theory parameters} \\
- Bridge   &  Structure                                                &        Ref.~\cite{closs1988determination,closs1989connection} &              Ref. \cite{Subotnik:2010}  &                  &      $\lambda$ (eV)  &  $\Delta \epsilon$ (eV)  &  $V_{ab}$ ($\mu$eV) \\
+ Bridge   &  Structure                                                &        Ref.~\cite{closs1988determination,closs1989connection} &              Ref. \cite{subotnik2010predicting}  &                  &      $\lambda$ (eV)  &  $\Delta \epsilon$ (eV)  &  $V_{ab}$ ($\mu$eV) \\
 \hline
  c-1,3ea  &  \includegraphics[height=.60cm,width=2cm]{Chapters/chap2/Table1-c13ea.pdf}  &                     3.3E9  &                     3.9E9  &          2.2E9  &           0.823  &           -0.612  &      470.1  \\
 \hline
@@ -466,7 +466,7 @@ d-2,6ea  &  \includegraphics[height=0.6cm,width=2cm]{Chapters/chap2/Table1-d26ea
 
 \par\end{centering}
 \caption{Comparison of triplet-triplet energy transfer rates obtained from our  approach,  Marcus rates are
-from Ref.\cite{Subotnik:2010}
+from ~Ref. \cite{subotnik2010predicting}
 and experimental rates from Refs.\cite{closs1988determination,closs1989connection}.   The experimental error is estimated to be 20\% in each
 case studied here.
 The $V_{ab}$ are the diabatic couplings obtained using  Edmiston-Ruedenberg diabatization.
@@ -480,24 +480,24 @@ In each case, D =4-benzophenonyl and A = 2-napthyl.  n.r. = Not Reported.
 
 \begin{figure}[t]
 \includegraphics[width=0.5\columnwidth]{Chapters/chap2/Figure3}
-\caption{Comparison between predicted (TCLME) rate constants and the experimental rates from Ref.\cite{miller1984intramolecular}.  With exception of
+\caption{Comparison between predicted (TCLME) rate constants and the experimental rates from ~Ref. \cite{miller1984intramolecular}.  With exception of
 the methyl and D-2,6-ea bridged cases, the TCLME results are in good agreement with the experimental results.  }\label{compare}
 \end{figure}
 
 
-In general, our results and those in Ref.\cite{Subotnik:2010} agree with each other well and both are
+In general, our results and those in ~Ref. \cite{subotnik2010predicting} agree with each other well and both are
 comparable to the experimental results which report an estimated error of 10-20\% in the
 rate for each case presented here.  Furthermore,  all theoretical values were computed
 in the absence of solvent environment, whereas the experiments were all performed in benzene solvent at a standard temperature.
 However,  there is considerable disagreement between the experimental and theoretical results for
 the d-2,6ea and methyl (M) bridged cases.   For the d-2,6ea bridge,  our results are similar to the
-Marcus theory rates given in Ref. \cite{Subotnik:2010}.  In this case, the
+Marcus theory rates given in Ref. \cite{subotnik2010predicting}.  In this case, the
  the ER localization gives a  small diabatic coupling
  % $V_{ab} = 4.4\times 10^{-6}$eV
  and it was  difficult to obtain converged localized states.
 In the case of the methyl-bridge,  there is a significant change in the geometry between donor and acceptor states.
 As a result,  the potential surfaces are no longer parabolic
-and the Condon approximation breaks down.\cite{Subotnik:2010}
+and the Condon approximation breaks down.\cite{subotnik2010predicting}
 
 
 
@@ -674,9 +674,9 @@ coordinate frame of each molecule.  The vectors indicate the direction
 of the electron-phonon coupling vectors projected onto the Cartesian displacement
 vectors of the individual atoms.   In each case, the primary
 coupling mode involves the  $b_{2u}$ in plane C=C stretching motions of the naphthalene donor and the
- in-plane $\nu_{8}$ (in the Mulliken numbering scheme) ring-squeezing motions of the benzaldehyde acceptor\cite{doi:10.1021/jp961282l}.
+ in-plane $\nu_{8}$ (in the Mulliken numbering scheme) ring-squeezing motions of the benzaldehyde acceptor\cite{silva1996theoretical}.
 It is interesting to note
-that $^{3}B_{2u}$ is also the symmetry of the first triplet $\pi-\pi^{*}$ excited state in naphthalene \cite{doi:10.1021/j100066a007},
+that $^{3}B_{2u}$ is also the symmetry of the first triplet $\pi-\pi^{*}$ excited state in naphthalene \cite{aagren1994response},
 Moreover, if we were to approximate benzaldehyde as a $C_{2v}$ molecule, taking the aldehyde as local site,
 the resulting first triplet $\pi-\pi^{*}$ is the product of a $b_{1}$ HOMO and a $b_{1}$ LUMO giving a state in the
   $a_{1}$ irreducible representation. This is the same irreducible representation one obtains for the $\nu_{8}$
@@ -797,6 +797,10 @@ nuclear displacement vectors and gain insight into the coupled electronic/nuclea
 transition.   Our analysis also suggests that the primary  mode reflects the irreducible representations of the
 donor and acceptor excited states.
 
+% \begin{}
+% \bibliographystyle{chicago}
+% \bibliography{Dbib}
+
 % \begin{acknowledgement}
 
 % ERB acknowledges support from
@@ -812,253 +816,253 @@ donor and acceptor excited states.
 % \bibliography{../References-local}
 % \bibliographystyle{plainnat}
 % \chapterbib
-\providecommand*\mcitethebibliography{\thebibliography}
-\csname @ifundefined\endcsname{endmcitethebibliography}
-  {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{27}
-\providecommand*\natexlab[1]{#1}
-\providecommand*\mciteSetBstSublistMode[1]{}
-\providecommand*\mciteSetBstMaxWidthForm[2]{}
-\providecommand*\mciteBstWouldAddEndPuncttrue
-  {\def\EndOfBibitem{\unskip.}}
-\providecommand*\mciteBstWouldAddEndPunctfalse
-  {\let\EndOfBibitem\relax}
-\providecommand*\mciteSetBstMidEndSepPunct[3]{}
-\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
-\providecommand*\EndOfBibitem{}
-\mciteSetBstSublistMode{f}
-\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
-\mciteSetBstSublistLabelBeginEnd
-  {\mcitemaxwidthsubitemform\space}
-  {\relax}
-  {\relax}
+% \providecommand*\mcitethebibliography{\thebibliography}
+% \csname @ifundefined\endcsname{endmcitethebibliography}
+%   {\let\endmcitethebibliography\endthebibliography}{}
+% \begin{mcitethebibliography}{27}
+% \providecommand*\natexlab[1]{#1}
+% \providecommand*\mciteSetBstSublistMode[1]{}
+% \providecommand*\mciteSetBstMaxWidthForm[2]{}
+% \providecommand*\mciteBstWouldAddEndPuncttrue
+%   {\def\EndOfBibitem{\unskip.}}
+% \providecommand*\mciteBstWouldAddEndPunctfalse
+%   {\let\EndOfBibitem\relax}
+% \providecommand*\mciteSetBstMidEndSepPunct[3]{}
+% \providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+% \providecommand*\EndOfBibitem{}
+% \mciteSetBstSublistMode{f}
+% \mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+% \mciteSetBstSublistLabelBeginEnd
+%   {\mcitemaxwidthsubitemform\space}
+%   {\relax}
+%   {\relax}
 
-% \begin{thebibliography}{27}
-\bibitem[Marcus(1956)]{marcus1956theory}
-Marcus,~R.~A. On the Theory of Oxidation-Reduction Reactions Involving Electron
-  Transfer. I. \emph{J. Chem. Phys.} \textbf{1956}, \emph{24},
-  966--978\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Marcus(1965)]{marcus1965theory}
-Marcus,~R.~A. On the Theory of Electron-Transfer Reactions. VI. Unified
-  Treatment for Homogeneous and Electrode Reactions. \emph{J. Chem. Phys} \textbf{1965}, \emph{43}, 679\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Marcus(1993)]{marcus1993electron}
-Marcus,~R.~A. Electron transfer reactions in chemistry. Theory and experiment.
-  \emph{Rev. Mod.  Phys.} \textbf{1993}, \emph{65}, 599--610\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Dexter(1953)]{Dexter:1952}
-Dexter,~D.~L. A Theory of Sensitized Luminescence in Solids. \emph{J. Chem. Phys.} \textbf{1953}, \emph{21}, 836--850\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Miller et~al.(1984)Miller, Calcaterra, and
-  Closs]{miller1984intramolecular}
-Miller,~J.; Calcaterra,~L.; Closs,~G. Intramolecular long-distance electron
-  transfer in radical anions. The effects of free energy and solvent on the
-  reaction rates. \emph{J.  Am.  Chem.  Soc.}
-  \textbf{1984}, \emph{106}, 3047--3049\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Subotnik et~al.(2008)Subotnik, Yeganeh, Cave, and
-  Ratner]{subotnik2008constructing}
-Subotnik,~J.~E.; Yeganeh,~S.; Cave,~R.~J.; Ratner,~M.~A. Constructing diabatic
-  states from adiabatic states: Extending generalized Mulliken--Hush to
-  multiple charge centers with Boys localization. \emph{J. Chem. Phys.} \textbf{2008}, \emph{129}, 244101\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Subotnik et~al.(2009)Subotnik, Cave, Steele, and
-  Shenvi]{subotnik2009initial}
-Subotnik,~J.~E.; Cave,~R.~J.; Steele,~R.~P.; Shenvi,~N. The initial and final
-  states of electron and energy transfer processes: Diabatization as motivated
-  by system-solvent interactions. \emph{J. Chem. Phys.}
-  \textbf{2009}, \emph{130}, 234102--234102\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Subotnik et~al.(2010)Subotnik, Vura-Weis, Sodt, and
-  Ratner]{Subotnik:2010}
-Subotnik,~J.~E.; Vura-Weis,~J.; Sodt,~A.~J.; Ratner,~M.~A. Predicting accurate
-  electronic energy transfer rates via Marcus theory and Edminston-Ruedeberg
-  localized diabatization. \emph{J. Phys. Chem. A} \textbf{2010},
-  \emph{114}\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Pereverzev and Bittner(2006)Pereverzev, and
-  Bittner]{pereverzev:104906}
-Pereverzev,~A.; Bittner,~E.~R. Time-convolutionless master equation for
-  mesoscopic electron-phonon systems. \emph{J. Chem. Phys.}
-  \textbf{2006}, \emph{125}, 104906\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Tamura et~al.(2008)Tamura, Ramon, Bittner, and Burghardt]{Tamura08}
-Tamura,~H.; Ramon,~J. G.~S.; Bittner,~E.~R.; Burghardt,~I. Phonon-Driven
-  Ultrafast Exciton Dissociation at Donor-Acceptor Polymer Heterojunctions.
-  \emph{Physical Review Letters} \textbf{2008}, \emph{100}, APS\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Tamura et~al.(2007)Tamura, Bittner, and Burghardt]{tamura:021103}
-Tamura,~H.; Bittner,~E.~R.; Burghardt,~I. Exciton dissociation at
-  donor-acceptor polymer heterojunctions: Quantum nonadiabatic dynamics and
-  effective-mode analysis. \emph{J. Chem. Phys.}
-  \textbf{2007}, \emph{126}, 021103\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Bittner and Silva(2014)Bittner, and Silva]{Bittner:2014ab}
-Bittner,~E.~R.; Silva,~C. Noise-induced quantum coherence drives photo-carrier
-  generation dynamics at polymeric semiconductor heterojunctions. \emph{Nat.   Comm.} \textbf{2014}, \emph{5}, 3119\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Singh et~al.(2009)Singh, Bittner, Beljonne, and
-  Scholes]{Jaykrishna-Singh:2009ly}
-Singh,~J.; Bittner,~E.~R.; Beljonne,~D.; Scholes,~G.~D. Fluorescence Depolarization in MEH-PPV:
-Sites vs. Eigenstates Hopping. \emph{J. Chem.
-  Phys.} \textbf{2009}, \emph{131}, 194905\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Cederbaum et~al.(2005)Cederbaum, Gildensperger, and
-  Burghardt]{Cederbaum:2005}
-Cederbaum,~L.; Gildensperger,~E.; Burghardt,~I. Short-Time Dynamics Through
-  Conical Intersections in Macrosystems. \emph{Phys. Rev. Lett.} \textbf{2005},
-  \emph{94}, 113003\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Gindensperger et~al.(2006)Gindensperger, Burghardt, and
-  Cederbaum]{gindensperger:144103}
-Gindensperger,~E.; Burghardt,~I.; Cederbaum,~L.~S. Short-time dynamics through
-  conical intersections in macrosystems. I. Theory: Effective-mode formulation.
-  \emph{J. Chem. Phys.} \textbf{2006}, \emph{124},
-  144103\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Gindensperger et~al.(2006)Gindensperger, Burghardt, and
-  Cederbaum]{gindensperger:144104}
-Gindensperger,~E.; Burghardt,~I.; Cederbaum,~L.~S. Short-time dynamics through
-  conical intersections in macrosystems. II. Applications. \emph{J. Chem. Phys.} \textbf{2006}, \emph{124}, 144104\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Cederbaum et~al.(2005)Cederbaum, Gindensperger, and
-  Burghardt]{PhysRevLett.94.113003}
-Cederbaum,~L.~S.; Gindensperger,~E.; Burghardt,~I. Short-Time Dynamics Through
-  Conical Intersections in Macrosystems. \emph{Phys. Rev. Lett.} \textbf{2005},
-  \emph{94}, 113003\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Pereverzev et~al.(2009)Pereverzev, Bittner, and  Burghardt]{pereverzev:034104}
-Pereverzev,~A.; Bittner,~E.~R.; Burghardt,~I. Energy and charge-transfer
-  dynamics using projected modes. \emph{J. Chem. Phys.}
-  \textbf{2009}, \emph{131}, 034104\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Closs et~al.(1988)Closs, Piotrowiak, MacInnis, and
-  Fleming]{closs1988determination}
-Closs,~G.~L.; Piotrowiak,~P.; MacInnis,~J.~M.; Fleming,~G.~R. Determination of
-  long-distance intramolecular triplet energy-transfer rates. Quantitative
-  comparison with electron transfer. \emph{J.  Am.  Chem.  Soc.} \textbf{1988}, \emph{110}, 2652--2653\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Closs et~al.(1989)Closs, Johnson, Miller, and
-  Piotrowiak]{closs1989connection}
-Closs,~G.~L.; Johnson,~M.~D.; Miller,~J.~R.; Piotrowiak,~P. A connection
-  between intramolecular long-range electron, hole, and triplet energy
-  transfers. \emph{J.  Am.  Chem.  Soc.} \textbf{1989},
-  \emph{111}, 3751--3753\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Grover and Silbey(1970)Grover, and Silbey]{grover:2099}
-Grover,~M.~K.; Silbey,~R. Exciton--Phonon Interactions in Molecular Crystals.
-  \emph{J. Chem. Phys.} \textbf{1970}, \emph{52},
-  2099--2108\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Rice and Gartstein(1994)Rice, and Gartstein]{rice:2504}
-Rice,~M.~J.; Gartstein,~Y.~N. Excitons and interband excitations in conducting
-  polymers based on phenylene. \emph{Phys. Rev. Lett.} \textbf{1994},
-  \emph{73}, 2504--2507\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Edmiston and Ruedenberg(1963)Edmiston, and
-  Ruedenberg]{RevModPhys.35.457}
-Edmiston,~C.; Ruedenberg,~K. Localized Atomic and Molecular Orbitals.
-  \emph{Rev. Mod. Phys.} \textbf{1963}, \emph{35}, 457--464\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Closs and Miller(1988)Closs, and Miller]{closs1988intramolecular}
-Closs,~G.~L.; Miller,~J.~R. Intramolecular long-distance electron transfer in
-  organic molecules. \emph{Science} \textbf{1988}, \emph{240}, 440--447\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Silva and Reilly(1996)Silva, and Reilly]{doi:10.1021/jp961282l}
-Silva,~C.~R.; Reilly,~J.~P. Theoretical Calculations on Excited Electronic
-  States of Benzaldehyde and Observation of the $S_2\leftarrow S_0$ Jet-Cooled
-  Spectrum. \emph{J. Phys. Chem.} \textbf{1996}, \emph{100},
-  17111--17123\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{\AA}gren et~al.(1994){\AA}gren, Minaev, and
-  Knuts]{doi:10.1021/j100066a007}
-{\AA}gren,~H.; Minaev,~B.~F.; Knuts,~S. Response Theory Studies of
-  Triplet-State Spectra and Radiative Lifetimes of Naphthalene, Quinoxaline,
-  and Phthalazine. \emph{J.  Phys.  Chem.} \textbf{1994},
-  \emph{98}, 3943--3949\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
+% % \begin{thebibliography}{27}
+% \bibitem[Marcus(1956)]{marcus1956theory}
+% Marcus,~R.~A. On the Theory of Oxidation-Reduction Reactions Involving Electron
+%   Transfer. I. \emph{Journal Chem. Phys.} \textbf{1956}, \emph{24},
+%   966--978\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Marcus(1965)]{marcus1965theory}
+% Marcus,~R.~A. On the Theory of Electron-Transfer Reactions. VI. Unified
+%   Treatment for Homogeneous and Electrode Reactions. \emph{J. Chem. Phys} \textbf{1965}, \emph{43}, 679\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Marcus(1993)]{marcus1993electron}
+% Marcus,~R.~A. Electron transfer reactions in chemistry. Theory and experiment.
+%   \emph{Rev. Mod.  Phys.} \textbf{1993}, \emph{65}, 599--610\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Dexter(1953)]{dexter1953theory}
+% Dexter,~D.~L. A Theory of Sensitized Luminescence in Solids. \emph{J. Chem. Phys.} \textbf{1953}, \emph{21}, 836--850\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Miller et~al.(1984)Miller, Calcaterra, and
+%   Closs]{miller1984intramolecular}
+% Miller,~J.; Calcaterra,~L.; Closs,~G. Intramolecular long-distance electron
+%   transfer in radical anions. The effects of free energy and solvent on the
+%   reaction rates. \emph{J.  Am.  Chem.  Soc.}
+%   \textbf{1984}, \emph{106}, 3047--3049\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Subotnik et~al.(2008)Subotnik, Yeganeh, Cave, and
+%   Ratner]{subotnik2008constructing}
+% Subotnik,~J.~E.; Yeganeh,~S.; Cave,~R.~J.; Ratner,~M.~A. Constructing diabatic
+%   states from adiabatic states: Extending generalized Mulliken--Hush to
+%   multiple charge centers with Boys localization. \emph{J. Chem. Phys.} \textbf{2008}, \emph{129}, 244101\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Subotnik et~al.(2009)Subotnik, Cave, Steele, and
+%   Shenvi]{subotnik2009initial}
+% Subotnik,~J.~E.; Cave,~R.~J.; Steele,~R.~P.; Shenvi,~N. The initial and final
+%   states of electron and energy transfer processes: Diabatization as motivated
+%   by system-solvent interactions. \emph{J. Chem. Phys.}
+%   \textbf{2009}, \emph{130}, 234102--234102\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Subotnik et~al.(2010)Subotnik, Vura-Weis, Sodt, and
+%   Ratner]{subotnik2010predicting}
+% Subotnik,~J.~E.; Vura-Weis,~J.; Sodt,~A.~J.; Ratner,~M.~A. Predicting accurate
+%   electronic energy transfer rates via Marcus theory and Edminston-Ruedeberg
+%   localized diabatization. \emph{J. Phys. Chem. A} \textbf{2010},
+%   \emph{114}\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Pereverzev and Bittner(2006)Pereverzev, and
+%   Bittner]{pereverzev2006time}
+% Pereverzev,~A.; Bittner,~E.~R. Time-convolutionless master equation for
+%   mesoscopic electron-phonon systems. \emph{J. Chem. Phys.}
+%   \textbf{2006}, \emph{125}, 104906\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Tamura et~al.(2008)Tamura, Ramon, Bittner, and Burghardt]{tamura2008phonon}
+% Tamura,~H.; Ramon,~J. G.~S.; Bittner,~E.~R.; Burghardt,~I. Phonon-Driven
+%   Ultrafast Exciton Dissociation at Donor-Acceptor Polymer Heterojunctions.
+%   \emph{Physical Review Letters} \textbf{2008}, \emph{100}, APS\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Tamura et~al.(2007)Tamura, Bittner, and Burghardt]{tamura2007exciton}
+% Tamura,~H.; Bittner,~E.~R.; Burghardt,~I. Exciton dissociation at
+%   donor-acceptor polymer heterojunctions: Quantum nonadiabatic dynamics and
+%   effective-mode analysis. \emph{J. Chem. Phys.}
+%   \textbf{2007}, \emph{126}, 021103\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Bittner and Silva(2014)Bittner, and Silva]{bittner2014noise}
+% Bittner,~E.~R.; Silva,~C. Noise-induced quantum coherence drives photo-carrier
+%   generation dynamics at polymeric semiconductor heterojunctions. \emph{Nat.   Comm.} \textbf{2014}, \emph{5}, 3119\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Singh et~al.(2009)Singh, Bittner, Beljonne, and
+%   Scholes]{singh2009fluorescence}
+% Singh,~J.; Bittner,~E.~R.; Beljonne,~D.; Scholes,~G.~D. Fluorescence Depolarization in MEH-PPV:
+% Sites vs. Eigenstates Hopping. \emph{J. Chem.
+%   Phys.} \textbf{2009}, \emph{131}, 194905\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Cederbaum et~al.(2005)Cederbaum, Gildensperger, and
+%   Burghardt]{cederbaum2005short}
+% Cederbaum,~L.; Gildensperger,~E.; Burghardt,~I. Short-Time Dynamics Through
+%   Conical Intersections in Macrosystems. \emph{Phys. Rev. Lett.} \textbf{2005},
+%   \emph{94}, 113003\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Gindensperger et~al.(2006)Gindensperger, Burghardt, and
+%   Cederbaum]{gindensperger2006shortI}
+% Gindensperger,~E.; Burghardt,~I.; Cederbaum,~L.~S. Short-time dynamics through
+%   conical intersections in macrosystems. I. Theory: Effective-mode formulation.
+%   \emph{J. Chem. Phys.} \textbf{2006}, \emph{124},
+%   144103\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Gindensperger et~al.(2006)Gindensperger, Burghardt, and
+%   Cederbaum]{gindensperger2006shortII}
+% Gindensperger,~E.; Burghardt,~I.; Cederbaum,~L.~S. Short-time dynamics through
+%   conical intersections in macrosystems. II. Applications. \emph{J. Chem. Phys.} \textbf{2006}, \emph{124}, 144104\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Cederbaum et~al.(2005)Cederbaum, Gindensperger, and
+%   Burghardt]{cederbaum2005short}
+% Cederbaum,~L.~S.; Gindensperger,~E.; Burghardt,~I. Short-Time Dynamics Through
+%   Conical Intersections in Macrosystems. \emph{Phys. Rev. Lett.} \textbf{2005},
+%   \emph{94}, 113003\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Pereverzev et~al.(2009)Pereverzev, Bittner, and  Burghardt]{pereverzev2009energy}
+% Pereverzev,~A.; Bittner,~E.~R.; Burghardt,~I. Energy and charge-transfer
+%   dynamics using projected modes. \emph{J. Chem. Phys.}
+%   \textbf{2009}, \emph{131}, 034104\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Closs et~al.(1988)Closs, Piotrowiak, MacInnis, and
+%   Fleming]{closs1988determination}
+% Closs,~G.~L.; Piotrowiak,~P.; MacInnis,~J.~M.; Fleming,~G.~R. Determination of
+%   long-distance intramolecular triplet energy-transfer rates. Quantitative
+%   comparison with electron transfer. \emph{J.  Am.  Chem.  Soc.} \textbf{1988}, \emph{110}, 2652--2653\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Closs et~al.(1989)Closs, Johnson, Miller, and
+%   Piotrowiak]{closs1989connection}
+% Closs,~G.~L.; Johnson,~M.~D.; Miller,~J.~R.; Piotrowiak,~P. A connection
+%   between intramolecular long-range electron, hole, and triplet energy
+%   transfers. \emph{J.  Am.  Chem.  Soc.} \textbf{1989},
+%   \emph{111}, 3751--3753\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Grover and Silbey(1970)Grover, and Silbey]{grover1970exciton}
+% Grover,~M.~K.; Silbey,~R. Exciton--Phonon Interactions in Molecular Crystals.
+%   \emph{J. Chem. Phys.} \textbf{1970}, \emph{52},
+%   2099--2108\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Rice and Gartstein(1994)Rice, and Gartstein]{rice1994excitons}
+% Rice,~M.~J.; Gartstein,~Y.~N. Excitons and interband excitations in conducting
+%   polymers based on phenylene. \emph{Phys. Rev. Lett.} \textbf{1994},
+%   \emph{73}, 2504--2507\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Edmiston and Ruedenberg(1963)Edmiston, and
+%   Ruedenberg]{edmiston1963localized}
+% Edmiston,~C.; Ruedenberg,~K. Localized Atomic and Molecular Orbitals.
+%   \emph{Rev. Mod. Phys.} \textbf{1963}, \emph{35}, 457--464\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Closs and Miller(1988)Closs, and Miller]{closs1988intramolecular}
+% Closs,~G.~L.; Miller,~J.~R. Intramolecular long-distance electron transfer in
+%   organic molecules. \emph{Science} \textbf{1988}, \emph{240}, 440--447\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[Silva and Reilly(1996)Silva, and Reilly]{silva1996theoretical}
+% Silva,~C.~R.; Reilly,~J.~P. Theoretical Calculations on Excited Electronic
+%   States of Benzaldehyde and Observation of the $S_2\leftarrow S_0$ Jet-Cooled
+%   Spectrum. \emph{J. Phys. Chem.} \textbf{1996}, \emph{100},
+%   17111--17123\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
+% \bibitem[{\AA}gren et~al.(1994){\AA}gren, Minaev, and
+%   Knuts]{aagren1994response}
+% {\AA}gren,~H.; Minaev,~B.~F.; Knuts,~S. Response Theory Studies of
+%   Triplet-State Spectra and Radiative Lifetimes of Naphthalene, Quinoxaline,
+%   and Phthalazine. \emph{J.  Phys.  Chem.} \textbf{1994},
+%   \emph{98}, 3943--3949\relax
+% \mciteBstWouldAddEndPuncttrue
+% \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+% {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+% \EndOfBibitem
 
-% \end{thebibliography}
-\end{mcitethebibliography}
+% % \end{thebibliography}
+% \end{mcitethebibliography}
 
 % \begin{tocentry}
 % {\includegraphics[width=4.3cm]{Chapters/chap2/TOCFigure1}}

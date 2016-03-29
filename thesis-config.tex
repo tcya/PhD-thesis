@@ -33,16 +33,21 @@
 % *********************************************************************************
 \PassOptionsToPackage{american}{babel}
 \usepackage{babel}
-\PassOptionsToPackage{style=phys,articletitle=true,biblabel=brackets,chaptertitle=true,pageranges=false,backend=biber,url=false,doi=false,eprint=false,isbn=false,firstinits=true,refsection=chapter}{biblatex}
+% \PassOptionsToPackage{style=phys,articletitle=true,biblabel=brackets,chaptertitle=true,pageranges=false,backend=biber,url=false,doi=false,eprint=false,isbn=false,firstinits=true}{biblatex}
+% \PassOptionsToPackage{style=phys,articletitle=true,biblabel=brackets,chaptertitle=true,pageranges=false,backend=biber,url=false,doi=false,eprint=false,isbn=false,firstinits=true,refsection=chapter}{biblatex}
 % \usepackage{biblatex}
+% \bibliography{\string$BIBDIR/Dbib}%$
 \usepackage[sort&compress,numbers]{natbib}
-\usepackage{chapterbib}
+\usepackage{hyperref}
+% \usepackage{chapterbib}
 % \newcommand{\chapterbib}{
-%   \bibliographystyle{unsrt}
-%   \bibliography{all}
+%   \bibliographystyle{chicago}
+%   \bibliography{Dbib}
 % }
-% \bibliographystyle{abbrvnat}
-\bibliography{Dbib}%$
+% \bibliographystyle{plain}
+\usepackage{tocbibind}
+% \bibliographystyle{chicago}
+% \bibliography{Dbib}%$
 % *********************************************************************************
 % 4. Setup encoding, fonts, math, and spacing
 % *********************************************************************************
