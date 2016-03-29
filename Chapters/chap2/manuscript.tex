@@ -1,3 +1,5 @@
+%!TEX root = /Users/tcya/Dropbox/PhDthesis/thesis.tex
+
 % \documentclass[journal=jpcbfk,manuscript=article]{achemso}
 % \usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
 
@@ -104,6 +106,7 @@
 % {\bf Keywords:} Quantum master equation, energy transfer rates, diabatic states,  triplet energy transfer
 
 % \newpage
+
 \chapter{Chapter 2}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}
 \section{Introduction}
 \label{sec:intro}
@@ -123,7 +126,7 @@ where $\lambda$ is  energy required to reorganize the environment
 following the transfer of an electron from donor to acceptor.
 and $\Delta \epsilon$ is the driving force for the reaction.
 
-\begin{figure}[b]
+\begin{figure}[h]
 \includegraphics[width=0.5\columnwidth]{Chapters/chap2/Figure1}
 \caption{Sketch of Marcus parabolas for a model energy or charge transfer system.
 Labeled are the key parameters used to compute the Marcus rate constant (Eq. 1).
@@ -230,51 +233,6 @@ states as the reference state, then either $\mathbf g_{11}$ or $\mathbf g_{22}$ 
 The remaining two terms correspond to the harmonic motions of the nuclear normal modes, given here in mass-weighted normal coordinates.
 In the normal mode basis, $\mathbf \Omega$  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
 
-\begin{table*}[t]
-\begin{centering}
-\begin{tabular}{llccc|ccc}
-\hline \hline
- & & \multicolumn{3}{c}{Rates (s$^{-1}$) }& \\
-                &                                                                &   Expt.                 &        Marcus Theory   & This work      & \multicolumn{3}{c}{Marcus theory parameters} \\
- Bridge   &  Structure                                                &        Ref.~\cite{closs1988determination,closs1989connection} &              Ref. \cite{Subotnik:2010}  &                  &      $\lambda$ (eV)  &  $\Delta \epsilon$ (eV)  &  $V_{ab}$ ($\mu$eV) \\
-\hline
- c-1,3ea  &  \includegraphics[height=.60cm]{Chapters/chap2/Table1-c13ea.pdf}  &                     3.3E9  &                     3.9E9  &          2.2E9  &           0.823  &           -0.612  &      470.1  \\
-\hline
- c-1,3ee  &  \includegraphics[height=0.4cm]{Chapters/chap2/Table1-c13ee.pdf}  &                     7.7E9  &                    2.1E10  &         2.8E10  &           0.810  &           -0.580  &     1687.3  \\
-\hline
- c-1,4ea  &  \includegraphics[height=0.6cm]{Chapters/chap2/Table1-c14ea.pdf}  &                     4.0E7  &                     1.3E7  &          1.8E7  &           0.817  &           -0.604  &      43.20 \\
-\hline
- c-1,4ee  &  \includegraphics[height=0.4cm]{Chapters/chap2/Table1-c14ee.pdf}  &                     1.3E9  &                     3.9E9  &          3.6E9  &           0.826  &           -0.642  &      605.8  \\
-\hline
- d-2,6ae  &  \includegraphics[height=0.6cm]{Chapters/chap2/Table1-d26ae.pdf}  &                     1.3E5  &                     1.0E4  &          4.7E4  &           0.836  &           -0.577  &    2.239  \\
-\hline
-d-2,6ea  &  \includegraphics[height=0.6cm]{Chapters/chap2/Table1-d26ea.pdf}  &                     7.0E5  &                     3.9E4  &          5.8E4  &            0.821  &            -0.609  &    2.414  \\
-\hline
- d-2,6ee  &  \includegraphics[height=0.4cm]{Chapters/chap2/Table1-d26ee.pdf}  &                     3.1E6  &                     5.0E6  &          4.8E6  &           0.810  &           -0.581  &     22.12  \\
-\hline
- d-2,7ae  &  \includegraphics[height=0.6cm]{Chapters/chap2/Table1-d27ae.pdf}  &                     1.1E7  &                     2.8E7  &          3.0E7  &           0.826  &           -0.605  &     55.16   \\
-\hline
- d-2,7ea  &  \includegraphics[height=0.6cm]{Chapters/chap2/Table1-d27ea.pdf}  &                     1.5E7  &                     1.8E7  &          4.3E7  &           0.817  &           -0.605  &     65.85  \\
-\hline
- d-2,7ee  &  \includegraphics[height=0.4cm]{Chapters/chap2/Table1-d27ee.pdf}  &                     9.1E7  &                     3.5E8  &          3.4E8  &           0.831  &           -0.648  &     185.1  \\
-\hline
- M        &  \includegraphics[height=0.4cm]{Chapters/chap2/Table1-M.pdf}      &                    5.0E10  &                      n.r.  &          1.2E9  &       	   0.896  &		 -0.636  &      357.0 \\
-\hline
-\end{tabular}
-
-\par\end{centering}
-\caption{Comparison of triplet-triplet energy transfer rates obtained from our  approach,  Marcus rates are
-from Ref.\cite{Subotnik:2010}
-and experimental rates from Refs.\cite{closs1988determination,closs1989connection}.   The experimental error is estimated to be 20\% in each
-case studied here.
-The $V_{ab}$ are the diabatic couplings obtained using  Edmiston-Ruedenberg diabatization.
-In each case, D =4-benzophenonyl and A = 2-napthyl.  n.r. = Not Reported.
-}
-\label{summarytable}
-\end{table*}
-
-
-
 
 We now separate Eq.~\ref{ham1} into diagonal and
 off-diagonal terms
@@ -369,7 +327,7 @@ adiabatic states.    In the following section, we discuss how we have used the E
 to estimate the couplings\cite{RevModPhys.35.457}.   We also
 present how one can construct a reduced set of harmonic modes that
 fully capture the electron/nuclear coupling.
-\subsection{Parameterization from quantum chemistry}
+\subsection{Parameterization From Quantum Chemistry}
 
  In order to obtain the final form of our target Hamiltonian, we assume the diabatic  potentials
 are a good approximation to the actual adiabatic potentials.
@@ -472,6 +430,52 @@ These cases are significant in that they provided a crucial verification of the 
 Table~\ref{summarytable} and Fig.~\ref{compare}  summarize our results.
 In addition, we give the diabatic coupling $V_{ab}$, reorganization energy $\lambda$, and driving force $\Delta \epsilon$
 computed using the Edmiston-Reudenberg (ER) localization method.
+
+\begin{sidewaystable}
+% \begin{table*}[t]
+\begin{centering}
+\begin{tabular}{llccc|ccc}
+\hline \hline
+ & & \multicolumn{3}{c}{Rates (s$^{-1}$) }& \\
+                &                                                                &   Expt.                 &        Marcus Theory   & This work      & \multicolumn{3}{c}{Marcus theory parameters} \\
+ Bridge   &  Structure                                                &        Ref.~\cite{closs1988determination,closs1989connection} &              Ref. \cite{Subotnik:2010}  &                  &      $\lambda$ (eV)  &  $\Delta \epsilon$ (eV)  &  $V_{ab}$ ($\mu$eV) \\
+\hline
+ c-1,3ea  &  \includegraphics[height=.60cm,width=2cm]{Chapters/chap2/Table1-c13ea.pdf}  &                     3.3E9  &                     3.9E9  &          2.2E9  &           0.823  &           -0.612  &      470.1  \\
+\hline
+ c-1,3ee  &  \includegraphics[height=0.4cm,width=2cm]{Chapters/chap2/Table1-c13ee.pdf}  &                     7.7E9  &                    2.1E10  &         2.8E10  &           0.810  &           -0.580  &     1687.3  \\
+\hline
+ c-1,4ea  &  \includegraphics[height=0.6cm,width=2cm]{Chapters/chap2/Table1-c14ea.pdf}  &                     4.0E7  &                     1.3E7  &          1.8E7  &           0.817  &           -0.604  &      43.20 \\
+\hline
+ c-1,4ee  &  \includegraphics[height=0.4cm,width=2cm]{Chapters/chap2/Table1-c14ee.pdf}  &                     1.3E9  &                     3.9E9  &          3.6E9  &           0.826  &           -0.642  &      605.8  \\
+\hline
+ d-2,6ae  &  \includegraphics[height=0.6cm,width=2cm]{Chapters/chap2/Table1-d26ae.pdf}  &                     1.3E5  &                     1.0E4  &          4.7E4  &           0.836  &           -0.577  &    2.239  \\
+\hline
+d-2,6ea  &  \includegraphics[height=0.6cm,width=2cm]{Chapters/chap2/Table1-d26ea.pdf}  &                     7.0E5  &                     3.9E4  &          5.8E4  &            0.821  &            -0.609  &    2.414  \\
+\hline
+ d-2,6ee  &  \includegraphics[height=0.4cm,width=2cm]{Chapters/chap2/Table1-d26ee.pdf}  &                     3.1E6  &                     5.0E6  &          4.8E6  &           0.810  &           -0.581  &     22.12  \\
+\hline
+ d-2,7ae  &  \includegraphics[height=0.6cm,width=2cm]{Chapters/chap2/Table1-d27ae.pdf}  &                     1.1E7  &                     2.8E7  &          3.0E7  &           0.826  &           -0.605  &     55.16   \\
+\hline
+ d-2,7ea  &  \includegraphics[height=0.6cm,width=2cm]{Chapters/chap2/Table1-d27ea.pdf}  &                     1.5E7  &                     1.8E7  &          4.3E7  &           0.817  &           -0.605  &     65.85  \\
+\hline
+ d-2,7ee  &  \includegraphics[height=0.4cm,width=2cm]{Chapters/chap2/Table1-d27ee.pdf}  &                     9.1E7  &                     3.5E8  &          3.4E8  &           0.831  &           -0.648  &     185.1  \\
+\hline
+ M        &  \includegraphics[height=0.4cm,width=2cm]{Chapters/chap2/Table1-M.pdf}      &                    5.0E10  &                      n.r.  &          1.2E9  &              0.896  &      -0.636  &      357.0 \\
+\hline
+\end{tabular}
+
+\par\end{centering}
+\caption{Comparison of triplet-triplet energy transfer rates obtained from our  approach,  Marcus rates are
+from Ref.\cite{Subotnik:2010}
+and experimental rates from Refs.\cite{closs1988determination,closs1989connection}.   The experimental error is estimated to be 20\% in each
+case studied here.
+The $V_{ab}$ are the diabatic couplings obtained using  Edmiston-Ruedenberg diabatization.
+In each case, D =4-benzophenonyl and A = 2-napthyl.  n.r. = Not Reported.
+}
+\label{summarytable}
+% \end{table*}
+\end{sidewaystable}
+
 
 
 \begin{figure}[t]
@@ -653,18 +657,18 @@ normal mode basis.
 
 %{\bf XUNMO---how are frequencies and couplings determined at this point??---  }
 
-\begin{figure}[b]
+\begin{figure}[t]
 \subfloat[c-1,4ee]{\includegraphics[width=0.75\columnwidth]{Chapters/chap2/Figure4a}}\\
 \subfloat[d-2,6ae]{\includegraphics[width=0.75\columnwidth]{Chapters/chap2/Figure4b}}
 \caption{
 Primary coupling modes for (a) c-1,4ee and (b) d-2,6ae projected onto the atomic displacement coordinates.
-}\label{LanczosModes}
+}\label{LanczosModes_chap2}
 \end{figure}
 
 
 As an illustrative example of our approach, we consider the
 first few collective modes for the c-1,4ee and d-2,5ae cases.
- In Fig.~\ref{LanczosModes}
+ In Fig.~\ref{LanczosModes_chap2}
 we show the projection of the primary coupling mode onto the
 coordinate frame of each molecule.  The vectors indicate the direction
 of the electron-phonon coupling vectors projected onto the Cartesian displacement
@@ -691,14 +695,6 @@ with respect to the number of reduced modes.  We
 can  this term exactly using all $N$ vibrational modes of the molecule and
 compare to the results obtained using a subset of modes.
 
-\begin{figure*}[t]
-\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5a}}
-\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5b}}\\
-\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5c}}
-\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5d}}
-\caption{Convergence of the electronic coupling autocorrelation function (Eq. ~\ref{c-of-t})
-with respect to number of reduced modes.\label{firstmodecorr}}
-\end{figure*}
 
 In Fig.~\ref{firstmodecorr}  we examine the convergence of $C(t)$ with respect to number of reduced modes for the c-1,4ee and d-2,6ae cases.
 In both cases,  only a handful of reduced modes (4 for c-1,4ee and 15 for d-2,6ae)  is needed to  accurately track the
@@ -709,6 +705,15 @@ The 23 fs recursion time corresponds to the period of the single reduced mode: $
 For the d-2,6ae case, including 15 modes is sufficient to fully suppress the recursion time to  beyond 100 fs.
  For purposes of computing golden rule rate constants,  the Markov limit is reached when
  $C(t)\to 0$.   For the cases at hand, this is well before the first recursion seen in Fig.~\ref{firstmodecorr}.
+
+\begin{figure*}[t]
+\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5a}}
+\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5b}}\\
+\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5c}}
+\subfloat[]{\includegraphics[width=0.45\columnwidth]{Chapters/chap2/Figure5d}}
+\caption{Convergence of the electronic coupling autocorrelation function (Eq. ~\ref{c-of-t})
+with respect to number of reduced modes.\label{firstmodecorr}}
+\end{figure*}
 
 While it is surprising that only a few reduced modes are needed to converge the coupling correlation function, only
 a single mode is necessary to accurately compute the golden-rule rate constant.
@@ -729,14 +734,14 @@ This implies that the first reduced mode indeed captures the majority of the ele
  and provides a unique description of the Marcus reaction coordinate.
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{Chapters/chap2/Figure6}
+\includegraphics[width=0.6\columnwidth]{Chapters/chap2/Figure6}
 \caption{Comparison between exact rate constant and its primary mode approximation.  The blue points correspond to rates computed using
 only the primary mode and the reorganization energy for only that mode.  The red points use the primary mode and the exact
 renormalized energies. }\label{fig-1mode}
 \end{figure}
 
 In Table~\ref{table2} we tabulate the frequencies and electron-phonon coupling constant for the first reduced mode for each
-test case.  Uniformly, these modes correspond to ring breathing motions on the donor and acceptor as illustrated in Fig.~\ref{LanczosModes}.
+test case.  Uniformly, these modes correspond to ring breathing motions on the donor and acceptor as illustrated in Fig.~\ref{LanczosModes_chap2}.
 As seen in this figure, coupling mode does not involve normal modes localized on the bridge species.
 Moreover, the magnitude of the electronic coupling carried by this mode is uniformly around 0.37 eV  and independent of the bridge.
 No single normal mode captures all of the electronic coupling.  This is evidenced by the fact that the magnitude of the electronic coupling
@@ -745,7 +750,7 @@ carried by the first reduced mode is over twice that of the largest coupling alo
 
 
 \begin{table}[t]
-\begin{centering}
+\centering
 \begin{tabular}{lrrr}
  bridge   &  $\omega_1$(eV)  & $|g_{1}|$ (eV)  &  $|g_{max}|$ (eV)  \\
 \hline
@@ -763,7 +768,7 @@ carried by the first reduced mode is over twice that of the largest coupling alo
  M           &           0.184  &         0.366  &           0.160  \\
  \hline
 \end{tabular}
-\end{centering}
+% \end{centering}
 \caption{Frequencies and dimensionless electron-phonon couplings for
 the first reduced mode for each model system. The last column gives the
 absolute value of the largest coupling constant within the normal mode basis.
