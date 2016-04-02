@@ -130,7 +130,7 @@ One of the most important and fundamental processes in chemical  dynamics is
 that of energy and charge transfer between molecular species.  The mechanism
 itself is highly quantum mechanical in nature and involves strong coupling between nuclear and
 electronic degrees of freedom.  The seminal model for the calculation of the transfer rate for this process
-was developed by Marcus in the 1950's\cite{marcus1956theory,marcus1965theory,marcus1993electron}
+was developed by Marcus in the 1950s \cite{marcus1956theory,marcus1965theory,marcus1993electron}
 \begin{equation}
 k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta G^{o})^{2}/4\text{\ensuremath{\lambda}}k_{B}T},
 \end{equation}
@@ -138,7 +138,7 @@ which relates the Fermi golden-rule transition rate, $k_{Marcus}$
 to the thermodynamic driving force $\Delta G^{o}$ and the reorganization energy $\lambda$.
 One of the most striking predictions of this theory is that as the free energy difference between the final and initial state increases, the transition rate reaches its maximum,
 and further increases in the energy off-set leads to slower transition rates.
-This ``inverted regime''  was confirmed by Closs and Miller\cite{miller1984intramolecular,closs1988determination,closs1989connection}
+This ``inverted regime''  was confirmed by Closs and Miller \cite{miller1984intramolecular,closs1988determination,closs1989connection}
 nearly 30 yrs later.
 
 Numerous improvements to the Marcus model have been presented over the years and
@@ -151,14 +151,14 @@ used in computing these terms.
 
 A number of years ago,  we developed a time-convolutionless  master equation approach (TCLME) for computing
 state-to-state rate in which the coupling between  states depends upon the
-nuclear coordinates\cite{pereverzev2006time}. This approach incorporates a fully quantum
+nuclear coordinates \cite{pereverzev2006time}. This approach incorporates a fully quantum
 mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
-the Marcus rate equation in the semiclassical limit.  The model itself is parameterized by the
+the Marcus rate equation in the semi-classical limit.  The model itself is parameterized by the
 vibrational normal mode frequencies, the electronic energies, and energy derivatives
 at a reference configuration obtained from {\em ab initio} quantum  chemistry computations.
 The approach has been intensively used and testified by our group to compute state-to-state
 transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
-\cite{tamura2008phonon,tamura2007exciton,singh2009fluorescence,bittner2014noise}.
+ \cite{tamura2008phonon,tamura2007exciton,singh2009fluorescence,bittner2014noise}.
 Central to our work here is the use of a mode-projection scheme
  % which is similar to the Page-rank algorithm used by internet search engines such as
  % Google and Netflix\cite{brin1998anatomy, page2004method},
@@ -176,14 +176,14 @@ benzaldehyde acceptor linked by a variety of bridging units as shown in Fig.~\re
 benzaldehyde acceptor linked by various bridging units. }\label{struct}
 \end{figure}
 Such systems were the basis of a  classic series of experiments by
-Closs and Miller\cite{miller1984intramolecular,closs1988determination,closs1989connection}
+Closs and Miller \cite{miller1984intramolecular,closs1988determination,closs1989connection}
 which verified the existence of the Marcus inverted regime.
 In Ref. \cite{yang2014intramolecular} we showed that both
 the autocorrelation function of the electronic coupling operators
 and the total transfer rate constant calculated using TCLME approach with only PLMs provide an
 excellent approximation to the exact correlation functions and rate
 constants computed using all normal modes, as well as to the experimental
-and recent theoretical values for the transfer rates.\cite{subotnik2010predicting}
+and recent theoretical values for the transfer rates \cite{subotnik2010predicting}.
 
 In this paper we analyze the symmetry of PLMs in model donor-bridge-acceptor systems as projected onto the local
  vibrational modes of the  donor (benzaldehyde)    and  acceptor (naphthalene) moieties.    By constructing the local modes
@@ -329,7 +329,7 @@ V_{21} & \epsilon_{2}
 where $H_{osc}$ is the harmonic oscillator Hamiltonian for the vibrational normal modes.
 
 
-To calculate transition rate, we transform to adiabatic representation. It is done via Edmiston-Ruendenberg (ER) localization\cite{subotnik2010predicting} implemented in Q-Chem and the electronic Hamiltonians
+To calculate transition rate, we transform to adiabatic representation. It is done via Edmiston-Ruendenberg (ER) localization \cite{subotnik2010predicting} implemented in Q-Chem and the electronic Hamiltonians
 on adiabatic and diabatic basis are related by the mixing angle $\theta$.
 \begin{equation}
 H_{dia,e}=\left(\begin{array}{cc}
@@ -392,7 +392,7 @@ H=\left(\begin{array}{cc}
 % \label{ham1}
 \end{eqnarray}
 then perform a polaron transform
-using the unitary transformation~\cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
+using the unitary transformation \cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
 \begin{eqnarray}
 U&=&e^{-\sum_{ni}\!\!\frac{g_{nni}}{\hbar\omega_i}|n\rangle \langle
 n|(a^{\dagger}_i-a_i)}
@@ -452,7 +452,7 @@ In our previous work we showed that both $C(t)$
 and the total transfer rate constant, $k_{nm}$ calculated using only the first few projected modes provide an
 excellent agreement with the exact quantities computed using  the full set of
 normal modes, as well as the experimental rates,
-when parameterized using accurate quantum chemical data.\cite{yang2014intramolecular}
+when parameterized using accurate quantum chemical data \cite{yang2014intramolecular}.
 
 
 % Diagonalizing $H$ at a given nuclear configuration  provides the adiabatic potentials for our system, which can be used to approximate the diabatic potentials.
@@ -806,7 +806,7 @@ so PLMs seem to give fairly good approximations of geometry changes.
  \label{aprroxGeom}
  \begin{tabular}{lllll}
    \hline
-   Mode used & C14ee-PLM   & C14ee-DNM  & D26ae-PLM  & D26ae-DNM\\
+   Mode used & c-1,4ee-PLM   & c-1,4ee-DNM  & d-2,6ae-PLM  & d-2,6ae-DNM\\
    \hline
    Max. bond length difference (\AA)   & 0.034 & 0.160 &0.039 & 0.283   \\
      Max. bond angle difference (rad)   & 0.053 &0.075 & 0.057 &0.135   \\
