@@ -1,0 +1,247 @@
+%!TEX root = /Users/tcya/Dropbox/PhDthesis/thesis.tex
+\chapter{Sample Codes}
+The codes below are for the computation of rate constants and projected modes, written in Mathematica.
+\\\large{Helper functions}
+\begin{lstlisting}
+ReadRotM[filename_]: = Module[{stream, RotMat},
+stream = OpenRead[filename];
+RotMat = Transpose[Partition[ToExpression[Last[Transpose[StringSplit[FindList[filename, "diabatic RotMatrix"]]]]], 2]];
+Close[stream];
+Return[RotMat]]
+
+ReadEne[filename_]: = Module[{stream, e1, e2},
+stream = OpenRead[filename];
+e1 = ToExpression[Last[StringSplit[Find[stream, "showmatrix adiabatH(0, 0)"]]]]*27.211396132;
+e2 = ToExpression[Last[StringSplit[Find[stream, "showmatrix adiabatH(1, 1)"]]]]*27.211396132(*in eV*);
+Close[stream];
+Return[{e1, e2}](* in hartree *)]
+
+ReadNormalModes[filename_](* for QChem*):= Module[{stream, NAtom, NMode, NBlock, Freq, ForceConst, RedMass, IRActive, IRIntens, RamanActive, NormalModeCoord, IAn, AtomicMass, tmp},
+  Freq = {};
+  ForceConst = {};
+  RedMass = {};
+  IRActive = {};
+  IRIntens = {};
+  RamanActive = {};
+  NormalModeCoord = {};
+  IAn = {};
+  AtomicMass = {};
+
+  stream = OpenRead[filename];
+  NMode = ToExpression[Last[Last[StringSplit[FindList[stream, "Mode"]]]]];
+  NBlock = If[IntegerQ[#], #, Ceiling[#]]&[NMode/3];
+  NAtom = (NMode + 6)/3;
+  Close[stream];
+
+  stream = OpenRead[filename];
+  Find[stream, "Raman Active"];
+  Read[stream];
+  tmp = Table[First[StringSplit[Read[stream, String]]], {NAtom}];
+  AtomicMass = QuantityMagnitude[ElementData[#, "AtomicWeight"] & /@ tmp];
+  IAn = ElementData[#, "AtomicNumber"] & /@ tmp;
+  Close[stream];
+
+  stream = OpenRead[filename];
+  Do[
+   Find[stream, "Mode"];
+   AppendTo[Freq, ToExpression[Drop[StringSplit[Read[stream, String]], 1]]];
+   AppendTo[ForceConst, ToExpression[Drop[StringSplit[Read[stream, String]], 2]]];
+   AppendTo[RedMass, ToExpression[Drop[StringSplit[Read[stream, String]], 2]]];
+   AppendTo[IRActive, Drop[StringSplit[Read[stream, String]], 2]];
+   AppendTo[IRIntens, ToExpression[Drop[StringSplit[Read[stream, String]], 2]]];
+   AppendTo[RamanActive, Drop[StringSplit[Read[stream, String]], 2]];
+   Read[stream];
+   NormalModeCoord = Join[NormalModeCoord, ToExpression[Transpose[Table[Partition[Rest[StringSplit[Read[stream, String]]], 3], {NAtom}]]]];
+   , {i, 1, NBlock}];
+  Close[stream];
+
+  {Freq, ForceConst, RedMass, IRActive, IRIntens, RamanActive} = Flatten /@ {Freq, ForceConst, RedMass, IRActive, IRIntens, RamanActive};
+  Return[{NAtom, NMode, AtomicMass, Freq, RedMass, NormalModeCoord}]]
+
+ReadGradient[filename_, NAtom_] := Module[{stream, grad, NMode, NBlock, tmp},
+  grad = {};
+  NBlock = If[IntegerQ[#], #, Ceiling[#]]&[NAtom/6];
+
+  stream = OpenRead[filename];
+  Find[stream, "Gradient of the state energy (including CIS Excitation Energy)"];
+   Do[
+    Read[stream];
+    grad = Join[grad, Transpose[Table[ToExpression[Rest[StringSplit[Read[stream, String]]]], {3}]]];
+    , {i, 1, NBlock}];
+  Return[grad]]
+\end{lstlisting}
+\begin{lstlisting}
+A_$\otimes$B_:= Outer[Times, A, B]
+(* Project1by1 sorts phono modes into a 1 by 1 hierarchical form. Only works for one mode case, for general 3 by 3 case it should be modified. *)
+Project1by1[gg_, Hess_]: = Module[
+{S, P, Q, PHP, QHQ, L, $\omega$c, $\omega$ck, $\omega$b, Mc, Mck, Mb, np, ns, Sinv, G, p, k, g},
+(* g should be 1-D, namely, ns = 1 *)
+{ns, np} = Dimensions[gg];
+g = gg;
+$\omega$c = {};
+Mc = {};
+p = ConstantArray[0, {np, np}];
+
+Do[{
+S = Table[g[[i]].g[[j]], {i, ns}, {j, ns}];
+Sinv = Inverse[S] ;
+(* define projection operators *)
+P = Sum[Sinv[[i, j]]  g[[i]]\[CircleTimes]g[[j]], {i, ns}, {j, ns}] ;
+p = p+P; (*$P = P_1 + P_2 + ...$*)
+Q = IdentityMatrix[np]-p;
+PHP = P.Hess.P ;
+QHQ = Q.Hess.Q ;
+{$\omega$ck, Mck} = Chop[Transpose[Take[Sort[Transpose[Eigensystem[PHP]]], -ns]], 10^-8];
+{$\omega$b, Mb} = Chop[Transpose[Take[Sort[Transpose[Eigensystem[QHQ]]], ns+k-1-np]], 10^-8];
+$\omega$c = Chop[Join[$\omega$c, $\omega$ck], 10^-8];
+Mc = Chop[Join[Mc, Mck], 10^-8];
+$\omega$all= Join[$\omega$c, $\omega$b]//Chop;
+M = Join[Mc, Mb]//Chop ;
+g = Chop[{Join[ConstantArray[0, k], ( M.Hess.Transpose[M])[[k]][[k+1;;np]]].M}, 10^-8]; (* Define nth mode = (0, 0, 0, ..., $\gamma_{k+1}$, $\gamma_{k+2}$, ..., $\gamma_{k+N}$) *)
+Gnew = M.gg[[1]];
+}, {k, 1, np-1}];
+](* The kth step gives k*k tridiagonal submatrix on lefttop, diagonal N-k on rightbottom and only the kth mode is coupled to the N-k bath modes *)
+\end{lstlisting}
+\begin{lstlisting}
+NMode[n_, hess_, M_, g_]: = Module[{h, gn, Mnm, $\omega$prime, Gn},
+h = Take[(M.hess.Transpose[M]), {1, n}, {1, n}];
+{$\omega$prime, Mn} = Transpose[Sort[Transpose[Eigensystem[h]]]];
+gn = Join[Take[g, n], ConstantArray[0, n-Length[Take[g, n]]]];
+Gn = Mn.gn;
+Return[{$\sqrt{\omega prime}$, Gn}]]
+\end{lstlisting}
+\large{Initialization}
+\begin{itemize}[leftmargin = *]
+\item Load Core routines
+\begin{lstlisting}
+SetDirectory[NotebookDirectory[]];
+Needs["PhysicalConstants`"];  (* this package is outdated...but highly useful! *)
+\end{lstlisting}
+
+\item Conversion factors
+\begin{lstlisting}
+hartree = 27.211396132 ElectronVolt(* eV *);
+Bohr = 0.5291772108 Angstrom;
+$\hbar$ = hbar = PlanckConstantReduced;
+\end{lstlisting}
+
+\item Read in files
+\begin{lstlisting}
+name = {"c13ea", "c13ee", "c14ea", "c14ee", "d26ae", "d26ea", "d26ee", "d27ae", "d27ea", "d27ee", "mmm"};
+path = "qchemout/"<>#<>".rtf"&/@name;
+\end{lstlisting}
+\begin{lstlisting}
+kkk = 4;  (* in this case we are looking at c14ee *)
+RotMat = ReadRotM[path[[kkk]]];
+Ene = ReadEne[path[[kkk]]];
+{NAtom, dof, AtomicMass, AngFreq, RedMass, NormMode} = ReadNormalModes[path[[kkk]]];
+Grads = ReadGradient[path[[kkk]], NAtom];
+$\omega$ = FreqeV = Table[Convert[2Pi SpeedOfLight AngFreq[[i]]Centimeter^-1 PlanckConstantReduced, ElectronVolt]/ElectronVolt, {i, 1, dof}];
+Freq = Table[Convert[2Pi SpeedOfLight AngFreq[[i]]Centimeter^-1 , Second^-1], {i, 1, dof}];
+NormModeInMWC = Table[Table[NormMode[[m, i, j]]$\sqrt{AtomicMass[[i]]}/\sqrt{RedMass[[m]]}$//Simplify//Chop, {i, NAtom}, {j, 3}], {m, 1, dof}];
+Force = Table[Sum[NormModeInMWC[[m]][[i, j]]*Grads[[i, j]]/$\sqrt{AtomicMass[[i]]}$//Simplify//Chop, {i, 1, NAtom}, {j, 1, 3}], {m, 1, dof}];
+GGG = CouplingConstant = Table[Convert[Force[[m]]hartree/Bohr$\sqrt{PlanckConstantReduced/(2 Freq[[m]]AMU)}$, ElectronVolt]/.ElectronVolt->1//Simplify//Chop, {m, 1, dof}];
+G = G0 = Table[({
+ {RotMat[[1, 2]]^2, RotMat[[2, 2]]RotMat[[1, 2]]},
+ {RotMat[[2, 2]]RotMat[[1, 2]], RotMat[[2, 2]]^2}
+})*CouplingConstant[[m]]//Simplify//Chop, {m, 1, dof}];
+\end{lstlisting}
+\large{Mode Analysis Routines}
+\item Analyze n projected modes
+\begin{lstlisting}
+ModeAnalysis[n_]: = Module[{$\omega$prime},
+Clear[imax];
+imax = n;
+{$\omega$prime, g} = NMode[n, hmat, M, Gnew];
+Clear[$\omega$, G];
+$\omega$ = Take[$\omega$prime, imax];
+G = Table[({
+ {RotMat[[1, 2]]^2, RotMat[[2, 2]]RotMat[[1, 2]]},
+ {RotMat[[2, 2]]RotMat[[1, 2]], RotMat[[2, 2]]^2}
+})*g[[m]]//Simplify//Chop, {m, 1, imax}];
+
+v12tab[kkk][imax] = Table[{t, V[1, 2, t]}, {t, 0, nstep*tstep, tstep}];
+v21tab[kkk][imax] = Table[{t, V[2, 1, t]}, {t, 0, nstep*tstep, tstep}];
+v12[kkk][imax]= Interpolation[v12tab[kkk][imax]];
+v21[kkk][imax]= Interpolation[v21tab[kkk][imax]];
+b12tab[kkk][imax] = Table[{t, Bd[1, 2, t]}, {t, 0, nstep*tstep, tstep}];
+b21tab[kkk][imax] = Table[{t, Bd[2, 1, t]}, {t, 0, nstep*tstep, tstep}];
+b12d[kkk][imax]= Interpolation[b12tab[kkk][imax]];
+b21d[kkk][imax]= Interpolation[b21tab[kkk][imax]];]
+\end{lstlisting}
+\item Calculation of Correlation Functions
+\begin{lstlisting}
+nstep = 3000;
+tstep = 0.14;
+imin = 1;
+imax = dof;
+Temperature = 298 Kelvin;
+
+$\hbar$ = hbar= 6.582122*10^(-4)(* eV/ps^-1 =Convert[PlanckConstantReduced /10^-12 /Second, ElectronVolt]*);
+$\beta$ = Convert[1/(Temperature BoltzmannConstant), ElectronVolt^-1]/.ElectronVolt->1;
+Clear[$\epsilon$];
+$\epsilon$[n_]: = Ene[[n]]-Sum[(G[[i, n, n]]^2/$\omega$[[i]]), {i, imin, imax}];
+nu[i_]: = 1/(Exp[$\beta$*$\omega$[[i]]]-1);
+
+$\Delta$[n_, m_, i_]: = (G[[i, n, n]]-G[[i, m, m]])/$\omega$[[i]];
+$\Omega$[n_, m_, i_]: = (G[[i, n, n]]+G[[i, m, m]])/$\omega$[[i]];
+f[n_, m_, $\tau$_]: = Exp[-2*Sum[(nu[i]+0.5)*($\Delta$[n, m, i])^2*(1-Cos[$\omega$[[i]]*$\tau$]), {i, imin, imax}]];
+q[n_, m_, $\tau$_]: = Exp[I*Sum[($\Delta$[n, m, i])^2*Sin[$\omega$[[i]]*$\tau$], {i, imin, imax}]];
+o[n_, m_, $\tau$_]: = (Sum[G[[i, n, m]]*($\Delta$[n, m, i]*(nu[i]+1)Exp[I*$\omega$[[i]]*$\tau$]-$\Delta$[n, m, i]*nu[i]*Exp[-I*$\omega$[[i]]*$\tau$]+$\Omega$[n, m, i]), {i, imin, imax}])^2+Sum[G[[i, n, m]]*G[[i, m, n]]*((nu[i]+1)Exp[I*$\omega$[[i]]*$\tau$]+nu[i]Exp[-I*$\omega$[[i]]*$\tau$]), {i, imin, imax}];
+V[m_, n_, $\tau$_]: = 2*f[n, m, $\tau$]*Re[Exp[-I*($\epsilon$[n]-$\epsilon$[m])*$\tau$]*q[n, m, $\tau$]*o[n, m, $\tau$]];
+Bd[m_, n_, $\tau$_]: = f[n, m, $\tau$]*q[n, m, $\tau$]*o[n, m, $\tau$];
+\end{lstlisting}
+\large{Get G and [Omega]}
+\begin{lstlisting}
+hess = FreqeV^2;
+hmat = DiagonalMatrix[hess];
+Project1by1[{CouplingConstant}, hmat]; (*This  gives a fully sorted tridiagonal matrix. You may encouter singular matrix error for certain molecules, c14ee for example, because some couplings are zero. Manually abort it and continue.*)
+\end{lstlisting}
+\begin{lstlisting}
+ModeAnalysis[dof](*Exact calculation*)
+\end{lstlisting}
+\begin{lstlisting}
+ModeAnalysis[1](*Do however many modes you like.*)
+ModeAnalysis[4]
+ModeAnalysis[7]
+Do[ModeAnalysis[i], {i, 5, 20, 5}]
+\end{lstlisting}
+\large{Rate}
+\begin{lstlisting}
+$\phi$12 = Table[NIntegrate[v12[kkk][dof][$\tau$], {$\tau$, i*tstep, (i+1)*tstep}], {i, 0, nstep-1}];
+$\phi$21 = Table[NIntegrate[v21[kkk][dof][$\tau$], {$\tau$, i*tstep, (i+1)*tstep}], {i, 0, nstep-1}];
+Ww12 = {{0, 0}};
+Ww21 = {{0, 0}};
+$\omega$$\omega$12 = 0;
+$\omega$$\omega$21 = 0;
+Do[$\omega$$\omega$12p = $\omega$$\omega$12+$\phi$12[[i]];
+Ww12 = Append[Ww12, {i*tstep*$\hbar$, $\omega$$\omega$12p}];
+$\omega$$\omega$12 = $\omega$$\omega$12p, {i, nstep}];
+Do[$\omega$$\omega$21p = $\omega$$\omega$21+$\phi$21[[i]];
+Ww21 = Append[Ww21, {i*tstep*$\hbar$, $\omega$$\omega$21p}];
+$\omega$$\omega$21 = $\omega$$\omega$21p, {i, nstep}];
+W12t= Interpolation[Ww12];
+W21t= Interpolation[Ww21];
+vm12 = Mean@Take[Table[Ww12[[i]][[2]], {i, 1, nstep}], -30];
+vm21 = Mean@Take[Table[Ww21[[i]][[2]], {i, 1, nstep}], -100];
+W12 = Function[Piecewise[{{W12t[#], 0< = #< = nstep*tstep}, {vm12 , #>nstep*tstep*$\hbar$}}]];
+W21 = Function[Piecewise[{{W21t[#], 0< = #< = nstep*tstep}, {vm21 , #>nstep*tstep*$\hbar$}}]];
+Print["Golden rule rate =", vm21/$\hbar$*10^12, "$s^{-1}$"];
+\end{lstlisting}
+\large{Correlation function}
+\begin{lstlisting}
+ Plot[{
+  Re[b21d[kkk][dof][.001 t/$\hbar$]],
+  Re[b21d[kkk][1][.001 t/$\hbar$]], Re[b21d[kkk][4][.001 t/$\hbar$]],
+  Re[b21d[kkk][7][.001 t/$\hbar$]]},
+ {t, 0, 10},
+ PlotRange -> All,
+ AspectRatio -> 1,
+ PlotStyle -> {{Black, Thick, Dashing[0.01]}, Blue, Green, Red, Purple},
+ LabelStyle -> 16,
+ AxesLabel -> {"t/fs", "Re($C_{12}(t)$))"},
+ PlotLegends -> Placed[{"Exact", "1 Mode", "4 Modes", "7 Modes", "7 Modes"}, Right],
+ Epilog -> {Style[Text[name[[kkk]], {9, -2.5*10^-7}], 24]}]
+\end{lstlisting}
+
+\end{itemize}

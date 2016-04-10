@@ -1,5 +1,5 @@
 %!TEX root = /Users/tcya/Dropbox/PhDthesis/thesis.tex
-\chapter{Chapter 1}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}
+\chapter{Introduction}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}
 \section{Introduction}
 
 Energy and electronic transport plays a central role in a
@@ -92,7 +92,7 @@ Below we give a detailed description of our methods.
 We consider a generic model for $n$ electronic states coupled linearly
 to a phonon bath.  Taking the electronic ground state of the system as a reference
 and assuming that the electronic states are coupled linearly to a common set of
- modes, we arrive a generic form for the Hamiltonian:
+ modes, we arrive at a generic form for the Hamiltonian, here written for two coupled electronic states:
  \begin{eqnarray}
 H=\left(\begin{array}{cc}
 \epsilon_{1} & 0\\
@@ -107,11 +107,11 @@ H=\left(\begin{array}{cc}
 Here, the first term contains the electronic energies, $\epsilon_{1}$ and $\epsilon_{2}$ computed at a
 reference geometry--typically that of the donor or acceptor state.   The second term represents the
 linearized coupling between the electronic and nuclear degrees of freedom given in terms of the mass-weighted
-normal coordinates $\mathbf q$.   The diagonal terms
+normal coordinates $\mathbf q$. The equation assumes the potentials for the excited states are parabolic. This is usually valid in the reaction region, as we will show in next several chapters.  The diagonal terms
 give the adiabatic displacement forces between the reference geometry and the two states.  If we choose one of the
 states as the reference state, then either $\mathbf g_{11}$ or $\mathbf g_{22}$ will vanish.
 The remaining two terms correspond to the harmonic motions of the nuclear normal modes, given here in mass-weighted normal coordinates.
-In the normal mode basis, $\mathbf \Omega$  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
+In the normal mode basis, the Hessian matrix, $\mathbf \Omega$,  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
 
 
 We now separate Eq.~\ref{ham1} into diagonal and
@@ -201,7 +201,7 @@ driving force of the state-to-state transition,
 \end{eqnarray}
 
 
-The difficulty in using this approach is that
+We first developed the approach about 10 years ago. However, the difficulty in using this approach is that
 it requires both diagonal (${\mathbf g}_{nn}$) and off-diagonal  (${\mathbf g}_{nm}$) derivative couplings between
 adiabatic states.    In the following section, we discuss how we have used the Edmiston-Ruedenberg localization scheme
 to estimate the couplings\cite{edmiston1963localized}.   We also
@@ -281,8 +281,8 @@ E_{1}  & 0 \\
 \section{Determining the Optimal Electron-Phonon Coupling Components}
 
 While the Marcus expression is elegant in its simplicity in requiring three parameters that
-can be obtained experimentally, it masks a wealth of detail that underlie the quantum transition.
-Central to the theory is that there exists a collective nuclear displacement coordinate
+can be obtained experimentally, it masks a wealth of detail that underlie the quantum transition. Considerable insight into the state-to-state dynamics can be revealed by examining such motions. However, until this work a general systematic approach for determining such motions did not exist. Our approach is based on earlier work by our group \cite{pereverzev2009energy} and Burghardt {\em et al.} \cite{gindensperger2006shortI,gindensperger2006shortII,cederbaum2005short}.
+ Central to the theory is that there exists a collective nuclear displacement coordinate
 that connects the initial geometry of the donor to the final geometry of the acceptor.
 
 Generally speaking, this collective coordinate involves all nuclear degrees of freedom.
@@ -430,10 +430,10 @@ normal mode basis.
 
 \section{Summary}
 
-Central to the work presented here consists of two parts. One is the use of a diabatization scheme for determining
-donor and acceptor states in a molecular unit. The other is a projection scheme which enables us to analyze the contribution of vibrations in reactions. Similar decomposition schemes have been presented by Burghardt
- \cite{cederbaum2005short,gindensperger2006shortI,gindensperger2006shortII,cederbaum2005short}
- and the approach used here builds upon the method given in Ref.~\cite{pereverzev2009energy}.
+The theory presented here consists of two parts. One is the use of a diabatization scheme for determining
+donor and acceptor states in a molecular unit. The other is a projection scheme enables us to analyze the contribution of vibrations in reactions. Similar decomposition schemes have been presented by Burghardt
+ \cite{gindensperger2006shortI,gindensperger2006shortII,cederbaum2005short}
+ and the approach used here builds upon the method given in Ref.~\cite{pereverzev2009energy}, but they decomposed normal modes into a 3 by 3 hierarchy, while we are able to get projected modes 1 by 1. This facilitates the analysis of dominating nuclear motions in transfer.
 
 In Chapter \ref{chap:chapt2} we benchmark the approach
 by computing the  triplet energy transfer rates for a series of donor-bridge-acceptor molecules
@@ -442,7 +442,7 @@ compare well against both the experimental rates and with
 more recent theoretical rates presented by Subotnik {\em et al.}
 \cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
 Then we use the projection operator scheme
-to parses out specific internal nuclear motions that accompany
+to parse out specific internal nuclear motions that accompany
 the electronic transition.
  By analyzing the electron-phonon couplings, we can
 discern a reduced set of motions that are responsible for coupling between the donor and
@@ -454,4 +454,5 @@ the donor and acceptor moieties. Upon investigating the molecular geometry chang
 broken into two steps, in the agreement of Born-Oppenheimer approximation:  a fast excitation transfer occurs, facilitated by the ``primary Lanczos mode'' (PLM),
 followed by slow nuclear relaxation on the final electronic diabatic surface.
 
+In Appendices we provide some sample codes and input files for analysis.
 
