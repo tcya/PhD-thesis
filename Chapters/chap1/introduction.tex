@@ -4,7 +4,7 @@
 
 Energy and electronic transport plays a central role in a
 wide range of  chemical  and biological systems.
-It is the fundamental mechanism for transporting the  energy  of a
+It is the fundamental mechanism for transporting the  energy  of an
 absorbed photon to a reaction center in light harvesting systems
 and for initiating a wide range of photo-induced  chemical processes,
 including vision, DNA mutation, and pigmentation.
@@ -15,7 +15,13 @@ k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}
 \end{equation}
 where $\lambda$ is  energy required to reorganize the environment
 following the transfer of an electron from donor to acceptor.
-and $\Delta \epsilon$ is the driving force for the reaction.
+and $\Delta \epsilon$ is the driving force for the reaction, as illustrated in Fig.~\ref{marcus}. If we assume that the nuclear motions about the equilibrium configurations of the
+donor and acceptor species is harmonic,  the chemical reactions resulting from
+energy or charge transfer events can be understood in terms of intersecting
+diabatic potentials as sketched.    The upper and lower
+curves are the adiabatic potential energy surfaces describing the nuclear dynamics
+resulting from an energy or charge transfer event, taking the geometry of the donor
+state as the origin.
 
 \begin{figure}[h]
 \includegraphics[width=0.5\columnwidth]{Chapters/chap2/Figure1}
@@ -26,14 +32,6 @@ Energies are given in eV and the collective nuclear displacement  is dimensionle
 \label{marcus}
 \end{figure}
 
-
-If we assume that the nuclear motions about the equilibrium configurations of the
-donor and acceptor species is harmonic,  the chemical reactions resulting from
-energy or charge transfer events can be understood in terms of intersecting
-diabatic potentials as sketched in Fig.~\ref{marcus}.    The upper and lower
-curves are the adiabatic potential energy surfaces describing the nuclear dynamics
-resulting from an energy or charge transfer event, taking the geometry of the donor
-state as the origin.
 %For reactions carried out in open systems,  the Marcus parabolas represent
 %free energy surfaces with driving force $\Delta G$.
 As the transfer occurs by crossing an energy barrier,
@@ -52,16 +50,16 @@ lead to lower reaction rates, termed the inverted regime.
 
 
 
-A number of years ago,  we developed a time-convolutionless  master equation approach for computing
+A number of years ago,  our group developed a time-convolutionless  master equation approach for computing
 state-to-state rates in which the coupling between  states depends upon the
 nuclear coordinates\cite{pereverzev2006time}. This approach incorporates a fully quantum
-mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
+mechanical treatment of both the nuclear and electronic degrees of freedom and recovers the
 well-known Marcus expression in the semiclassical limit.  The model is parameterized by the
 vibrational normal mode frequencies, and the electronic energies and energy derivatives
 at a reference configuration.  The approach has been used by our group to compute state-to-state
 transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
 \cite{tamura2008phonon,tamura2007exciton,bittner2014noise,singh2009fluorescence}.
-This paper represents the first time we have used this approach within the context of a fully {\em ab initio} quantum
+Our work here represents the first time this approach has been used within the context of a fully {\em ab initio} quantum
 chemical model.   As such, this present work provides an important benchmark of the approach since all parameters will be determined
 using state-of-the-art quantum chemical methods
 and results compared to both theoretical and experimental
@@ -146,7 +144,7 @@ a_i-\frac{2g_{nni}}{\hbar\omega_i}\right)e^{\sum_{j}\frac{(g_{nnj}-g_{mmj})}{\hb
 \end{eqnarray}
 In the transformed (or dressed) picture the electronic transition from state
 $|n\rangle$ to $|m\rangle$ is accompanied by the excitations of all the
-normal phonon modes.  Transforming to the interaction representation
+normal modes. Following the conventional notations in this field, we refer to all harmonic nuclear motions as phonons. Transforming to the interaction representation
 and performing a trace over the phonons gives the spectral density in
 terms of the autocorrelation of the electron-phonon coupling
 operators.
@@ -159,7 +157,7 @@ vibrational degrees of freedom.
 The derivation and explicit form for the kernel in Eq.~\ref{spec-dens}  is quite lengthy and is given in
 Ref.~\cite{pereverzev2006time}.
 
-\subsection{Non-Markovian Master Equation and Golden-Rule rates}
+\subsection{Non-Markovian Master Equation and Golden-Rule Rates}
 
 In Ref.~\cite{pereverzev2006time}, Pereverzev and Bittner derived
 a non-Markovian, time-convolutionless form of the Pauli master
@@ -187,9 +185,9 @@ First, the reorganization energy is given by
 %$$
 %\lambda_{nm} =\sum_{j}((g_{nnj}-g_{mmj})/\omega_j)^{2} = \sum_{j}\hbar \omega_{j}S_{j}
 %$$
-\[
+\begin{eqnarray}
 \lambda_{nm}=\sum_{j}\frac{\left(g_{nnj}-g_{mmj}\right)^{2}}{\omega_{j}} = \sum_{j}\hbar \omega_{j}S_{j}
-\]
+\end{eqnarray}
 where  the $\{S_{j}\}$  are  the Huang-Rhys factors for each phonon mode.
 These are related to the Franck-Condon factor
 describing the overlap between the $v_j=1$ vibronic state in one electronic state
@@ -203,10 +201,53 @@ driving force of the state-to-state transition,
 
 We first developed the approach about 10 years ago. However, the difficulty in using this approach is that
 it requires both diagonal (${\mathbf g}_{nn}$) and off-diagonal  (${\mathbf g}_{nm}$) derivative couplings between
-adiabatic states.    In the following section, we discuss how we have used the Edmiston-Ruedenberg localization scheme
-to estimate the couplings\cite{edmiston1963localized}.   We also
-present how one can construct a reduced set of harmonic modes that
+adiabatic states.    In the following section, we discuss how we have used the Edmiston-Ruedenberg (ER) localization scheme \cite{edmiston1963localized} to estimate the couplings.   We also present how one can construct a reduced set of harmonic modes that
 fully capture the electron/nuclear coupling.
+
+
+
+
+\subsection{Adiabatic and Diabatic Representations}
+There are two common ways to represent the Hamiltonian, adiabatic and diabatic representations, as sketched in Fig. \ref{adiaDiab}. The way we represent the Hamiltonian in Eq. \ref{ham1} is adiabatic representation, where states are the eigenstates of molecule, and hence can be directly calculated in {\em ab initio} quantum chemistry software. However, the off-diagonal couplings in adiabatic representations ($g_{ij}$ in Eq. \ref{ham1}) are derivative couplings, which are difficult to compute. Even worse, the  couplings change radically near avoided crossing. A workaround is switching to diabatic representation, where the Hamiltonian is written as
+\begin{eqnarray}
+H_{dia}=U^{T}H_{adia}U=\left(\begin{array}{cc}
+\epsilon_{a}(\mathbf{R})\mathrm{+T'_{n}}(\mathbf{R})_{11} & V_{ab}\\
+V_{ab} & \epsilon_{b}(\mathbf{R})\mathrm{+T'_{n}}(\mathbf{R})_{22}
+\end{array}\right).
+\end{eqnarray}
+
+The diabatic representation has several advantages. First, sharp derivative couplings in adiabatic representations are transformed to smoother static diabatic couplings, $V_{ab}$. Second, potential energy surfaces are  smoothened and avoided crossing is eliminated.
+
+
+\begin{figure}[!t]
+\includegraphics[width=0.95\columnwidth]{Chapters/chap2/adia_vs_diabatic.png}
+\caption{Sketch of adiabatic and diabatic representations for two-state system. Compared to adiabatic representation, diabatic representation has smoother energy surfaces and couplings.
+}
+\label{adiaDiab}
+\end{figure}
+
+The problem now is how to obtain the transformation matrix
+\begin{eqnarray}
+U = \left(\begin{array}{cc}
+\cos\theta & \sin\theta\\
+-\sin\theta & \cos\theta
+\end{array}\right).
+\end{eqnarray}
+There are many methods available \cite{domcke2004conical}. Here we introduce the Edmiston-Ruedenberg diabatization approach.
+
+
+\subsection{Edmiston-Ruedenberg Diabatization}\label{sec:ER}
+A straightforward way to construct diabatic states is to eliminate derivative coupling mathematically, namely, to solve
+\begin{eqnarray}
+\left\langle \phi_{i}(\mathbf{r};\mathbf{R})|\nabla_{\mathbf{R}}|\phi_{j}(\mathbf{r};\mathbf{R})\right\rangle = 0.
+\end{eqnarray}
+However, it is computationally very expensive, and exact solution do not usually exist \cite{mead1982conditions}.
+
+Another category of diabatization methods is based on physical intuition, with ER diabatization being one of them. The ER diabatization is based on the idea that good diabatic states are supposed to be localized, so the approach defines the diabatic states by minimizing the total electron repulsion
+\begin{eqnarray}
+f_{ER}=\sum_{k}^{N_{states}}\iint dr_{1}dr_{2}\frac{\left\langle \phi_{k}|\hat{\rho}\left(r_{1}\right)|\phi_{k}\right\rangle \left\langle \phi_{k}|\hat{\rho}\left(r_{2}\right)|\phi_{k}\right\rangle }{\left\Vert r_{1}-r_{2}\right\Vert }.
+\end{eqnarray}
+
 \subsection{Parameterization From Quantum Chemistry}
 
  In order to obtain the final form of our target Hamiltonian, we assume the diabatic  potentials
@@ -339,7 +380,7 @@ electron transfer process.  In addition,  we can gain a computational advantage 
 \subsection{Lanczos Method}
 It is crucial to notice that the vectors  given in Eq.~\ref{eq:locaiHam} are {\em not linearly independent}.
  Consequently, special care
-must be taken to generate the reduced sub-space.  To do so, we use an iterative Lanczos approach
+must be taken to generate the reduced sub-space.  To facilitate this, we develop an iterative Lanczos approach,
 taking the normalized vector ${\mathbf v}_{1} = {\mathbf g}_{22}$ as a starting point.
 
 As above, we initialize each step indexed by $k$,  by defining a projection operator
@@ -354,7 +395,7 @@ $k$-th mode.
 %\mathbf p = \sum_{k} \mathbf P_{k}
 %\end{eqnarray}
 %as  the total projection operator for all ${k} \le N$ modes.
-We then project the hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
+We then project the Hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
 \begin{eqnarray}
 \mathbf\Omega_{p} = \mathbf P_{k}\cdot \mathbf\Omega \cdot \mathbf P_{k} \,\, \& \,\, \mathbf\Omega_{q} = \mathbf Q_{k}\cdot \mathbf\Omega \cdot  \mathbf Q_{k}
 \end{eqnarray}
@@ -366,13 +407,12 @@ non-trivial eigenvalue and the second set
 will have $N-k$ non-trivial eigenvalues.  As above we collect the non-trivial eigenvectors associated with each
 to form the orthogonal transformation matrix
 \begin{eqnarray}
-{\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\}.
+{\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\},
 \end{eqnarray}
-and again transform the full hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
- At each step in the iteration, the transformed hessian, $\mathbf\Omega'$ is in the form of a
+and again transform the full Hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
+ At each step in the iteration, the transformed Hessian, $\mathbf\Omega'$ is in the form of a
 $k\times k$ tri-diagonal submatrix in the upper-left part of the matrix and
-a diagonal submatrix in the lower-right.  For example, after $k=3$ iterations, one has
-a Hessian matrix of the form:
+a diagonal submatrix in the lower-right.  For example, after $k=3$ iterations, the Hessian matrix takes the form:
 \begin{eqnarray}
 {\mathbf\Omega}' =
 \begin{pmatrix}
@@ -404,14 +444,14 @@ which is then reintroduced into the iteration scheme.
 At any point along the way, we can terminate the iteration and obtain a reduced set of
 couplings.  Since the  Lanczos approach uses the power method for finding the largest eigenvector of a matrix,
 it converges first upon the vector with the largest electron/nuclear coupling--which
- we refer to as the ``primary mode''.  Subsequent iterations produce reduced modes with
+ we refer to as the ``primary mode''.  Subsequent iterations produce reduced modes with progressively
  weaker electron/nuclear couplings and the entire  process can be terminated after a few iterations.
 After $k$-steps, the final electron-phonon couplings are then obtained by
 projecting the original set of couplings (in the normal mode basis) into the final vector space.
 
 For the first iteration, ${\mathbf v}_{1}$ is parallel to the bare electron-phonon coupling vector $g_{22}$
 and the associated frequency is ${\mathbf v}_{1}\cdot\Omega\cdot{\mathbf v}_{1}$.   The subsequent iterations introduce
-corrections to this via phonon-phonon coupling.  For example, for the $k=3$ iteration,
+corrections to this via phonon-phonon coupling mediated via the electronic couplings.  For example, for the $k=3$ iteration,
 we would determine the active vector space in terms of the upper-left 3$\times 3$ block of the matrix in
 Eq.~\ref{omega-prime}.
 \begin{eqnarray}

@@ -107,7 +107,7 @@
 
 % \newpage
 
-\chapter{Benchmark and Primary Mode}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}\label{chap:chapt2}
+\chapter{Benchmark and Primary Mode}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, Intramolecular Charge- and Energy-Transfer Rates with Reduced Modes: Comparison to Marcus Theory for Donor–Bridge–Acceptor Systems. The Journal of Physical Chemistry A\textbf{118}, 5196 (2014)}\label{chap:chapt2}
 \section{Introduction}
 \label{sec:intro}
 
@@ -167,11 +167,12 @@ Triplet energy exchange in these systems occurs via the through-space Dexter mec
 This is a short-ranged interaction involving the simultaneous exchange of two electrons between the
 donor and acceptor moieties.
 Systems such as these formed the basis of a series of experiments by  Closs and Miller \cite{miller1984intramolecular}
-in which they verified the existence of the Marcus inverted regime
+in which they verified the existence of the Marcus ``inverted regime'' - the very negative $\Delta G$ domain where transfer becomes slower -
 and serve as crucial benchmarks for testing new theoretical models for computing
-energy and charge transfer rates \cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}.
+energy and charge transfer rates \cite{subotnik2008constructing,subotnik2009initial,subotnik2010predicting}. The molecules are sketched in Table. \ref{summarytable}.
 
-The chapter is arranged in this way. First we examine the validity of the assumptions in our method. Then we apply the method to get theoretical transfer rate constants, and compare them to experiments. Finally, we use the projection scheme to find the primary modes in the reactions. The modes turn out to show certain symmetry.
+The chapter is arranged in this way. First we examine the validity of the assumptions in our method. Then we apply the method to obtain theoretical transfer rate constants, and compare these to experimental results. Finally, we use the projection scheme to find the primary modes in the reactions.
+% The modes turn out to show certain symmetry.
 
 
 % A number of years ago,  we developed a time-convolutionless  master equation approach for computing
@@ -396,9 +397,9 @@ The chapter is arranged in this way. First we examine the validity of the assump
 
 \section{Assumption Validity}
 
-Our method employs two assumptions, parabolic assumption and Condon approximation. The former assumes that relevant potential energy surfaces are parabolic. The latter means diabatic coupling  is independent of nuclear coordinates in the region where reaction occurs.
-In Fig.~\ref{parabs} we show the adiabatic potential curves and off-diagonal couplings along an interpolation coordinate
-connecting the equilibrium geometries of the donor and acceptor states for the donor-[d-2,6ae]-acceptor case.
+Our method employs two assumptions. First is that the diabatic surfaces are harmonic. Second, the Condon approximation is valid, namely, the diabatic couplings are independent of nuclear coordinates in the region where the reaction occurs.
+In Fig.~\ref{parabs} we show the computed adiabatic potential curves and off-diagonal couplings along an interpolation coordinate
+connecting the equilibrium geometries of the donor and acceptor states for the d-2,6ae molecule.
 The dashed curve gives the parabolic approximation to the
 lower potential curves.  Along this coordinate, the off-diagonal coupling is small and essentially linear and the parabolic
 approximation provides a good approximation to the actual potential.  This indicates that the assumptions in our model Hamiltonian
@@ -418,7 +419,7 @@ $D^{*}-B-A$ and $D-B-A^{*}$ equilibrium geometries.  $V_{ab}$ is the off-diagona
 \section{Energy transfer rates in  Donor-Bridge-Acceptor systems}
 
 
-Using the ER localization approach, all parameters needed for our model can be  obtained from
+Using the ER localization approach explained in Section \ref{sec:ER}, all parameters needed for our model can be  obtained from
 standard  quantum chemical packages.   The vertical energies, $\epsilon_{a}$
 and $\epsilon_{b}$ are obtained from single point CI(S) calculations at a given
 reference geometry.   We then project the energy gradients onto the vibrational normal
@@ -426,7 +427,7 @@ coordinates to obtain the electron-phonon coupling constants.  Either the Boys o
 localization scheme can be use to compute the mixing
 angles for constructing diabatic states. For all calculations shown here we
 used the Q-Chem 4.0 \cite{QCHEM4} code and employed the 6-31G(d){*}{*} basis set
-in order to compare our results  with  Ref.~\cite{subotnik2010predicting}.
+in order to compare our results  against other theoretical results in  Ref.~\cite{subotnik2010predicting}.
 
  We  benchmark our approach against a series of donor-bridge-acceptor
 molecules studied by Closs \cite{closs1988determination,closs1988intramolecular,closs1989connection}.
@@ -586,7 +587,7 @@ and the Condon approximation breaks down \cite{subotnik2010predicting}.
 % %\mathbf p = \sum_{k} \mathbf P_{k}
 % %\end{eqnarray}
 % %as  the total projection operator for all ${k} \le N$ modes.
-% We then project the hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
+% We then project the Hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
 % \begin{eqnarray}
 % \mathbf\Omega_{p} = \mathbf P_{k}\cdot \mathbf\Omega \cdot \mathbf P_{k} \,\, \& \,\, \mathbf\Omega_{q} = \mathbf Q_{k}\cdot \mathbf\Omega \cdot  \mathbf Q_{k}
 % \end{eqnarray}
@@ -600,8 +601,8 @@ and the Condon approximation breaks down \cite{subotnik2010predicting}.
 % \begin{eqnarray}
 % {\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\}.
 % \end{eqnarray}
-% and again transform the full hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
-%  At each step in the iteration, the transformed hessian, $\mathbf\Omega'$ is in the form of a
+% and again transform the full Hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
+%  At each step in the iteration, the transformed Hessian, $\mathbf\Omega'$ is in the form of a
 % $k\times k$ tri-diagonal submatrix in the upper-left part of the matrix and
 % a diagonal submatrix in the lower-right.  For example, after $k=3$ iterations, one has
 % a Hessian matrix of the form:
@@ -745,7 +746,7 @@ renormalized energies. }\label{fig-1mode}
 
 In Table~\ref{table2} we tabulate the frequencies and electron-phonon coupling constant for the first reduced mode for each
 test case.  Uniformly, these modes correspond to ring breathing motions on the donor and acceptor as illustrated in Fig.~\ref{LanczosModes_chap2}.
-As seen in this figure, coupling mode does not involve normal modes localized on the bridge species.
+As seen in this figure, the coupling mode does not involve normal modes localized on the bridge species.
 Moreover, the magnitude of the electronic coupling carried by this mode is uniformly around 0.37 eV  and independent of the bridge.
 No single normal mode captures all of the electronic coupling.  This is evidenced by the fact that the magnitude of the electronic coupling
 carried by the first reduced mode is over twice that of the largest coupling along a single normal mode.
@@ -798,7 +799,7 @@ agreement (to within 2\% on average over   all of the donor-bridge-acceptor syst
 when compared to an exact evaluation using all normal modes.   One can visualize the primary mode by projecting it on to the
 nuclear displacement vectors and gain insight into the coupled electronic/nuclear motions that underlie an electronic
 transition.   Our analysis also suggests that the primary  mode resembles certain  irreducible representations of the
-donor and acceptor moieties. This is further explored in next chapter.
+donor and acceptor moieties. This connection is further explored in next chapter.
 
 % \begin{}
 % \bibliographystyle{chicago}

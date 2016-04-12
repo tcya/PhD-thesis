@@ -119,83 +119,81 @@
 % %\maketitle must follow title, authors, abstract, \pacs, and \keywords
 % \maketitle
 
-\chapter{Primary Mode and Its Relation to Transfer Dynamics}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, The Journal of Chemical Physics \textbf{142}, 244114 (2015)}\label{chap:chapt3}
+\chapter{Primary Mode and Its Relation to Transfer Dynamics}\footnotetext{Part of this chapter has been published in Xunmo Yang and E. R. Bittner, Computing Intramolecular Charge and Energy Transfer Rates Using Optimal Modes. The Journal of Chemical Physics \textbf{142}, 244114 (2015)}\label{chap:chapt3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Start the main part of the manuscript here.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-One of the most important and fundamental processes in chemical  dynamics is
-that of energy and charge transfer between molecular species.  The mechanism
-itself is highly quantum mechanical in nature and involves strong coupling between nuclear and
-electronic degrees of freedom.  The seminal model for the calculation of the transfer rate for this process
-was developed by Marcus in the 1950s \cite{marcus1956theory,marcus1965theory,marcus1993electron}
-\begin{equation}
-k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta G^{o})^{2}/4\text{\ensuremath{\lambda}}k_{B}T},
-\end{equation}
-which relates the Fermi golden-rule transition rate, $k_{Marcus}$
-to the thermodynamic driving force $\Delta G^{o}$ and the reorganization energy $\lambda$.
-One of the most striking predictions of this theory is that as the free energy difference between the final and initial state increases, the transition rate reaches its maximum,
-and further increases in the energy off-set leads to slower transition rates.
-This ``inverted regime''  was confirmed by Closs and Miller \cite{miller1984intramolecular,closs1988determination,closs1989connection}
-nearly 30 yrs later.
+% One of the most important and fundamental processes in chemical  dynamics is
+% that of energy and charge transfer between molecular species.  The mechanism
+% itself is highly quantum mechanical in nature and involves strong coupling between nuclear and
+% electronic degrees of freedom.  The seminal model for the calculation of the transfer rate for this process
+% was developed by Marcus in the 1950s \cite{marcus1956theory,marcus1965theory,marcus1993electron}
+% \begin{equation}
+% k_{Marcus}=\frac{2\pi}{\hbar}|V_{ab}|^{2}\frac{1}{\sqrt{4\text{\ensuremath{\pi}}k_{B}T\lambda}}e^{-(\lambda+ \Delta G^{o})^{2}/4\text{\ensuremath{\lambda}}k_{B}T},
+% \end{equation}
+% which relates the Fermi golden-rule transition rate, $k_{Marcus}$
+% to the thermodynamic driving force $\Delta G^{o}$ and the reorganization energy $\lambda$.
+% One of the most striking predictions of this theory is that as the free energy difference between the final and initial state increases, the transition rate reaches its maximum,
+% and further increases in the energy off-set leads to slower transition rates.
+% This ``inverted regime''  was confirmed by Closs and Miller \cite{miller1984intramolecular,closs1988determination,closs1989connection}
+% nearly 30 yrs later.
 
-Numerous improvements to the Marcus model have been presented over the years and
-a detailed exploration of each is well beyond the scope of this work.
-Aside from the electronic coupling, $V_{ab}$,  the other terms in the expression of rate constant arise from
-a semi-classical approximation to the overlap between the initial vibrational states of the donor and the
-the final  states of the acceptor state. It suffices to say that most of the
-efforts focus upon incorporating more molecular-level detail into the couplings and vibrational modes
-used in computing these terms.
+% Numerous improvements to the Marcus model have been presented over the years and
+% a detailed exploration of each is well beyond the scope of this work.
+% Aside from the electronic coupling, $V_{ab}$,  the other terms in the expression of rate constant arise from
+% a semi-classical approximation to the overlap between the initial vibrational states of the donor and the
+% the final  states of the acceptor state. It suffices to say that most of the
+% efforts focus upon incorporating more molecular-level detail into the couplings and vibrational modes
+% used in computing these terms.
 
-A number of years ago,  we developed a time-convolutionless  master equation approach (TCLME) for computing
-state-to-state rate in which the coupling between  states depends upon the
-nuclear coordinates \cite{pereverzev2006time}. This approach incorporates a fully quantum
-mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
-the Marcus rate equation in the semi-classical limit.  The model itself is parameterized by the
-vibrational normal mode frequencies, the electronic energies, and energy derivatives
-at a reference configuration obtained from {\em ab initio} quantum  chemistry computations.
-The approach has been intensively used and testified by our group to compute state-to-state
-transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
- \cite{tamura2008phonon,tamura2007exciton,singh2009fluorescence,bittner2014noise}.
-Central to our work here is the use of a mode-projection scheme
- % which is similar to the Page-rank algorithm used by internet search engines such as
- % Google and Netflix\cite{brin1998anatomy, page2004method},
- which parses out a
-reduced set of nuclear motions primarily coupled to the quantum transition.
-We refer to the modes identified early in the iterative process as the ``primary Lanczos modes'' or PLMs.
+% A number of years ago,  we developed a time-convolutionless  master equation approach (TCLME) for computing
+% state-to-state rate in which the coupling between  states depends upon the
+% nuclear coordinates \cite{pereverzev2006time}. This approach incorporates a fully quantum
+% mechanical treatment of both the nuclear and electronic degrees of freedom and recovers
+% the Marcus rate equation in the semi-classical limit.  The model itself is parameterized by the
+% vibrational normal mode frequencies, the electronic energies, and energy derivatives
+% at a reference configuration obtained from {\em ab initio} quantum  chemistry computations.
+% The approach has been intensively used and testified by our group to compute state-to-state
+% transition rates in semi-empirical models for organic semiconducting light-emitting diode and photovoltaics
+%  \cite{tamura2008phonon,tamura2007exciton,singh2009fluorescence,bittner2014noise}.
+% Central to our work here is the use of a mode-projection scheme
+%  % which is similar to the Page-rank algorithm used by internet search engines such as
+%  % Google and Netflix\cite{brin1998anatomy, page2004method},
+%  which parses out a
+% reduced set of nuclear motions primarily coupled to the quantum transition.
+% We refer to the modes identified early in the iterative process as the ``primary Lanczos modes'' or PLMs.
 
-Using the TCLME approach,  we recently investigated
-triplet-triplet excitation energy transfer between a naphthalene donor and a
-benzaldehyde acceptor linked by a variety of bridging units as shown in Fig.~\ref{struct}. \cite{yang2014intramolecular}
-\begin{figure}
-%\includegraphics[width=\columnwidth]{Chapters/chap3/D-B-A-Numbered.pdf}
-\includegraphics[width=\columnwidth]{Chapters/chap3/molecule1.pdf}
-\caption{Molecular structure of naphthalene donor and a
-benzaldehyde acceptor linked by various bridging units. }\label{struct}
-\end{figure}
-Such systems were the basis of a  classic series of experiments by
-Closs and Miller \cite{miller1984intramolecular,closs1988determination,closs1989connection}
-which verified the existence of the Marcus inverted regime.
-In Ref. \cite{yang2014intramolecular} we showed that both
-the autocorrelation function of the electronic coupling operators
-and the total transfer rate constant calculated using TCLME approach with only PLMs provide an
-excellent approximation to the exact correlation functions and rate
-constants computed using all normal modes, as well as to the experimental
-and recent theoretical values for the transfer rates \cite{subotnik2010predicting}.
+% Using the TCLME approach,  we recently investigated
+% triplet-triplet excitation energy transfer between a naphthalene donor and a
+% benzaldehyde acceptor linked by a variety of bridging units as shown in Fig.~\ref{struct}. \cite{yang2014intramolecular}
+% \begin{figure}
+% %\includegraphics[width=\columnwidth]{Chapters/chap3/D-B-A-Numbered.pdf}
+% \includegraphics[width=\columnwidth]{Chapters/chap3/molecule1.pdf}
+% \caption{Molecular structure of naphthalene donor and a
+% benzaldehyde acceptor linked by various bridging units. }\label{struct}
+% \end{figure}
+% Such systems were the basis of a  classic series of experiments by
+% Closs and Miller \cite{miller1984intramolecular,closs1988determination,closs1989connection}
+% which verified the existence of the Marcus inverted regime.
+% In Ref. \cite{yang2014intramolecular} we showed that both
+% the autocorrelation function of the electronic coupling operators
+% and the total transfer rate constant calculated using TCLME approach with only PLMs provide an
+% excellent approximation to the exact correlation functions and rate
+% constants computed using all normal modes, as well as to the experimental
+% and recent theoretical values for the transfer rates \cite{subotnik2010predicting}.
 
-In this paper we analyze the symmetry of PLMs in model donor-bridge-acceptor systems as projected onto the local
+In this chapter we analyze the symmetry of PLMs (see Fig. \ref{LanczosModes_chap2}) in model donor-bridge-acceptor systems as projected onto the local
  vibrational modes of the  donor (benzaldehyde)    and  acceptor (naphthalene) moieties.    By constructing the local modes
 from the dominant normal modes in the projection,  one can deduce a relation between the PLMs,
 fragment modes,  and normal modes for the entire molecule.
-The structure of this paper is as follows.
-We begin by reviewing the TCLME approach and how one generates the PLMs.  We then
-discuss the symmetry  of PLMs and their relation to a linear coordinate linking the
-initial/donor geometry to the final/acceptor geometry of the molecule.
+% The structure of this paper is as follows. We begin by reviewing the TCLME approach and how one generates the PLMs.
+% Below we discuss the symmetry  of PLMs and their relation to a linear coordinate linking the initial/donor geometry to the final/acceptor geometry of the molecule.
 %---NEED CONCLUDING STATEMENT----
 
-\section{Theoretical Model}
+% \section{Theoretical Model}
 
 % \subsection{Construction and parameterization}
 % Our method was detailed in ~Ref. \cite{yang2014intramolecular} but to be self-contained, we briefly present it here.
@@ -293,173 +291,197 @@ initial/donor geometry to the final/acceptor geometry of the molecule.
 % normal modes, as well as the experimental rates,
 % when parameterized using accurate quantum chemical data.\cite{yang2014intramolecular}
 
-\subsection{Hamiltonian and Parameterization}
+% \subsection{Hamiltonian and Parameterization}
 
-We start with the  generic form for the diabatic Hamiltonian, describing two electronic states coupled with $N$ normal modes:
-\begin{eqnarray}
-H_{dia}=\left(\begin{array}{cc}
-\epsilon_{1} & V_{12}\\
-V_{21} & \epsilon_{2}
-\end{array}\right)
-+\left(\begin{array}{cc}
-{\mathbf g}_{11}&{\mathbf g}_{12} \\
-{\mathbf g}_{21} &{\mathbf g}_{22}
-\end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}.
-\nonumber \\
-\end{eqnarray}
-Here, the first term contains the electronic energies, $\epsilon_{1}$ and $\epsilon_{2}$ computed at a
-reference geometry--typically that of the donor or acceptor state. $V_{ij}$ is the diabatic coupling between them.  The second term represents the
-linear coupling between the electronic and nuclear degrees of freedom given in terms of the mass-weighted
-normal coordinates $\mathbf q$.   The diagonal terms
-give the diabatic displacement forces between the reference geometry and the two states.
-The remaining two terms correspond to the harmonic motions of the nuclear normal modes, given here in mass-weighted normal coordinates.
-In the normal mode basis, $\mathbf \Omega$  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
-
-If we choose one of the states as the reference state, then either $\mathbf g_{11}$ or $\mathbf g_{22}$ will vanish. We further assume Condon approximation to neglect $\mathbf g_{12}$ and $\mathbf g_{21}$. Now the Hamiltonian is simplified to
-\begin{eqnarray}
-H_{dia}=\left(\begin{array}{cc}
-\epsilon_{1} & V_{12}\\
-V_{21} & \epsilon_{2}
-\end{array}\right)+\left(\begin{array}{cc}
-0 & 0\\
-0 & 1
-\end{array}\right) {\mathbf g}_{22}\cdot{\mathbf q}+H_{osc},
-\end{eqnarray}
-\label{eq:diaHam}
-where $H_{osc}$ is the harmonic oscillator Hamiltonian for the vibrational normal modes.
-
-
-To calculate transition rate, we transform to adiabatic representation. It is done via Edmiston-Ruendenberg (ER) localization \cite{subotnik2010predicting} implemented in Q-Chem and the electronic Hamiltonians
-on adiabatic and diabatic basis are related by the mixing angle $\theta$.
-\begin{equation}
-H_{dia,e}=\left(\begin{array}{cc}
-\cos\theta & -\sin\theta\\
-\sin\theta & \cos\theta
-\end{array}\right)\left(\begin{array}{cc}
-\epsilon_{1}  & 0 \\
-0  & \epsilon_{2}
-\end{array}\right)\left(\begin{array}{cc}
-\cos\theta & \sin\theta\\
--\sin\theta & \cos\theta
-\end{array}\right).
-\end{equation}
-The diabatic coupling is then given by
-\begin{eqnarray}
-V_{12}=\frac{1}{2}\sin2\theta\left(\epsilon_{2}-\epsilon_{1}\right).
-\end{eqnarray}
-The full adiabatic Hamiltonian reads:
-\begin{eqnarray}
-H&=&U^{T}H_{dia}U\nonumber  \\
-&=&\left(\begin{array}{cc}
-E_{1}  & 0 \\
-0 & E_{2}
-\end{array}\right)+\left(\begin{array}{cc}
-\sin^{2}\theta & \frac{1}{2}\sin2\theta\\
-\frac{1}{2}\sin2\theta & \cos^{2}\theta
-\end{array}\right) {\mathbf g}_{22}.{\mathbf q} \nonumber \\
-&+& H_{osc}.\label{eq:locaiHam2}
-\end{eqnarray}
-where the electronic part is in the adiabatic basis with eigenenergies of $E_1$ and $E_2$ at certain reference geometry. The nuclear normal modes are described by $H_{osc}$ whereas $\theta$ is the mixing angle between two states.
-%to describe the coupling between two electronic states, $|1\rangle$ and $|2\rangle$  by a set of nuclear vibrational motionsdescribed by $H_{osc}$.  The angle $\theta$ gives the mixing angle between diabatic states and $E_1$ and $E_{2}$ are electronic energies computed at the same reference configuration.
-
-To parametrize our Hamiltonian, we assume the diabatic
-are a good approximation to the actual adiabatic potentials.
-This allows us to
-use the gradients of the adiabatic potentials to approximate the diabatic potentials.
-This approximation is  valid when the adiabatic (and diabatic) energy minima
-are far enough away from the crossing points and the mixing angles between the diabatic  and adiabatic
-states is small.
-Thus, all parameters in Eq.~\ref{eq:locaiHam2}  can be  obtained from
-standard  quantum chemical computations.
-As in our previous work, we use the Q-Chem 4.0 package  to obtain the vertical energies
- from single point CI(S) calculations with 6-31G** basis set at a given
-reference geometry.   We then project the energy gradients onto the vibrational normal
-coordinates
-
-Our group has shown that the dynamics of Hamiltonian in the form of Eq.~\ref{eq:locaiHam2} can be expressed in a time-convolutionless mater equation \cite{pereverzev2006time}. The derivation is lengthy so we present it briefly.
-
-\subsection{Transition Rate and Autocorrelation}
-We start from a more general Hamiltonian:
-\begin{eqnarray}
-H=\left(\begin{array}{cc}
-\epsilon_{1} & 0\\
-0 & \epsilon_{2}
-\end{array}\right)+\left(\begin{array}{cc}
-{\mathbf g}_{11}&{\mathbf g}_{12} \\
-{\mathbf g}_{21} &{\mathbf g}_{22}
-\end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}
-\nonumber \\
-% \label{ham1}
-\end{eqnarray}
-then perform a polaron transform
-using the unitary transformation \cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
-\begin{eqnarray}
-U&=&e^{-\sum_{ni}\!\!\frac{g_{nni}}{\hbar\omega_i}|n\rangle \langle
-n|(a^{\dagger}_i-a_i)}
- \nonumber \\
-&=&
-\sum_{n}|n\rangle \langle n|e^{-\sum_{i}\!\!\frac{g_{nni}}{\hbar\omega_i}(a^{\dagger}_i-a_i)}
-% \label{unitary}
-\end{eqnarray}
-under which the transformed Hamiltonian is written in terms of the
-diagonal elements
-\begin{eqnarray} \tilde H_0=U^{-1}H_0U
-=\sum_n\tilde\epsilon_n |n\rangle \langle
-n|+\sum_i\omega_ia^{\dagger}_ia_i,
- \end{eqnarray}
-with  the renormalized electronic energies,
-\begin{eqnarray}
-\tilde\epsilon_n=\epsilon_n-\sum_{i}\frac{g_{nni}^2}{\hbar\omega_i},
-\end{eqnarray}
-and off-diagonal terms,
-\begin{eqnarray} \hat V_{nm}=\sum_{i}g_{nmi}\left(a^{\dagger}_i+
-a_i-\frac{2g_{nni}}{\hbar\omega_i}\right)e^{\sum_{j}\frac{(g_{nnj}-g_{mmj})}{\hbar\omega_j}(a^{\dagger}_j-a_j)}.
-% \label{opm}
-\end{eqnarray}
-% In the transformed (or dressed) picture the electronic transition from state
-% $|n\rangle$ to $|m\rangle$ is accompanied by the excitations of all the
-% normal phonon modes.  Transforming to the interaction representation
-% and performing a trace over the phonons gives the spectral density in
-% terms of the autocorrelation of the electron/phonon coupling
-% operators.
+% We start with the  generic form for the diabatic Hamiltonian, describing two electronic states coupled with $N$ normal modes:
 % \begin{eqnarray}
-% S_{nm}(\tilde\omega) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}C_{nm}(t),\label{spec-dens}
+% H_{dia}=\left(\begin{array}{cc}
+% \epsilon_{1} & V_{12}\\
+% V_{21} & \epsilon_{2}
+% \end{array}\right)
+% +\left(\begin{array}{cc}
+% {\mathbf g}_{11}&{\mathbf g}_{12} \\
+% {\mathbf g}_{21} &{\mathbf g}_{22}
+% \end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}.
+% \nonumber \\
 % \end{eqnarray}
-% where
+% Here, the first term contains the electronic energies, $\epsilon_{1}$ and $\epsilon_{2}$ computed at a
+% reference geometry--typically that of the donor or acceptor state. $V_{ij}$ is the diabatic coupling between them.  The second term represents the
+% linear coupling between the electronic and nuclear degrees of freedom given in terms of the mass-weighted
+% normal coordinates $\mathbf q$.   The diagonal terms
+% give the diabatic displacement forces between the reference geometry and the two states.
+% The remaining two terms correspond to the harmonic motions of the nuclear normal modes, given here in mass-weighted normal coordinates.
+% In the normal mode basis, $\mathbf \Omega$  is diagonal with elements corresponding to the normal mode frequencies, $\omega_{j}^{2}$.
+
+% If we choose one of the states as the reference state, then either $\mathbf g_{11}$ or $\mathbf g_{22}$ will vanish. We further assume Condon approximation to neglect $\mathbf g_{12}$ and $\mathbf g_{21}$. Now the Hamiltonian is simplified to
+% \begin{eqnarray}
+% H_{dia}=\left(\begin{array}{cc}
+% \epsilon_{1} & V_{12}\\
+% V_{21} & \epsilon_{2}
+% \end{array}\right)+\left(\begin{array}{cc}
+% 0 & 0\\
+% 0 & 1
+% \end{array}\right) {\mathbf g}_{22}\cdot{\mathbf q}+H_{osc},
+% \end{eqnarray}
+% \label{eq:diaHam}
+% where $H_{osc}$ is the harmonic oscillator Hamiltonian for the vibrational normal modes.
+
+
+% To calculate transition rate, we transform to adiabatic representation. It is done via Edmiston-Ruendenberg (ER) localization \cite{subotnik2010predicting} implemented in Q-Chem and the electronic Hamiltonians
+% on adiabatic and diabatic basis are related by the mixing angle $\theta$.
+% \begin{equation}
+% H_{dia,e}=\left(\begin{array}{cc}
+% \cos\theta & -\sin\theta\\
+% \sin\theta & \cos\theta
+% \end{array}\right)\left(\begin{array}{cc}
+% \epsilon_{1}  & 0 \\
+% 0  & \epsilon_{2}
+% \end{array}\right)\left(\begin{array}{cc}
+% \cos\theta & \sin\theta\\
+% -\sin\theta & \cos\theta
+% \end{array}\right).
+% \end{equation}
+% The diabatic coupling is then given by
+% \begin{eqnarray}
+% V_{12}=\frac{1}{2}\sin2\theta\left(\epsilon_{2}-\epsilon_{1}\right).
+% \end{eqnarray}
+% The full adiabatic Hamiltonian reads:
+% \begin{eqnarray}
+% H&=&U^{T}H_{dia}U\nonumber  \\
+% &=&\left(\begin{array}{cc}
+% E_{1}  & 0 \\
+% 0 & E_{2}
+% \end{array}\right)+\left(\begin{array}{cc}
+% \sin^{2}\theta & \frac{1}{2}\sin2\theta\\
+% \frac{1}{2}\sin2\theta & \cos^{2}\theta
+% \end{array}\right) {\mathbf g}_{22}.{\mathbf q} \nonumber \\
+% &+& H_{osc}.\label{eq:locaiHam2}
+% \end{eqnarray}
+% where the electronic part is in the adiabatic basis with eigenenergies of $E_1$ and $E_2$ at certain reference geometry. The nuclear normal modes are described by $H_{osc}$ whereas $\theta$ is the mixing angle between two states.
+% %to describe the coupling between two electronic states, $|1\rangle$ and $|2\rangle$  by a set of nuclear vibrational motionsdescribed by $H_{osc}$.  The angle $\theta$ gives the mixing angle between diabatic states and $E_1$ and $E_{2}$ are electronic energies computed at the same reference configuration.
+
+% To parametrize our Hamiltonian, we assume the diabatic
+% are a good approximation to the actual adiabatic potentials.
+% This allows us to
+% use the gradients of the adiabatic potentials to approximate the diabatic potentials.
+% This approximation is  valid when the adiabatic (and diabatic) energy minima
+% are far enough away from the crossing points and the mixing angles between the diabatic  and adiabatic
+% states is small.
+% Thus, all parameters in Eq.~\ref{eq:locaiHam2}  can be  obtained from
+% standard  quantum chemical computations.
+% As in our previous work, we use the Q-Chem 4.0 package  to obtain the vertical energies
+%  from single point CI(S) calculations with 6-31G** basis set at a given
+% reference geometry.   We then project the energy gradients onto the vibrational normal
+% coordinates
+
+% Our group has shown that the dynamics of Hamiltonian in the form of Eq.~\ref{eq:locaiHam2} can be expressed in a time-convolutionless mater equation \cite{pereverzev2006time}. The derivation is lengthy so we present it briefly.
+
+% \subsection{Transition Rate and Autocorrelation}
+% We start from a more general Hamiltonian:
+% \begin{eqnarray}
+% H=\left(\begin{array}{cc}
+% \epsilon_{1} & 0\\
+% 0 & \epsilon_{2}
+% \end{array}\right)+\left(\begin{array}{cc}
+% {\mathbf g}_{11}&{\mathbf g}_{12} \\
+% {\mathbf g}_{21} &{\mathbf g}_{22}
+% \end{array}\right)\cdot{\mathbf q} +\frac{{\mathbf p}^{2}}{2}+\frac{1}{2}\mathbf{q}^{T}\cdot\mathbf\Omega\cdot\mathbf{q}
+% \nonumber \\
+% % \label{ham1}
+% \end{eqnarray}
+% then perform a polaron transform
+% using the unitary transformation \cite{grover1970exciton,rice1994excitons,pereverzev2006time}.
+% \begin{eqnarray}
+% U&=&e^{-\sum_{ni}\!\!\frac{g_{nni}}{\hbar\omega_i}|n\rangle \langle
+% n|(a^{\dagger}_i-a_i)}
+%  \nonumber \\
+% &=&
+% \sum_{n}|n\rangle \langle n|e^{-\sum_{i}\!\!\frac{g_{nni}}{\hbar\omega_i}(a^{\dagger}_i-a_i)}
+% % \label{unitary}
+% \end{eqnarray}
+% under which the transformed Hamiltonian is written in terms of the
+% diagonal elements
+% \begin{eqnarray} \tilde H_0=U^{-1}H_0U
+% =\sum_n\tilde\epsilon_n |n\rangle \langle
+% n|+\sum_i\omega_ia^{\dagger}_ia_i,
+%  \end{eqnarray}
+% with  the renormalized electronic energies,
+% \begin{eqnarray}
+% \tilde\epsilon_n=\epsilon_n-\sum_{i}\frac{g_{nni}^2}{\hbar\omega_i},
+% \end{eqnarray}
+% and off-diagonal terms,
+% \begin{eqnarray} \hat V_{nm}=\sum_{i}g_{nmi}\left(a^{\dagger}_i+
+% a_i-\frac{2g_{nni}}{\hbar\omega_i}\right)e^{\sum_{j}\frac{(g_{nnj}-g_{mmj})}{\hbar\omega_j}(a^{\dagger}_j-a_j)}.
+% % \label{opm}
+% \end{eqnarray}
+% % In the transformed (or dressed) picture the electronic transition from state
+% % $|n\rangle$ to $|m\rangle$ is accompanied by the excitations of all the
+% % normal phonon modes.  Transforming to the interaction representation
+% % and performing a trace over the phonons gives the spectral density in
+% % terms of the autocorrelation of the electron/phonon coupling
+% % operators.
+% % \begin{eqnarray}
+% % S_{nm}(\tilde\omega) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}C_{nm}(t),\label{spec-dens}
+% % \end{eqnarray}
+% % where
+% % $$
+% %C_{nm}(t) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle.\label{cor-fun}
+% After lengthy derivation we get the autocorrelation function in the Heisenberg representation
 % $$
-%C_{nm}(t) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle.\label{cor-fun}
-After lengthy derivation we get the autocorrelation function in the Heisenberg representation
-$$
-C_{nm}(t) =\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle,\label{cor-fun}
-$$
-where $\langle \cdots \rangle$ denotes a thermal average over the
-vibrational degrees of freedom.
-% The derivation and explicit form for the kernel in Eq.~\ref{spec-dens}  is quite lengthy and is given in
-% Ref.~\citenum{pereverzev2006time}.
-Using this approach , the golden-rule rates are given by
-\begin{eqnarray}
-k_{nm}=\lim_{\tau \to \infty}2{\rm Re}\int_{0}^{\tau}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
-% \label{gr-expression}
-\end{eqnarray}
-In a practical sense, we take $\tau$ to be some finite time at which the
-autocorrelation function $C(t)$
-has relaxed to zero.
+% C_{nm}(t) =\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle,\label{cor-fun}
+% $$
+% where $\langle \cdots \rangle$ denotes a thermal average over the
+% vibrational degrees of freedom.
+% % The derivation and explicit form for the kernel in Eq.~\ref{spec-dens}  is quite lengthy and is given in
+% % Ref.~\citenum{pereverzev2006time}.
+% Using this approach , the golden-rule rates are given by
+% \begin{eqnarray}
+% k_{nm}=\lim_{\tau \to \infty}2{\rm Re}\int_{0}^{\tau}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
+% % \label{gr-expression}
+% \end{eqnarray}
+% In a practical sense, we take $\tau$ to be some finite time at which the
+% autocorrelation function $C(t)$
+% has relaxed to zero.
 
-Later, we will use the $C_{nm}(t) $ to benchmark the convergence of our model with respect to
-the number of nuclear modes included in constructing the electronic coupling operator, $V_{nm}(t)$.
-For our purposes here,  an ``exact''  calculation involves including all nuclear vibrational modes.
-In our previous work we showed that both $C(t)$
-and the total transfer rate constant, $k_{nm}$ calculated using only the first few projected modes provide an
-excellent agreement with the exact quantities computed using  the full set of
-normal modes, as well as the experimental rates,
-when parameterized using accurate quantum chemical data \cite{yang2014intramolecular}.
+% Later, we will use the $C_{nm}(t) $ to benchmark the convergence of our model with respect to
+% the number of nuclear modes included in constructing the electronic coupling operator, $V_{nm}(t)$.
+% For our purposes here,  an ``exact''  calculation involves including all nuclear vibrational modes.
+% In our previous work we showed that both $C(t)$
+% and the total transfer rate constant, $k_{nm}$ calculated using only the first few projected modes provide an
+% excellent agreement with the exact quantities computed using  the full set of
+% normal modes, as well as the experimental rates,
+% when parameterized using accurate quantum chemical data \cite{yang2014intramolecular}.
 
 
-% Diagonalizing $H$ at a given nuclear configuration  provides the adiabatic potentials for our system, which can be used to approximate the diabatic potentials.
+% % Diagonalizing $H$ at a given nuclear configuration  provides the adiabatic potentials for our system, which can be used to approximate the diabatic potentials.
 
-% The linear coupling parameter $ {\mathbf g}_{22}$ defines
+% % The linear coupling parameter $ {\mathbf g}_{22}$ defines
+% % a force
+% % along a vector connecting the
+% % the initial and final equilibrium geometries of the molecule.
+% % This vector, along with the diabatic mixing angle can be obtained from quantum chemistry
+% % using the ER localization
+% % scheme to approximate the donor and acceptor states.
+% % By analyzing this force we can gain the insight into the dynamics of the transition as well as
+% % open an avenue for developing improved approximations for transition rates.
+% % In our previous work \cite{yang2014intramolecular},  we presented a Lanczos-base ranking algorithm that project
+% % out a series of nuclear displacements that are most important for
+% % the transition.   We refer to the highest-ranked mode identified by the algorithm
+% % as the ``primary Lanczos mode'' (PLM).
+
+
+% % \subsection{Computing spectral densities and transition rates}
+
+% % Once a suitable set of parameters and vibrational modes  have been determined,
+
+
+
+
+
+% \subsection{Constructing Primary Lanczos Modes}
+% The linear coupling parameter $ {\mathbf g}_{22}$ in Eq.~\ref{eq:locaiHam2} defines
 % a force
-% along a vector connecting the
+% along a vector connecting
 % the initial and final equilibrium geometries of the molecule.
 % This vector, along with the diabatic mixing angle can be obtained from quantum chemistry
 % using the ER localization
@@ -470,87 +492,62 @@ when parameterized using accurate quantum chemical data \cite{yang2014intramolec
 % out a series of nuclear displacements that are most important for
 % the transition.   We refer to the highest-ranked mode identified by the algorithm
 % as the ``primary Lanczos mode'' (PLM).
+% The process of finding the PLMs is initiated by defining the vector ${\mathbf v}_{1} = {\mathbf g}_{22}$.
+% At each step indexed by $k$,  we define a projection operator
+% \begin{eqnarray}
+% {\mathbf P}_{k} = {\mathbf v}_{k}\otimes  {\mathbf v}_{k}
+% \end{eqnarray}
+% and its complement ${\mathbf Q}_{k} = {\mathbf I}  - {\mathbf P}_{k}$.
+% We also construct
+% \begin{eqnarray}
+% \mathbf p = \sum_{k} \mathbf P_{k}
+% \end{eqnarray}
+% as  the total projection operator for all ${k} \le N$ modes.
+% We then project the Hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
+% \begin{eqnarray}
+% \mathbf\Omega_{p} = \mathbf P_{k}\cdot \mathbf\Omega \cdot \mathbf P_{k} \,\, \& \,\, \mathbf\Omega_{q} = \mathbf Q_{k}\cdot \mathbf\Omega \cdot  \mathbf Q_{k}
+% \end{eqnarray}
+% and diagonalize each to obtain eigenvalues and eigenvectors $\{\alpha_{p}, {\mathbf M}_{p}\}$ and $\{\alpha_{q}, {\mathbf M}_{q}\}$
+% respectively.  $\mathbf\Omega_{p} $ and $\mathbf\Omega_{q}$ are $N\times N$ matrices.
+% The first set of these  will have a single
+% non-trivial eigenvalue and the second set
+% will have $N-k$ non-trivial eigenvalues. We then collect the non-trivial eigenvectors associated with each
+% to form the orthogonal transformation matrix
+% \begin{eqnarray}
+% {\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\}.
+% \end{eqnarray}
+% and again transform the full Hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
+%  At each step in the iteration, the transformed Hessian, $\mathbf\Omega'$ is in the form of a
+% $k\times k$ tri-diagonal submatrix in the upper-left part of the matrix and
+% a diagonal submatrix in the lower-right.
 
 
-% \subsection{Computing spectral densities and transition rates}
-
-% Once a suitable set of parameters and vibrational modes  have been determined,
-
-
-
-
-
-\subsection{Constructing Primary Lanczos Modes}
-The linear coupling parameter $ {\mathbf g}_{22}$ in Eq.~\ref{eq:locaiHam2} defines
-a force
-along a vector connecting
-the initial and final equilibrium geometries of the molecule.
-This vector, along with the diabatic mixing angle can be obtained from quantum chemistry
-using the ER localization
-scheme to approximate the donor and acceptor states.
-By analyzing this force we can gain the insight into the dynamics of the transition as well as
-open an avenue for developing improved approximations for transition rates.
-In our previous work \cite{yang2014intramolecular},  we presented a Lanczos-base ranking algorithm that project
-out a series of nuclear displacements that are most important for
-the transition.   We refer to the highest-ranked mode identified by the algorithm
-as the ``primary Lanczos mode'' (PLM).
-The process of finding the PLMs is initiated by defining the vector ${\mathbf v}_{1} = {\mathbf g}_{22}$.
-At each step indexed by $k$,  we define a projection operator
-\begin{eqnarray}
-{\mathbf P}_{k} = {\mathbf v}_{k}\otimes  {\mathbf v}_{k}
-\end{eqnarray}
-and its complement ${\mathbf Q}_{k} = {\mathbf I}  - {\mathbf P}_{k}$.
-We also construct
-\begin{eqnarray}
-\mathbf p = \sum_{k} \mathbf P_{k}
-\end{eqnarray}
-as  the total projection operator for all ${k} \le N$ modes.
-We then project the hessian matrix $\mathbf\Omega$ into each subspace {\em viz.}
-\begin{eqnarray}
-\mathbf\Omega_{p} = \mathbf P_{k}\cdot \mathbf\Omega \cdot \mathbf P_{k} \,\, \& \,\, \mathbf\Omega_{q} = \mathbf Q_{k}\cdot \mathbf\Omega \cdot  \mathbf Q_{k}
-\end{eqnarray}
-and diagonalize each to obtain eigenvalues and eigenvectors $\{\alpha_{p}, {\mathbf M}_{p}\}$ and $\{\alpha_{q}, {\mathbf M}_{q}\}$
-respectively.  $\mathbf\Omega_{p} $ and $\mathbf\Omega_{q}$ are $N\times N$ matrices.
-The first set of these  will have a single
-non-trivial eigenvalue and the second set
-will have $N-k$ non-trivial eigenvalues. We then collect the non-trivial eigenvectors associated with each
-to form the orthogonal transformation matrix
-\begin{eqnarray}
-{\mathbf M}_{k} = \{{\mathbf M}_{p},{\mathbf M}_{q}\}.
-\end{eqnarray}
-and again transform the full hessian $\mathbf\Omega$ into this new vector space to form the $N\times N$ matrix $\mathbf\Omega'$.
- At each step in the iteration, the transformed hessian, $\mathbf\Omega'$ is in the form of a
-$k\times k$ tri-diagonal submatrix in the upper-left part of the matrix and
-a diagonal submatrix in the lower-right.
+% \begin{figure*}[t]
+% \subfloat[c-1,4ee]{\includegraphics[width=0.75\columnwidth]{Chapters/chap3/Figure1a.pdf}}\\
+% \subfloat[d-2,6ae]{\includegraphics[width=0.75\columnwidth]{Chapters/chap3/Figure1b.pdf}}
+% \caption{
+% Primary Lanczos modes for (a) c-1,4ee and (b) d-2,6ae projected onto the atomic displacement coordinates.  The frequencies
+% for both these are at 0.185 eV (1490 cm$^{-1}$), a typical $C=C$ stretching frequency for arene systems.
+% }\label{LanczosModes}
+% \end{figure*}
 
 
-\begin{figure*}[t]
-\subfloat[c-1,4ee]{\includegraphics[width=0.75\columnwidth]{Chapters/chap3/Figure1a.pdf}}\\
-\subfloat[d-2,6ae]{\includegraphics[width=0.75\columnwidth]{Chapters/chap3/Figure1b.pdf}}
-\caption{
-Primary Lanczos modes for (a) c-1,4ee and (b) d-2,6ae projected onto the atomic displacement coordinates.  The frequencies
-for both these are at 0.185 eV (1490 cm$^{-1}$), a typical $C=C$ stretching frequency for arene systems.
-}\label{LanczosModes}
-\end{figure*}
+% In Fig.~\ref{LanczosModes_chap2}  we show the PLMs for the
+% intramolecular triplet energy transfer within
+% two representative donor-bridge-acceptor molecules from our study, termed c-1,4ee and d-2,6ae.
+% In both cases, triplet energy is transferred from a benzaldehyde (BZ) donor group to a naphthyl- acceptor group.
+% Several observations can be made from Fig.~\ref{LanczosModes_chap2} concerning the primary Lanczos modes for these
+% donor-bridge-acceptor systems. First, there is negligible contribution from the bridging unit.
+% This is not surprising since the transitions involve  electronic energy
+%  transfer between $\pi$-orbitals localized on the donor and acceptor moieties.
+%  Since the bridges in these cases
+% are not conjugated, there is very weak electronic coupling between the D/A groups and the bridge itself.
+% Hence, to a good approximation, the electronic
+% contribution from the bridge can be effectively ignored, it simply serves to hold the donor and acceptor in fixed relative positions.
+% Secondly, the displacement vectors on donor and acceptor moieties are very much akin to  totally symmetric normal modes
+% of the corresponding moieties, and do not correspond any single normal vibrational  mode of the whole molecule.
 
-
-In Fig.~\ref{LanczosModes}  we show the PLMs for the
-intramolecular triplet energy transfer within
-two representative donor-bridge-acceptor molecules from our study, termed c-1,4ee and d-2,6ae.
-In both cases, triplet energy is transferred from a benzaldehyde (BZ) donor group to a naphthyl- acceptor group.
-Several observations can be made from Fig.~\ref{LanczosModes} concerning the primary Lanczos modes for these
-donor-bridge-acceptor systems. First, there is negligible contribution from the bridging unit.
-This is not surprising since the transitions involve  electronic energy
- transfer between $\pi$-orbitals localized on the donor and acceptor moieties.
- Since the bridges in these cases
-are not conjugated, there is very weak electronic coupling between the D/A groups and the bridge itself.
-Hence, to a good approximation, the electronic
-contribution from the bridge can be effectively ignored, it simply serves to hold the donor and acceptor in fixed relative positions.
-Secondly, the displacement vectors on donor and acceptor moieties are very much akin to  totally symmetric normal modes
-of the corresponding moieties, and do not correspond any single normal vibrational  mode of the whole molecule.
-
-In the next two Sections, we explore the role of symmetry in detail.
-We first project the PLMs onto the normal modes of both the donor or acceptor moieties
+In the next two sections, we discuss the symmetry  of PLMs and their relation to a linear coordinate linking the initial/donor geometry to the final/acceptor geometry of the molecule. We first project the PLMs onto the normal modes of both the donor or acceptor moieties
 and onto entire molecules (donor-bridge-acceptor).  Using these reduced PLMs we
  compute rate constants and compare to the numerically exact results obtained using the full
 modes.  Then we do a similar set of projections using simply the geometric change from initial to final configurations
@@ -560,13 +557,15 @@ to explore  the relation between the PLMs and geometry.
 
 \section{Symmetry of the Primary Lanczos Modes}
 
-Fig.~\ref{fragProj} shows the projection of the PLMs  onto the local vibrational modes of
-D/A moieties in molecules of c-1,4ee and d-2,6ae.
+Fig.~\ref{fragProj} shows the projection of the PLMs  onto the normal modes of
+donor and acceptor moieties in molecules of c-1,4ee and d-2,6ae, respectively.
 In each case, we label the dominant contributions by the
-irreducible representation (IR) of the moiety. The normal mode basis is generated as follows:
-first, we take the geometry of donor or acceptor moiety and add  the necessary hydrogens.
-Then the $D_{2h}$ symmetry is applied to naphthalene using GaussView 5.
-The benzaldehyde moiety is unchanged because it has very low  symmetry:  $C_{s}$ if planar and $C_{1}$  other wise.
+irreducible representations (IR) of the moiety.
+There are 4 sets of normal modes used as basis in projections. Two are the normal modes of benzaldehyde and two of naphthalene. They are generated as follows: first, we take the  coordinates of benzaldehyde  and naphthalene from the equilibrium geometry of c-1,4ee and d-2,6ae, and add necessary hydrogens. In theory, naphthalene has $D_{2h}$ symmetry. However, by taking coordinates directly from the D-B-A molecules, the geometry of naphthalene is distorted slightly by the bridge and acceptor moieties, and its point group reduces to $C_{1}$. We want the naphthalene to have high symmetry, so we can use the irreducible representations of $D_{2h}$ to classify its normal modes. As the result, we use GaussView 5 to enforce $D_{2h}$ symmetry on naphthalene. For  benzaldehyde, we leave  the coordinates unchanged, as there is no obvious way to increase the symmetry for benzaldehyde. Finally we run frequency computations for all 4 sets of coordinates.
+% The normal mode basis is generated as follows:
+% first, we take the geometry of donor or acceptor moiety and add  the necessary hydrogens.
+% Then the $D_{2h}$ symmetry is applied to naphthalene using GaussView 5.
+% The benzaldehyde moiety is unchanged because it has very low  symmetry:  $C_{s}$ if planar and $C_{1}$  otherwise.
 
 \begin{figure*}[ht]
 \subfloat[]{\includegraphics[width=0.49\columnwidth]{Chapters/chap3/Figure2a.pdf}}
@@ -586,26 +585,24 @@ We then assign a weight to each mode viz.
 $$
 w_i = \frac{\left\langle \overrightarrow{M_{i}}|\overrightarrow{PLM}\right\rangle ^{2}}{\sqrt{\sum_{i}\left\langle \overrightarrow{M_{i}}|\overrightarrow{PLM}\right\rangle ^{2}}}
 $$
-where $\overrightarrow{M_{i}}$ is the displacement vector of the $i$th normal mode.
-The symmetrization of naphthalene introduces another problem
-in that the projection depends on the orientation of the basis vectors.
-Thus, we orient the original and symmetrized frames by first aligning the center of masses
-and then minimize the RMS displacement between atoms.
-Analyzing the projections it becomes clear that in all cases, the dominant components
+where $\overrightarrow{M_{i}}$ is the displacement vector of the $i$th normal mode, and $\overrightarrow{PLM}$ is the displacement vector of the PLM on the corresponding moiety. For example, for naphthalene, the $\overrightarrow{PLM}$ are the vectors in Fig. \ref{LanczosModes_chap2}, with only the atoms of naphthalene kept.
+The symmetrization of naphthalene introduces a subtle problem. The $\overrightarrow{PLM}$  is based on the distorted geometry of naphthalene in the D-B-A molecule, while $\overrightarrow{M_{i}}$ is computed on the geometry of symmetrized naphthalene. Two geometries differ slightly, so $\left\langle \overrightarrow{M_{i}}|\overrightarrow{PLM}\right\rangle$ depends on how we orient them.
+We choose to orient the original and symmetrized frames by first aligning the center of masses
+and then minimize the RMS displacement between atoms. This is arbitrary. Fortunately, two geometries are really similar, so we expect the choice of orientation, as long as it is not ridiculous, is acceptable.
+By analyzing the projections it becomes clear that in all cases, the dominant components
 belong to totally symmetric $A_{g}$ or $A_1$ irreducible representations,  in agreement
-with the intuitive observations from Fig.~\ref{LanczosModes}.
+with the intuitive observations from Fig.~\ref{LanczosModes_chap2}.
 
 This behavior is not unique for the napthyl-bridge-benzaldehyde  system.
-To see this, we repeated the analysis using various acceptor groups as shown in Fig.~\ref{benz}.
-together with their PLMs and correlation functions for different numbers of projected modes.
+To see this, we repeated the analysis by replacing naphthalene with various acceptor groups, as shown in Fig.~\ref{benz}. Fig.~\ref{benz} also shows the corresponding PLMs and correlation functions.
 % and d-2,6ae and compute the
 %coupling correlation functions in Eq.~\ref{cor-fun} and displacement vectors of their
 %PLMs.  Fig.~\ref{benz} shows the correlation functions and PLMs for  two phenyl-[bridge]-BZ
-For both molecules,  with 4 projected modes or more, the excellent agreement with exact (all modes) result out to 10 fs indicates that
+For both molecules,  4 projected modes are enough to reproduce the exact (all modes) correlation function up to 10 fs. It indicates that
 the projection scheme provides an accurate description of the electronic coupling in  these cases as well.
 %Moreover, the PLMs in each case are similar to the PLMs in the napthyl-[bridge]-BZ
-Moreover, the PLMs are qualitatively similar to the PLM of unchanged c-1,4ee.
-The displacements on the benzaldehyde moiety are almost identical, while on the phenyl and anthracene moieties they belong to totally symmetric irreducible representations as well.
+Moreover, the PLMs in Fig.~\ref{benz} are qualitatively similar to those in Fig.~\ref{LanczosModes_chap2}, where the acceptor is naphthalene.
+The displacements vectors on the benzaldehyde moiety in all 4 molecules are almost identical, and  the displacements vectors on the naphthalene, phenyl and anthracene moieties all belong to totally symmetric irreducible representations.
 
 %Till now we have shown that in the donor and acceptor moieties, PLMs are collections of normal modes with totally symmetric representation. I
 %
@@ -647,7 +644,7 @@ replaced by (a) phenyl ring and (b) anthracene, with their PLMs shown in (c) and
 %{\bf  Comment: this paragraph needs fleshing out since there's a lot going on here.}
 It is not a coincidence that the PLMs belong to the totally symmetric irreducible representation of the isolated donor and acceptor moieties.
 This connection can be understood by analyzing the corresponding  the changes in the electron density that accompany the transition.
-For example, the PLM on the naphthalene part shown in  Fig.~\ref{LanczosModes}
+For example, the PLM on the naphthalene part shown in  Fig.~\ref{LanczosModes_chap2}
 largely corresponds to a symmetric ring-stretching mode,  involving carbons
 C1 - C2, C3 - C4, C5 - C6, and C7 - C8.
 During the exciton transfer, an electron is promoted from the naphthalene HOMO to the naphthalene LUMO (shown in Fig.~\ref{naphHOMOLUMO})
@@ -704,9 +701,9 @@ Embedded are the most significant modes, namely, the 33rd modes \label{projNaph}
 
 %To construct coupling modes from the projections. We take the normal modes in  Fig.~\ref{projNaph}, starting from the most significant ones, and sum their displacement vectors multiplied by their weights in projection. Results are summarized in Fig.~\ref{backCorr}. Several conclusions can be made here. First, taking all modes in both sites, the ``NfBf'' in graph, gives same correlation function to the exact PLM. It verifies our observation that the bridge unit is negligible in PLM. Secondly, taking one mode in each fragment is not enough. 5 modes in each site is good enough and taking 10 gives indistinguishable correlation functions. Nevertheless, correlation function does not need to coincide perfectly to give a good rate constant so we calculate the rate constants for various combinations up to 10 modes in each fragment. The contour plots of the absolute values of their relative errors compared to the rate of PLM are shown in the second row in  Fig.~\ref{backCorr}. We can see that, roughly, taking 3 modes in benzaldehyde and 2 modes in naphthalene suffices to give rate constants within 10\% error. The fact that more modes are needed in benzaldehyde is because more normal modes in it are involved in PLMs, as can be seen in Fig.~\ref{fragProj}.
 
-One may argue that bridge is not included in our comparison.
-As showed in Fig.~\ref{LanczosModes}, one can see that very few motions involving the bridge contribute to the PLM.
-Thus, that we anticipate that we can construct the PLM using only local modes on the donor and acceptor units.
+% One may argue that bridge is not included in our comparison.
+We do not include the bridge in the projections, because as showed in Fig.~\ref{LanczosModes_chap2}, very few motions involving the bridge contribute to the PLM.
+Thus, we anticipate that we can construct the PLM using only local modes on the donor and acceptor units.
  In the next section, we  quantitatively verify this by using only
 dominant modes on the  donor and acceptor to construct coupling modes.
 
@@ -822,7 +819,7 @@ so PLMs seem to give fairly good approximations of geometry changes.
 %lengths and angles between the approximated and real final states. The differences are small,
 %so PLMs seem to give fairly good approximations of geometry changes.
 %In this part we discuss the mechanism why PLM is totally symmetric in donor and acceptor moieties. We show that it corresponds to geometry change of the moieties in the transfer. However, simply taking the difference of coordinates of initial and final states does not give PLM. By breaking down geometry change, we get the insight that the entire process consists of two steps, the fast excitation transfer facilitated by PLM and the relaxation after that.
-%Looking at the symmetry of PLM in Fig.~\ref{LanczosModes}, especially the naphthalene, it is basically the stretch of four bonds being symmetric to each other. Comparing the bonding and antibonding in the HOMO/LUMO of naphthalene in Fig.~\ref{naphHOMOLUMO}, we noticed that these four bonds change lengths dramatically in deexcitation, so does PLM correspond to geometry change? Yes, and no. First, we prove the "yes".
+%Looking at the symmetry of PLM in Fig.~\ref{LanczosModes_chap2}, especially the naphthalene, it is basically the stretch of four bonds being symmetric to each other. Comparing the bonding and antibonding in the HOMO/LUMO of naphthalene in Fig.~\ref{naphHOMOLUMO}, we noticed that these four bonds change lengths dramatically in deexcitation, so does PLM correspond to geometry change? Yes, and no. First, we prove the "yes".
 
 
 
