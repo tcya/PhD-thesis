@@ -44,8 +44,7 @@ with $E_{A}$ as the activation energy.
  we can relate the activation energy to both the reorganization energy and driving force, $-\Delta \epsilon$.
 One of the most profound predictions of the theory is that  as the driving force increases,
 the transfer rate reaches a maximum and further increases in the driving force
-lead to lower reaction rates, termed the inverted regime.
-
+lead to lower reaction rates, termed the inverted regime. The inverted region is unequivocally substantiated by Miller {\em et al.} \cite{miller1984intramolecular} in a series experiments of intramolecular transfer. Part of their work is used as the experimental benchmark of our model in Chapter \ref{chap:chapt2} and \ref{chap:chapt3}.
 
 
 
@@ -131,7 +130,7 @@ under which the transformed Hamiltonian is written in terms of the
 diagonal elements
 \begin{eqnarray} \tilde H_0=U^{-1}H_0U
 =\sum_n\tilde\epsilon_n |n\rangle \langle
-n|+\sum_i\omega_ia^{\dagger}_ia_i,
+n|+\sum_i\hbar\omega_ia^{\dagger}_ia_i,
  \end{eqnarray}
 with  the renormalized electronic energies,
 \begin{eqnarray}
@@ -149,7 +148,7 @@ and performing a trace over the phonons gives the spectral density in
 terms of the autocorrelation of the electron-phonon coupling
 operators.
 \begin{eqnarray}
-S_{nm}(\tilde\omega) = \int_{-\infty}^{\infty} dt e^{-i\tilde \omega t}\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle.\label{spec-dens}
+S_{nm}(\tilde\omega) = \int_{-\infty}^{\infty} \! \mathrm{d}t e^{-i\tilde \omega t}\langle \hat V_{nm}(t) \hat V_{mn}(0)\rangle.\label{spec-dens}
 \end{eqnarray}
 Here, $\hat V_{nm}(t)$ is the electron-phonon coupling term in the Heisenberg representation and
 $\langle \cdots \rangle$ denotes a thermal average over the
@@ -163,17 +162,17 @@ In Ref.~\cite{pereverzev2006time}, Pereverzev and Bittner derived
 a non-Markovian, time-convolutionless form of the Pauli master
 equation (TCLME)  for general system described by Eq.~\ref{ham1}.
 \begin{eqnarray}
-\frac{dP_{n}}{dt} = \sum_{m} W_{nm}(t)P_{m}(t) - \left(\sum_{m} W_{mn}(t)\right)P_{n}(t)
+\frac{dP_{n}}{dt} = \sum_{m \ne n} W_{nm}(t)P_{m}(t) - \sum_{m \ne n} W_{mn}(t)P_{n}(t)
 \end{eqnarray}
 where the time-dependent rates are given by
 \begin{eqnarray}
-W_{nm}(\tau)=2{\rm Re}\int_{0}^{\tau}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
+W_{nm}(\tau)=2{\rm Re}\int_{0}^{\tau} \! \mathrm{d}t\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
 \label{rate-expression}
 \end{eqnarray}
 In the limit that $\tau\to\infty$, Eq.~\ref{rate-expression} gives the Fermi's Golden Rule expression for the
 transition rate,
 \begin{eqnarray}
-k_{nm}=2{\rm Re}\int_{0}^{\infty}dt\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
+k_{nm}=2{\rm Re}\int_{0}^{\infty} \! \mathrm{d}t\left\langle \hat V_{nm}(0)\hat V_{mn}\left(t\right)\right\rangle e^{-i\tilde\omega_{nm}t}.
 \label{gr-expression}
 \end{eqnarray}
 
@@ -243,7 +242,7 @@ A straightforward way to construct diabatic states is to eliminate derivative co
 \end{eqnarray}
 However, it is computationally very expensive, and exact solution do not usually exist \cite{mead1982conditions}.
 
-Another category of diabatization methods is based on physical intuition, with ER diabatization being one of them. The ER diabatization is based on the idea that good diabatic states are supposed to be localized, so the approach defines the diabatic states by minimizing the total electron repulsion
+Another category of diabatization methods is based on physical intuition, with ER diabatization being one of them. The ER diabatization is based on the idea that good diabatic states are supposed to be localized, so the approach defines the diabatic states by maximizing the total electron repulsion
 \begin{eqnarray}
 f_{ER}=\sum_{k}^{N_{states}}\iint dr_{1}dr_{2}\frac{\left\langle \phi_{k}|\hat{\rho}\left(r_{1}\right)|\phi_{k}\right\rangle \left\langle \phi_{k}|\hat{\rho}\left(r_{2}\right)|\phi_{k}\right\rangle }{\left\Vert r_{1}-r_{2}\right\Vert }.
 \end{eqnarray}

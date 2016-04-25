@@ -44,9 +44,9 @@ All three molecules undergo similar ET processes after excitation, as illustrate
 \caption{The sketch of ET pathways. For PTZ-CH\textsubscript{2}-Pt-NAP, the CT $\rightarrow$ CSS step can be fully suppressed by intermediate infrared excitation. Reprinted with permission from Ref.~\cite{delor2015mechanism}.\label{ETscheme}}
 \end{figure*}
 
-\begin{figure*}[!h]
+\begin{figure*}[]
 \includegraphics[width=0.45\columnwidth]{Chapters/chap4/Images/parabola.jpg}
-\caption{Calculated energies of the CT (black), CSS (blue) and 3NAP (red) states along the NAP side C$\equiv$C coordinate in the ground state geometries of the molecules studied, in CH\textsubscript{2}Cl\textsubscript{2}. a, PTZ-CH\textsubscript{2}-Pt-NAP. b, PTZ-Pt-NAP. c, OMe-PTZ-Pt-NAP. The first and second vibrational energy levels for the asymmetric C$\equiv$C stretch are shown for the CT state. The energy gaps from $\nu_0$ to the intersection between CT and CSS are shown in the insets. There is a clear trend concerning the energy gap: PTZ-CH\textsubscript{2}-Pt-NAP < PTZ-Pt-NAP < OMe-PTZ-Pt-NAP, reflecting the trend experimentally observed in the efficiency of the infrared control effect. Reprinted with permission from Ref.~\cite{delor2015mechanism}.\label{PTZparabolas}} \end{figure*}
+\caption{Calculated energies of the CT (black), CSS (blue) and \textsuperscript{3}NAP (red) states along the NAP side C$\equiv$C coordinate in the ground state geometries of the molecules studied, in CH\textsubscript{2}Cl\textsubscript{2}. a, PTZ-CH\textsubscript{2}-Pt-NAP. b, PTZ-Pt-NAP. c, OMe-PTZ-Pt-NAP. The first and second vibrational energy levels for the asymmetric C$\equiv$C stretch are shown for the CT state. The energy gaps from $\nu_0$ to the intersection between CT and CSS are shown in the insets. There is a clear trend concerning the energy gap: PTZ-CH\textsubscript{2}-Pt-NAP < PTZ-Pt-NAP < OMe-PTZ-Pt-NAP, reflecting the trend experimentally observed in the efficiency of the infrared control effect. Reprinted with permission from Ref.~\cite{delor2015mechanism}.\label{PTZparabolas}} \end{figure*}
 
 
 The molecules show different changes in yield because of the different donors. From PTZ-CH\textsubscript{2}-Pt-NAP to PTZ-Pt-NAP, to OMe-PTZ-Pt-NAP, the donor strength increases, which enlarges the energy gap between CT and CSS states, as sketched in Fig.~\ref{JuliaStruct}. The driving force ($\Delta$G) of CT $\rightarrow$ CSS transfer increases from 0.2 $eV$ in PTZ-CH\textsubscript{2}-Pt-NAP, to 0.4 $eV$ in PTZ-Pt-NAP, to 0.6 $eV$ in OMe-PTZ-Pt-NAP. Large $\Delta$G accelerates the CT decay and hence decreases the lifetime of CT state.
@@ -84,7 +84,7 @@ The results presented here are for PTZ-Pt-NAP. The computation of other two mole
 %   \end{adjustbox}
 % \end{figure}
 
-\begin{figure}[!t]
+\begin{figure}[]
 \includegraphics[width=\columnwidth]{Chapters/chap4/Images/energy_diagram.pdf}
 \caption{The energy diagram of triplet states at \textsuperscript{3}NAP and CT state geometries. The electron/hole distribution are shown as well (green for electron, blue for hole). The arrows indicate the transitions we calculate.
 }\label{ene_diagram}
@@ -95,14 +95,14 @@ The comparison between theoretical and experimental rate constants is summarized
 
 The failure of the \textsuperscript{3}NAP geometry is especially obvious when we look at the CT $\rightarrow$ \textsuperscript{3}NAP transition. For this transition, we can calculate at either geometry. The TCLME rate constants at two geometries do not agree to each other. The results based on the CT geometry are in the same magnitude with experimental values, and the corresponding primary mode rates are similar to the exact ones. While the \textsuperscript{3}NAP geometry performs poorly. In Section \ref{sec:condon}, we illustrate that the error is, at least partially, caused by the break down of Condon approximation, and according corrections may improve the results.
 
-\begin{figure*}[!ht]
+\begin{figure*}[]
 \includegraphics[width=\columnwidth]{Chapters/chap4/Images/kTCLME-VS-EXPT.pdf}
 \caption{Comparisons between theoretical rate constants and the experimental rates. Experimental rates are calculated as yield of product/lifetime of reactant, using values from ~Ref. \cite{delor2015mechanism}.  The ``Marcus'' rates are calculated using Marcus theory with the diabatic couplings at according geometries. The ``Marcus (mean V)'' rates are calculated using mean diabatic couplings along the interpolated coordinate in Fig. \ref{interCondon}. Similarly, the ``TCLME'' and ``TCLME (mean V)'' rates are calculated using the TCLME approach, with all normal modes used. The ``PLM'' rates are calculated using only the primary mode. Our approach performs better than Marcus theory. The CT geometry gives good ``exact'' results, its primary mode rates also agree well. While for the \textsuperscript{3}NAP geometry, using mean value of diabatic couplings along the reaction coordinate significantly improves the performance.\label{rateComp}}
 \end{figure*}
 
 
 
-\begin{figure}[!t]
+\begin{figure}[]
 \subfloat[]{\includegraphics[width=0.5\columnwidth]{Chapters/chap4/Images/corrT12.pdf}}
 \subfloat[]{\includegraphics[width=0.5\columnwidth]{Chapters/chap4/Images/corrT13.pdf}}\\
 \subfloat[]{\includegraphics[width=0.5\columnwidth]{Chapters/chap4/Images/corrT31.pdf}}
@@ -111,12 +111,15 @@ The failure of the \textsuperscript{3}NAP geometry is especially obvious when we
 Correlation functions of various numbers of projected modes, compared to exact correlation, for (a) CSS $\rightarrow$ \textsuperscript{3}NAP at \textsuperscript{3}NAP geometry, (b) CT $\rightarrow$ \textsuperscript{3}NAP at \textsuperscript{3}NAP geometry, (c) CT $\rightarrow$ \textsuperscript{3}NAP at CT geometry, and (d) CT $\rightarrow$ CSS at CT geometry.
 }\label{corrT1T3}
 \end{figure}
+
+
+
 \subsection{Primary Mode}
 
 In Fig. \ref{rateComp} we see that for the CT geometry, using only the primary mode is sufficient to get good rate constants. Fig. \ref{corrT1T3} shows the correlation functions of different numbers of projected modes for all four transitions. Again the CT geometry performs better. Its convergence is satisfactory. The primary mode always resembles the exact initial dynamics, especially for the CT $\rightarrow$ \textsuperscript{3}NAP transition, where the primary mode reproduces the dynamics almost exactly up to 9 fs. Though not perfectly, tens of projected modes are enough to reproduce the shape of exact correlation functions for CT geometry. On the contrary, it takes hundreds of modes to recover the correlation for \textsuperscript{3}NAP (note that the degrees of freedom of PTZ-Pt-NAP is 201). Our previous studies \cite{yang2014intramolecular} shows that perfect matching of correlation function is unnecessary for good rate constant. It is verified again here. The primary mode's correlation function at CT geometry does not match the exact correlation perfectly, but the rate it gives agrees well to the exact value, and experiments. Nevertheless, the better it resembles the shape of exact function, the better the rate constant it gives.
 
 
-\begin{figure}[!t]
+\begin{figure}[]
 \subfloat[]{\includegraphics[width=0.88\columnwidth]{Chapters/chap4/Images/plmT12.png}}\\
 \subfloat[]{\includegraphics[width=0.88\columnwidth]{Chapters/chap4/Images/plmT13.png}}
 % \subfloat[]{\includegraphics[width=0.88\columnwidth]{Chapters/chap4/Images/plmT31.png}}\\
@@ -129,7 +132,7 @@ PTZ-Ph-$\protect\overset{\longleftarrow}{C}\equiv\protect\overset{\longrightarro
 in (b).}\label{projT1}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[]
 % \subfloat[]{\includegraphics[width=0.89\columnwidth]{Chapters/chap4/Images/plmT12.png}}\\
 % \subfloat[]{\includegraphics[width=0.89\columnwidth]{Chapters/chap4/Images/plmT13.png}}
 \subfloat[]{\includegraphics[width=0.89\columnwidth]{Chapters/chap4/Images/plmT31.png}}\\
@@ -144,20 +147,27 @@ in (b).
 \end{figure}
 
 
-\begin{figure}[!h]
-\subfloat{\includegraphics[height=0.8\textheight,keepaspectratio]{Chapters/chap4/Images/t1_174.jpg}}\\
-\subfloat{\includegraphics[height=0.8\textheight,keepaspectratio]{Chapters/chap4/Images/t1_175.jpg}}\\
-\subfloat{\includegraphics[height=0.8\textheight,keepaspectratio]{Chapters/chap4/Images/t3_174.jpg}}\\
-\subfloat{\includegraphics[height=0.8\textheight,keepaspectratio]{Chapters/chap4/Images/t3_175.jpg}}
+\begin{figure}[]
+\subfloat{\includegraphics[width=0.85\columnwidth]{Chapters/chap4/Images/t1_174.png}}\\
+\subfloat{\includegraphics[width=0.85\columnwidth]{Chapters/chap4/Images/t1_175.png}}\\
+\subfloat{\includegraphics[width=0.85\columnwidth]{Chapters/chap4/Images/t3_174.png}}\\
+\subfloat{\includegraphics[width=0.85\columnwidth]{Chapters/chap4/Images/t3_175.png}}
 \caption{From top to bottom: the displacement vectors of the 174th, 175th mode of \textsuperscript{3}NAP state, the 174th, 175th mode of CT state. For clarity, bonds are not shown. They are all the stretching modes of single C$\equiv$C bond, look like
-PTZ-Ph-C$\equiv$C-Pt-C$\protect\overset{\longleftrightarrow}{\equiv}$C-NAP in (a) and (c),
-PTZ-Ph-C$\protect\overset{\longleftrightarrow}{\equiv}$C-Pt-C$\equiv$C-NAP in (b) and (d).
+PTZ-Ph-C$\equiv$C-Pt-C$\protect\overset{\longleftrightarrow}{\equiv}$C-NAP in (a),
+PTZ-Ph-C$\protect\overset{\longleftrightarrow}{\equiv}$C-Pt-C$\equiv$C-NAP in (b),
+PTZ-Ph-$\protect\overset{\leftarrow}{C}\equiv\protect\overset{\rightarrow}{C}$-Pt-$\protect\overset{\longrightarrow}{C}\equiv\protect\overset{\longleftarrow}{C}$-NAP
+ in (c), and
+PTZ-Ph-$\protect\overset{\longleftarrow}{C}\equiv\protect\overset{\longrightarrow}{C}$-Pt-$\protect\overset{\leftarrow}{C}\equiv\protect\overset{\rightarrow}{C}$-NAP
+ in (d).
 }\label{NMT1T3}
 \end{figure}
 
 
 
-As experiments show that the excitation of C$\equiv$C bond radically affected the ET process, we expect the triple bond vibration to dominate the primary modes, at least for the CT state based calculations, since they achieve good agreement. Fig. \ref{projT1} and \ref{projT3} show the projection of primary modes onto the normal modes of corresponding state, {\em i.~e.}, the primary modes calculated at CT geometry are projected onto the normal modes of the CT state, and those at \textsuperscript{3}NAP are projected onto \textsuperscript{3}NAP's normal modes. It turns out that all four primary modes involve obvious C$\equiv$C displacement, and it is verified by the projections. The projections of primary modes are dominated by 1 or 2 normal modes. In Fig. \ref{projT1}(a), it is the 174th normal mode (ordered by increasing frequency) that dominates; in Fig. \ref{projT1}(b), the 174th and 175th modes dominate. Similarly, 174th and 175th modes dominate in Fig. \ref{projT3}(a) and  175th mode in Fig. \ref{projT3}(b). All these normal modes are C$\equiv$C stretching modes, as shown in Fig. \ref{NMT1T3}. We suggest that the primary mode of  CT $\rightarrow$ CSS transition (Fig. \ref{projT3}(b)) is the one involves C$\equiv$C vibration most. It has a component which has the largest weight, > 0.25, in all four primary modes. And that component clearly dominates other normal modes. As for PTZ-CH\textsubscript{2}-Pt-NAP, the CT $\rightarrow$ CSS step can be fully switched off by vibronic excitation, the step is supposed to be the one influenced by C$\equiv$C stretching most. Although PTZ-Pt-NAP does not show such radical change, we expect the the CT $\rightarrow$ CSS to be the most C$\equiv$C involved, as two molecules only differ by a -CH\textsubscript{2}-
+As experiments show that the excitation of C$\equiv$C bond radically affected the ET process, we expect the triple bond vibration to dominate the primary modes, at least for the CT state based calculations, since they achieve good agreement. Fig. \ref{projT1} and \ref{projT3} show the projection of primary modes onto the normal modes of corresponding state, {\em i.~e.}, the primary modes calculated at CT geometry are projected onto the normal modes of the CT state, and those at \textsuperscript{3}NAP are projected onto \textsuperscript{3}NAP's normal modes. It turns out that all four primary modes involve obvious C$\equiv$C displacement, and it is verified by the projections. The projections of primary modes are dominated by 1 or 2 normal modes. In Fig. \ref{projT1}(a), it is the 174th normal mode (ordered by increasing frequency) that dominates; in Fig. \ref{projT1}(b), the 174th and 175th modes dominate. Similarly, 174th and 175th modes dominate in Fig. \ref{projT3}(a) and  175th mode in Fig. \ref{projT3}(b).
+
+All these normal modes are C$\equiv$C stretching modes, as shown in Fig. \ref{NMT1T3}. We suggest that the primary mode of  CT $\rightarrow$ CSS transition (Fig. \ref{projT3}(b)) is the one involves C$\equiv$C vibration most. It has a component which has the largest weight, > 0.25, in all four primary modes. And that component clearly dominates other normal modes. Experimentally, after the IR pump is applied, the CT $\rightarrow$  \textsuperscript{3}NAP transition is relatively accelerated compared to the CT $\rightarrow$ CSS transition. By comparing the primary modes of the two transitions at CT geometry, we see that the primary mode of CT $\rightarrow$  \textsuperscript{3}NAP transition  is mainly antisymmetric stretching of two C$\equiv$C bonds, while that of CT $\rightarrow$ CSS transition is symmetric. As a result, the primary mode of CT $\rightarrow$  \textsuperscript{3}NAP is more IR active than that of CT $\rightarrow$ CSS transition. It may explain why CT $\rightarrow$  \textsuperscript{3}NAP  transition is relatively accelerated with IR pump.
+% As for PTZ-CH\textsubscript{2}-Pt-NAP, the CT $\rightarrow$ CSS step can be fully switched off by vibronic excitation, the step is supposed to be the one influenced by C$\equiv$C stretching most. Although PTZ-Pt-NAP does not show such radical change, we expect the the CT $\rightarrow$ CSS to be the most C$\equiv$C involved, as two molecules only differ by a -CH\textsubscript{2}-
 
 % section results (end)
 
@@ -174,7 +184,7 @@ Our model explicitly relies on two assumptions, parabolic assumption and Condon 
 
 To explore the effect of the change of diabatic coupling, we replace the original coupling with the average coupling along interpolation and redo the calculations. The new rate constants are illustrated in Fig. \ref{rateComp}, as ``with mean V''. The correction brings significant improvements, to both the Marcus and TCLME approaches, at the \textsuperscript{3}NAP geometry, especially for the most poorly computed  CSS $\rightarrow$ \textsuperscript{3}NAP transfer.
 
-\begin{figure*}[!h]
+\begin{figure*}[t]
 \includegraphics[width=\columnwidth]{Chapters/chap4/Images/interpolation.pdf}
 \caption{Diabatic coupling values along the interpolation from the \textsuperscript{3}NAP $\rightarrow$ CT geometries. State 0 and 10 stand for the \textsuperscript{3}NAP and the CT state, respectively.\label{interCondon}}
 \end{figure*}

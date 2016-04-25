@@ -640,6 +640,13 @@ replaced by (a) phenyl ring and (b) anthracene, with their PLMs shown in (c) and
 \caption{The (a)  ($A_{u}$) HOMO and (b)  ($B_{2g}) $LUMO of naphthalene.\label{naphHOMOLUMO}}
 \end{figure*}
 
+\begin{figure*}[]
+\subfloat[]{\includegraphics[width=0.82\columnwidth]{Chapters/chap3/Figure5a.pdf}}\\
+\subfloat[]{\includegraphics[width=0.82\columnwidth]{Chapters/chap3/Figure5b.pdf}}
+\caption{Projections of the PLM onto the normal modes of (a) c-1,4ee and (b) d-2,6ae.\label{LancProj}}
+\end{figure*}
+
+
 
 %{\bf  Comment: this paragraph needs fleshing out since there's a lot going on here.}
 It is not a coincidence that the PLMs belong to the totally symmetric irreducible representation of the isolated donor and acceptor moieties.
@@ -666,13 +673,6 @@ It is not at all straightforward to determine the PLMs by taking the difference 
 and final geometries of the molecule.
 %{\bf Question:  if you examine the bond-lengths of the Naphthalene anion,  do you see a similar behavior?}
 
-\begin{figure*}[!h]
-\subfloat[]{\includegraphics[width=0.82\columnwidth]{Chapters/chap3/Figure5a.pdf}}\\
-\subfloat[]{\includegraphics[width=0.82\columnwidth]{Chapters/chap3/Figure5b.pdf}}
-\caption{Projections of the PLM onto the normal modes of (a) c-1,4ee and (b) d-2,6ae.\label{LancProj}}
-\end{figure*}
-
-
 
 \section{Localized Property of the Primary Lanczos Mode}
 
@@ -685,7 +685,7 @@ which is shown in Fig.~\ref{LancProj}, as a comparison to Fig.~\ref{fragProj}, w
  its close relation with local sites reveals the fact that the exciton transfer here is more like a local excitation/de-excitation
 coupled by exchange interaction,  in accordance with the Dexter mechanism \cite{dexter1953theory}.
 
-\begin{figure*}[!h]
+\begin{figure*}[]
 \subfloat[]{\includegraphics[width=0.82\columnwidth]{Chapters/chap3/Figure6a.pdf}}\\
 \subfloat[]{\includegraphics[width=0.82\columnwidth]{Chapters/chap3/Figure6b.pdf}}
 \caption{Projection of PLMs onto unsymmetrized naphthalene for (a) c-1,4ee and (b) d-2,6ae.
@@ -752,7 +752,7 @@ is the mode made up from all normal modes of both the donor and acceptor sites.
 The designation ``NxBy'' indicates that the correlation function was constructed using  $x$ most significant normal modes
 on naphthalene and $y$ most significant ones on benzaldehyde.   Plots (c) and (d) show the
  relative error in rate constants calculated for various combinations of normal modes compared to the exact result
- or c-1,4ee (c) and d-2,6ae (d) respectively. \label{backCorr}}
+ of c-1,4ee (c) and d-2,6ae (d), respectively. \label{backCorr}}
 \end{figure*}
 
 
@@ -787,9 +787,9 @@ consider the relation between the PLM and geometry change accompanying the trans
 First, we use the PLM to approximate geometry change by distorting the molecule
 along the PLM.   The magnitude of the distortion
  is determined  by minimizing the average bond length difference of the four bonds on naphthalene
- which stretch significantly in PLM, between the optimized and approximate geometries. In Table 1 we list the differences between two geometries.
+ which stretch significantly in PLM, between the optimized and approximate geometries. In Table. ~\ref{aprroxGeom} we list the differences between two geometries.
 Comparing the maximum difference of bond
-lengths and angles between the approximated and true final states (Table. ~\ref{aprroxGeom}), the differences are very small,
+lengths and angles between the approximated and true final states, the differences are very small,
 so PLMs seem to give fairly good approximations of geometry changes.
 
 
@@ -803,7 +803,7 @@ so PLMs seem to give fairly good approximations of geometry changes.
  \label{aprroxGeom}
  \begin{tabular}{lllll}
    \hline
-   Mode used & c-1,4ee-PLM   & c-1,4ee-DNM  & d-2,6ae-PLM  & d-2,6ae-DNM\\
+   Mode used & c-1,4ee-PLM   & c-1,4ee-RM  & d-2,6ae-PLM  & d-2,6ae-RM\\
    \hline
    Max. bond length difference (\AA)   & 0.034 & 0.160 &0.039 & 0.283   \\
      Max. bond angle difference (rad)   & 0.053 &0.075 & 0.057 &0.135   \\
@@ -879,7 +879,7 @@ In essence, simply changing representation completely changes the implied dynami
 %However, this is only one side of the story. In Fig.~\ref{geomDiffProj} we project geometry change onto the normal modes of molecule. It does not look same to the projections of PLM in Fig.~\ref{LancProj}. The geometry change of both c-1,4ee and d-2,6ae are dominated by single mode with very low frequency, shown in Fig.~\ref{geomDiffProj}(c) and (d). We term them the dominant mode relaxation mode (RM) for the reason below. RM does not resemble PLM at all.
 
 
-The resolution to this inconsistency is to distinguish between the two types of geometric changes.
+The solution to this inconsistency is to distinguish between the two types of geometric changes.
 One is the internal changes within  the moieties.  These are well represented  by the PLM.
 The other is the gross motion of the entire molecule, which we shall refer to as the ``relaxation mode'' (RM).  This latter motion
 is not well represented by the PLM.
@@ -890,6 +890,14 @@ internal motion primarily affects C=C bond lengths,  and
 hence is strongly coupled to the $\pi$-electronic degrees of freedom, while gross motion of moieties corresponds
 to  relaxation after exciton transfer has occurred. This is verified in Table 1, where we use the relaxation mode to approximate the final geometry. The procedure is similar to that of PLM. Although RM is the dominant mode in the projection, it gives much worse approximated bond lengths and angles.
 % In short, the PLM is a subvector within the relaxation mode.
+
+\begin{figure*}[]
+\subfloat[]{\includegraphics[width=0.92\columnwidth]{Chapters/chap3/Figure10a.pdf}}\\
+\subfloat[]{\includegraphics[width=0.92\columnwidth]{Chapters/chap3/Figure10b.pdf}}\\
+% \subfloat[]{\includegraphics[width=0.53\columnwidth]{Chapters/chap3/Figure10c.pdf}}
+\caption{Correlation functions of relaxation mode (RM), PLM, geometry change (GC), and geometry change with the RM component eliminated for (a) c-1,4ee and (b) d-2,6ae. The exact rate is computed using the full set of normal modes.}
+\label{Corr}
+\end{figure*}
 
 %The procedure is same as before except the relaxation mode is used instead of the PLM.
 Since the PLM explains the short-time dynamics and can approximate the local geometry changes within the individual
@@ -913,20 +921,6 @@ a reasonable approximation to  the overall rate.  However, the best agreement ov
 obtained by using the PLM identified using the Lanczos search algorithm.
 
 
-\begin{figure*}[!h]
-\subfloat[]{\includegraphics[width=0.92\columnwidth]{Chapters/chap3/Figure10a.pdf}}\\
-\subfloat[]{\includegraphics[width=0.92\columnwidth]{Chapters/chap3/Figure10b.pdf}}\\
-% \subfloat[]{\includegraphics[width=0.53\columnwidth]{Chapters/chap3/Figure10c.pdf}}
-\caption{Correlation functions of relaxation mode (RM), PLM, geometry change (GC), and geometry change with the RM component eliminated for (a) c-1,4ee and (b) d-2,6ae. The exact rate is computed using the full set of normal modes.}
-\label{Corr}
-\end{figure*}
-
-
-\begin{figure*}[!h]
-\subfloat[]{\includegraphics[width=0.9\columnwidth]{Chapters/chap3/Figure10c.pdf}}
-\caption{Relative comparison of the rate constants computed using different sets of reduced modes. blue = c-1,4ee, gold =d-2,6ae. }
-\label{RateComp}
-\end{figure*}
 
 %The results are consistent with our intuition.  The relaxation mode a gives negligible correlation
 %function, so its contribution to the rate constant can be neglected.
@@ -944,6 +938,12 @@ obtained by using the PLM identified using the Lanczos search algorithm.
 %
 %
 
+
+\begin{figure*}[!t]
+\subfloat[]{\includegraphics[width=0.9\columnwidth]{Chapters/chap3/Figure10c.pdf}}
+\caption{Relative comparison of the rate constants computed using different sets of reduced modes. blue = c-1,4ee, gold =d-2,6ae. }
+\label{RateComp}
+\end{figure*}
 
 
 
